@@ -44,12 +44,28 @@ const TokenPage: React.FC = () => {
   const nextId = idx >= 0 && idx < manifest.length - 1 ? manifest[idx + 1] : undefined;
 
   const name = item?.name ?? `Token #${tokenId}`;
+  const absoluteUrl =
+    typeof window !== "undefined" ? `${window.location.origin}/token/${tokenId}` : "";
+  const ogImage =
+    typeof window !== "undefined"
+      ? (item?.image || item?.image_url || "/placeholder.svg").startsWith("http")
+        ? (item?.image || item?.image_url || "/placeholder.svg")
+        : `${window.location.origin}${item?.image || item?.image_url || "/placeholder.svg"}`
+      : (item?.image || item?.image_url || "/placeholder.svg");
 
   return (
     <>
       <Helmet>
         <title>{name} — fourHundred</title>
         <meta name="description" content={`Attributes and details for ${name}.`} />
+        <meta property="og:title" content={`${name} — fourHundred`} />
+        <meta property="og:description" content={`Attributes and details for ${name}.`} />
+        <meta property="og:url" content={absoluteUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${name} — fourHundred`} />
+        <meta name="twitter:description" content={`Attributes and details for ${name}.`} />
+        <meta name="twitter:image" content={ogImage} />
       </Helmet>
       <Section>
         <Container>
@@ -79,9 +95,7 @@ const TokenPage: React.FC = () => {
             <div className="space-y-6">
               <div>
                 <h1 className="text-3xl md:text-5xl font-semibold">{name}</h1>
-                <p className="text-muted-foreground mt-2">
-                  Token #{tokenId}
-                </p>
+                <p className="text-muted-foreground mt-2">Token #{tokenId}</p>
               </div>
 
               <AttributeList attributes={item?.attributes ?? []} />
@@ -99,7 +113,7 @@ const TokenPage: React.FC = () => {
                 </div>
               </div>
 
-              <SocialShare url={typeof window !== "undefined" ? window.location.href : ""} text={`fourHundred ${name}`} />
+              <SocialShare url={absoluteUrl} text={`fourHundred ${name}`} />
             </div>
           </div>
         </Container>

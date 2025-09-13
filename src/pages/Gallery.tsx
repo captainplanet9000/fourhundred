@@ -11,6 +11,7 @@ import { EmptyState } from "@/components/gallery/EmptyState";
 import { loadAll, buildFacetCounts, filterAndSort } from "@/lib/metadata";
 import { useGalleryStore } from "@/store/gallery-store";
 import { useSearchParams, useNavigate } from "react-router-dom";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const GalleryPage: React.FC = () => {
   const [items, setItems] = React.useState<any[]>([]);
@@ -18,7 +19,7 @@ const GalleryPage: React.FC = () => {
   const [loading, setLoading] = React.useState(true);
 
   const { search, sort, traits, page, perPage, setPage, reset } = useGalleryStore();
-  const [params, setParams] = useSearchParams();
+  const [params] = useSearchParams();
   const navigate = useNavigate();
 
   // Initialize from URL
@@ -30,9 +31,7 @@ const GalleryPage: React.FC = () => {
     const p = Number(params.get("page") ?? 1);
     const per = Number(params.get("perPage") ?? 24);
 
-    // Apply to store if different
     if (q || s || t || p || per) {
-      // Use store setters directly
       useGalleryStore.setState({
         search: q,
         sort: s,
@@ -83,6 +82,23 @@ const GalleryPage: React.FC = () => {
   const visible = filtered.slice(start, end);
   const canLoadMore = end < filtered.length;
 
+  const SkeletonGrid = () => (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {Array.from({ length: 8 }).map((_, i) => (
+        <div key={i} className="rounded-md border border-primary/20 overflow-hidden">
+          <Skeleton className="w-full aspect-square" />
+          <div className="p-3 space-y-2">
+            <Skeleton className="h-4 w-24" />
+            <div className="flex gap-2">
+              <Skeleton className="h-5 w-16" />
+              <Skeleton className="h-5 w-20" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <>
       <Helmet>
@@ -95,7 +111,7 @@ const GalleryPage: React.FC = () => {
           <FilterBar facetCounts={facets} />
           <GradientDivider />
           {loading ? (
-            <div className="py-20 text-center text-muted-foreground">Loading portraits…</div>
+            <SkeletonGrid />
           ) : visible.length === 0 ? (
             <EmptyState onReset={reset} />
           ) : (
@@ -109,7 +125,7 @@ const GalleryPage: React.FC = () => {
                 {canLoadMore && (
                   <button
                     onClick={() => setPage(page + 1)}
-                    className="px-6 py-3 rounded-md bg-yellow-600 hover:bg-yellow-700 text-black font-medium"
+                    className="px-6 py-3 rounded-md bg-primary text-primary-foreground hover:brightness-110 font-medium"
                   >
                     Load more
                   </button>

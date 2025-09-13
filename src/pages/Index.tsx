@@ -12,9 +12,11 @@ import { loadAll } from "@/lib/metadata";
 import { Link } from "react-router-dom";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Reveal } from "@/components/common/Reveal";
+import { useParallax } from "@/hooks/use-parallax";
 
 const Index: React.FC = () => {
   const [featured, setFeatured] = React.useState<any[]>([]);
+  const parallax = useParallax(0.15);
 
   React.useEffect(() => {
     let mounted = true;
@@ -39,7 +41,10 @@ const Index: React.FC = () => {
       </Helmet>
 
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-900 to-black pointer-events-none" />
+        <div
+          className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black via-zinc-900 to-black"
+          style={{ transform: `translateY(${parallax}px)` }}
+        />
         <Section className="relative">
           <Container className="text-center">
             <Reveal>
