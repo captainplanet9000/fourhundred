@@ -58,12 +58,12 @@ const TokenPage: React.FC = () => {
             <Button variant="ghost" onClick={() => navigate(-1)}>← Back</Button>
             <div className="flex gap-2">
               {prevId && (
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" className="border-primary/50">
                   <Link to={`/token/${prevId}`}>Previous</Link>
                 </Button>
               )}
               {nextId && (
-                <Button asChild className="bg-yellow-600 hover:bg-yellow-700 text-black">
+                <Button asChild className="bg-primary text-primary-foreground hover:brightness-110">
                   <Link to={`/token/${nextId}`}>Next</Link>
                 </Button>
               )}
@@ -73,7 +73,7 @@ const TokenPage: React.FC = () => {
             <img
               src={img}
               alt={name}
-              className="w-full rounded-lg border border-yellow-700/40"
+              className="w-full rounded-lg border border-primary/40"
             />
             <div className="space-y-6">
               <div>

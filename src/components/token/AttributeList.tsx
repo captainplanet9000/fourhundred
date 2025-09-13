@@ -7,7 +7,7 @@ export const AttributeList: React.FC<{ attributes: Attribute[] }> = ({ attribute
   return (
     <div className="flex flex-wrap gap-2">
       {attributes.map((a, idx) => (
-        <Badge key={`${a.trait_type}-${idx}`} variant="outline" className="border-yellow-700/40 text-yellow-300">
+        <Badge key={`${a.trait_type}-${idx}`} variant="outline" className="border-primary/40 text-primary">
           {a.trait_type}: {String(a.value)}
         </Badge>
       ))}

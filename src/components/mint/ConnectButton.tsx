@@ -26,7 +26,7 @@ export const ConnectButton: React.FC = () => {
     <Button
       onClick={() => connect({ connector: wc })}
       disabled={status === "pending"}
-      className="bg-yellow-600 hover:bg-yellow-700 text-black"
+      className="bg-primary text-primary-foreground hover:brightness-110"
     >
       {status === "pending" ? "Connecting..." : "Connect Wallet"}
     </Button>

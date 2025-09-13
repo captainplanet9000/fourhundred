@@ -12,12 +12,12 @@ export const TokenCard: React.FC<{ item: NFTMetadata }> = ({ item }) => {
 
   return (
     <Link to={`/token/${item.tokenId}`} aria-label={`View token #${item.tokenId}`}>
-      <Card className="overflow-hidden hover:shadow-lg transition border-yellow-700/30 hover:border-yellow-500/50">
+      <Card className="overflow-hidden hover:shadow-lg transition border border-primary/30 hover:border-primary/60">
         <CardHeader className="pb-2">
           <CardTitle className="text-base font-medium flex items-center justify-between">
             <span>#{item.tokenId}</span>
             {item.rarity_rank !== undefined && (
-              <Badge variant="secondary" className="bg-yellow-700/30 text-yellow-300">
+              <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
                 Rank {item.rarity_rank}
               </Badge>
             )}
@@ -32,7 +32,7 @@ export const TokenCard: React.FC<{ item: NFTMetadata }> = ({ item }) => {
           />
           <div className="p-3 flex flex-wrap gap-2">
             {shown.map((a) => (
-              <Badge key={a.trait_type} variant="outline" className="border-yellow-700/40 text-yellow-300">
+              <Badge key={a.trait_type} variant="outline" className="border-primary/40 text-primary">
                 {a.trait_type}: {String(a.value)}
               </Badge>
             ))}

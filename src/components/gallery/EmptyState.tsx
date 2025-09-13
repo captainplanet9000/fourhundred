@@ -8,7 +8,7 @@ export const EmptyState = ({ onReset }: { onReset: () => void }) => {
       <p className="text-muted-foreground mt-2">
         Try adjusting filters or clearing the search query.
       </p>
-      <Button onClick={onReset} className="mt-6 bg-yellow-600 hover:bg-yellow-700 text-black">
+      <Button onClick={onReset} className="mt-6 bg-primary text-primary-foreground hover:brightness-110">
         Reset Filters
       </Button>
     </div>

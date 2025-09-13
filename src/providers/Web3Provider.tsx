@@ -2,11 +2,12 @@
 
 import React from "react";
 import { WagmiConfig, createConfig, http } from "wagmi";
+import type { Chain } from "viem";
 import { mainnet, base, sepolia, baseSepolia } from "viem/chains";
 import { walletConnect } from "wagmi/connectors";
 import { getEnv } from "@/lib/env";
 
-const chainMap: Record<string, typeof mainnet> = {
+const chainMap: Record<string, Chain> = {
   "1": mainnet,
   "11155111": sepolia,
   "8453": base,
@@ -22,14 +23,19 @@ function getChain() {
   return chain;
 }
 
-const chain = getChain();
+const CHAINS = [mainnet, base, sepolia, baseSepolia] as const;
+
+function rpcUrlFor(_chain: Chain): string {
+  return getEnv("VITE_RPC_URL") ?? getEnv("NEXT_PUBLIC_RPC_URL") ?? "";
+}
 
 const config = createConfig({
-  chains: [chain],
+  chains: CHAINS,
   transports: {
-    [chain.id]: http(
-      getEnv("VITE_RPC_URL") ?? getEnv("NEXT_PUBLIC_RPC_URL") ?? "",
-    ),
+    [mainnet.id]: http(rpcUrlFor(mainnet)),
+    [base.id]: http(rpcUrlFor(base)),
+    [sepolia.id]: http(rpcUrlFor(sepolia)),
+    [baseSepolia.id]: http(rpcUrlFor(baseSepolia)),
   },
   connectors: [
     walletConnect({

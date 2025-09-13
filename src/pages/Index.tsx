@@ -37,17 +37,20 @@ const Index: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-900 to-black pointer-events-none" />
         <Section className="relative">
           <Container className="text-center">
-            <h1 className="text-5xl md:text-7xl font-semibold tracking-tight bg-gradient-to-b from-yellow-300 via-yellow-500 to-yellow-200 bg-clip-text text-transparent">
+            <h1
+              className="text-5xl md:text-7xl font-semibold tracking-tight bg-clip-text text-transparent"
+              style={{ backgroundImage: "var(--gilded-gradient)" }}
+            >
               Gilded Age Canine Portraits
             </h1>
             <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Opulent frames, sumptuous fabrics, and steadfast companions. 400 on-chain portraits—classic, enduring, and distinctly fourHundred.
             </p>
             <div className="mt-8 flex items-center justify-center gap-3">
-              <Button asChild className="bg-yellow-600 hover:bg-yellow-700 text-black">
+              <Button asChild className="bg-primary text-primary-foreground hover:brightness-110">
                 <Link to="/gallery">View Gallery</Link>
               </Button>
-              <Button asChild variant="outline" className="border-yellow-700/50">
+              <Button asChild variant="outline" className="border-primary/50 text-foreground hover:bg-muted/50">
                 <Link to="/mint">Mint</Link>
               </Button>
             </div>
@@ -85,7 +88,7 @@ const Index: React.FC = () => {
               </div>
             </div>
             <div className="mt-8">
-              <Button asChild variant="outline" className="border-yellow-700/50">
+              <Button asChild variant="outline" className="border-primary/50 text-foreground hover:bg-muted/50">
                 <Link to="/traits">Explore Traits</Link>
               </Button>
             </div>
@@ -97,9 +100,9 @@ const Index: React.FC = () => {
         <Section title="Roadmap" subtitle="A measured cadence—quality, not haste.">
           <Container>
             <ul className="grid md:grid-cols-3 gap-6 text-left">
-              <li className="p-4 rounded-lg border border-yellow-800/30">Launch collection and gallery.</li>
-              <li className="p-4 rounded-lg border border-yellow-800/30">Community exhibitions and features.</li>
-              <li className="p-4 rounded-lg border border-yellow-800/30">Collector perks and archival prints.</li>
+              <li className="p-4 rounded-lg border border-primary/30">Launch collection and gallery.</li>
+              <li className="p-4 rounded-lg border border-primary/30">Community exhibitions and features.</li>
+              <li className="p-4 rounded-lg border border-primary/30">Collector perks and archival prints.</li>
             </ul>
           </Container>
         </Section>

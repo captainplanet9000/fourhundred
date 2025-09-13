@@ -3,7 +3,13 @@
 import React, { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useAccount, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
+import {
+  useAccount,
+  useWriteContract,
+  useWaitForTransactionReceipt,
+  useChainId,
+  useConfig,
+} from "wagmi";
 import { getContractAddress } from "@/lib/env";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
@@ -24,9 +30,16 @@ export const MintPanel: React.FC<{
   maxSupply?: number;
   abi?: any;
 }> = ({ priceEth = 0, totalSupply = 0, maxSupply = 400, abi }) => {
-  const { isConnected } = useAccount();
+  const { isConnected, address } = useAccount();
   const contractAddress = getContractAddress();
   const [qty, setQty] = useState<number>(1);
+
+  const config = useConfig();
+  const chainId = useChainId();
+  const activeChain = useMemo(
+    () => config.chains.find((c) => c.id === chainId) ?? config.chains[0],
+    [config, chainId],
+  );
 
   const contractAbi = useMemo(() => abi ?? DEFAULT_ABI, [abi]);
 
@@ -36,13 +49,15 @@ export const MintPanel: React.FC<{
   const canMint = Boolean(contractAddress) && isConnected;
 
   const handleMint = () => {
-    if (!contractAddress) return;
+    if (!contractAddress || !address || !activeChain) return;
     writeContract({
       address: contractAddress as `0x${string}`,
       abi: contractAbi,
       functionName: "mint",
-      args: [BigInt(qty)],
-      value: BigInt(Math.floor((priceEth * 1e18) * qty)),
+      args: [BigInt(qty)] as const,
+      value: BigInt(Math.floor(priceEth * 1e18) * qty),
+      account: address as `0x${string}`,
+      chain: activeChain,
     });
   };
 
@@ -62,17 +77,17 @@ export const MintPanel: React.FC<{
         <Button
           onClick={handleMint}
           disabled={!canMint || isPending || isConfirming}
-          className="bg-yellow-600 hover:bg-yellow-700 text-black"
+          className="bg-primary text-primary-foreground hover:brightness-110"
         >
           {isPending ? "Confirm in wallet..." : isConfirming ? "Minting..." : "Mint"}
         </Button>
       </div>
 
       <div className="text-sm text-muted-foreground flex flex-wrap gap-3">
-        <Badge variant="secondary" className="bg-yellow-800/40">
+        <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
           Price: {priceEth} ETH
         </Badge>
-        <Badge variant="secondary" className="bg-yellow-800/40">
+        <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
           Supply: {totalSupply} / {maxSupply}
         </Badge>
         {!contractAddress && (

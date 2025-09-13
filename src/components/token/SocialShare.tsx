@@ -16,7 +16,7 @@ export const SocialShare: React.FC<{ url: string; text: string }> = ({ url, text
       <Button onClick={shareNative} variant="outline">
         <Share2 className="h-4 w-4 mr-2" /> Share
       </Button>
-      <Button asChild className="bg-yellow-600 hover:bg-yellow-700 text-black">
+      <Button asChild className="bg-primary text-primary-foreground hover:brightness-110">
         <a
           href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`}
           target="_blank"

@@ -31,7 +31,7 @@ export const FilterBar: React.FC<Props> = ({ facetCounts }) => {
 
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="border-yellow-800/40">
+          <Button variant="outline" className="border-primary/40">
             Traits <ChevronDown className="ml-2 h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
@@ -75,7 +75,7 @@ export const FilterBar: React.FC<Props> = ({ facetCounts }) => {
           variant={sort === "id" ? "default" : "outline"}
           size="sm"
           onClick={() => setSort("id")}
-          className={sort === "id" ? "bg-yellow-600 text-black hover:bg-yellow-700" : ""}
+          className={sort === "id" ? "bg-primary text-primary-foreground hover:brightness-110" : ""}
         >
           ID
         </Button>
@@ -83,7 +83,7 @@ export const FilterBar: React.FC<Props> = ({ facetCounts }) => {
           variant={sort === "alpha" ? "default" : "outline"}
           size="sm"
           onClick={() => setSort("alpha")}
-          className={sort === "alpha" ? "bg-yellow-600 text-black hover:bg-yellow-700" : ""}
+          className={sort === "alpha" ? "bg-primary text-primary-foreground hover:brightness-110" : ""}
         >
           A–Z
         </Button>
@@ -91,7 +91,7 @@ export const FilterBar: React.FC<Props> = ({ facetCounts }) => {
           variant={sort === "rarity" ? "default" : "outline"}
           size="sm"
           onClick={() => setSort("rarity")}
-          className={sort === "rarity" ? "bg-yellow-600 text-black hover:bg-yellow-700" : ""}
+          className={sort === "rarity" ? "bg-primary text-primary-foreground hover:brightness-110" : ""}
         >
           Rarity
         </Button>
@@ -100,7 +100,7 @@ export const FilterBar: React.FC<Props> = ({ facetCounts }) => {
       <div className="flex flex-wrap gap-2">
         {Object.entries(traits).flatMap(([trait, values]) =>
           values.map((v) => (
-            <Badge key={`${trait}-${v}`} variant="secondary" className="bg-yellow-800/40">
+            <Badge key={`${trait}-${v}`} variant="secondary" className="bg-secondary text-secondary-foreground">
               {trait}: {v}
             </Badge>
           )),

@@ -24,10 +24,13 @@ export const TraitBarChart: React.FC<{
                   <span className="capitalize">{label}</span>
                   <span className="text-muted-foreground">{count}</span>
                 </div>
-                <div className="h-2 bg-yellow-900/30 rounded mt-1 overflow-hidden">
+                <div className="h-2 bg-muted rounded mt-1 overflow-hidden">
                   <div
-                    className="h-2 bg-yellow-600"
-                    style={{ width: `${pct}%` }}
+                    className="h-2"
+                    style={{
+                      width: `${pct}%`,
+                      backgroundImage: "var(--gilded-gradient)",
+                    }}
                   />
                 </div>
               </button>
