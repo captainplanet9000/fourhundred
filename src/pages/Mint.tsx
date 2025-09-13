@@ -8,6 +8,7 @@ import { ConnectButton } from "@/components/mint/ConnectButton";
 import { MintPanel } from "@/components/mint/MintPanel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getContractAddress } from "@/lib/env";
+import { NetworkBadge } from "@/components/mint/NetworkBadge";
 
 const MintPage: React.FC = () => {
   const contract = getContractAddress();
@@ -20,9 +21,12 @@ const MintPage: React.FC = () => {
       <Section>
         <Container>
           <h1 className="text-3xl md:text-5xl font-semibold mb-6">Mint</h1>
-          <div className="mb-6">
+
+          <div className="mb-6 flex items-center gap-4 flex-wrap">
             <ConnectButton />
+            <NetworkBadge />
           </div>
+
           <Card>
             <CardHeader>
               <CardTitle>Mint Panel</CardTitle>

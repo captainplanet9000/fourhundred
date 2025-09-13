@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { NFTMetadata } from "@/lib/types";
 import { SafeImage } from "@/components/common/SafeImage";
+import { FrameCorners } from "@/components/layout/FrameCorners";
 
 export const TokenCard: React.FC<{ item: NFTMetadata }> = ({ item }) => {
   const keyTraits = ["Breed", "Headwear", "Background"];
@@ -11,7 +12,8 @@ export const TokenCard: React.FC<{ item: NFTMetadata }> = ({ item }) => {
 
   return (
     <Link to={`/token/${item.tokenId}`} aria-label={`View token #${item.tokenId}`}>
-      <Card className="overflow-hidden hover:shadow-lg transition border border-primary/30 hover:border-primary/60">
+      <Card className="relative overflow-hidden hover:shadow-lg transition border border-primary/30 hover:border-primary/60">
+        <FrameCorners />
         <CardHeader className="pb-2">
           <CardTitle className="text-base font-medium flex items-center justify-between">
             <span>#{item.tokenId}</span>
