@@ -3,10 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { NFTMetadata } from "@/lib/types";
-import { imageUrlFor } from "@/lib/image";
+import { SafeImage } from "@/components/common/SafeImage";
 
 export const TokenCard: React.FC<{ item: NFTMetadata }> = ({ item }) => {
-  const img = item.image ?? item.image_url ?? imageUrlFor(item.tokenId);
   const keyTraits = ["Breed", "Headwear", "Background"];
   const shown = item.attributes.filter((a) => keyTraits.includes(a.trait_type));
 
@@ -24,8 +23,9 @@ export const TokenCard: React.FC<{ item: NFTMetadata }> = ({ item }) => {
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">
-          <img
-            src={img}
+          <SafeImage
+            src={item.image || item.image_url}
+            tokenId={item.tokenId}
             alt={item.name}
             className="w-full aspect-square object-cover"
             loading="lazy"

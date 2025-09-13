@@ -9,8 +9,8 @@ import { loadToken, loadManifest } from "@/lib/metadata";
 import { AttributeList } from "@/components/token/AttributeList";
 import { RaritySummary } from "@/components/token/RaritySummary";
 import { SocialShare } from "@/components/token/SocialShare";
-import { imageUrlFor } from "@/lib/image";
 import { Button } from "@/components/ui/button";
+import { SafeImage } from "@/components/common/SafeImage";
 
 const TokenPage: React.FC = () => {
   const { id } = useParams();
@@ -44,7 +44,6 @@ const TokenPage: React.FC = () => {
   const nextId = idx >= 0 && idx < manifest.length - 1 ? manifest[idx + 1] : undefined;
 
   const name = item?.name ?? `Token #${tokenId}`;
-  const img = item?.image ?? item?.image_url ?? imageUrlFor(tokenId);
 
   return (
     <>
@@ -70,10 +69,12 @@ const TokenPage: React.FC = () => {
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-start">
-            <img
-              src={img}
+            <SafeImage
+              src={item?.image || item?.image_url}
+              tokenId={tokenId}
               alt={name}
               className="w-full rounded-lg border border-primary/40"
+              loading="eager"
             />
             <div className="space-y-6">
               <div>
