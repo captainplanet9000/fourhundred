@@ -11,7 +11,6 @@ import { TokenCard } from "@/components/gallery/TokenCard";
 import { loadAll } from "@/lib/metadata";
 import { Link } from "react-router-dom";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { Check, Crown, Layers, Library, Users } from "lucide-react";
 import { Reveal } from "@/components/common/Reveal";
 
 const Index: React.FC = () => {
@@ -54,7 +53,8 @@ const Index: React.FC = () => {
             <Reveal delayMs={60}>
               <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
                 In an age of unprecedented prosperity and refinement, the most discerning companions deserved portraits worthy of their devotion.
-                fourHundred presents masterfully crafted portraits celebrating the noble breeds that once graced the finest estates and grandest halls—each rendered with museum-quality artistry for the digital age.
+                400 presents 10,000 masterfully crafted portraits celebrating the noble breeds that once graced the finest estates and grandest halls.
+                Each NFT captures the timeless bond between elegance and loyalty, rendered with museum-quality artistry for the digital age.
               </p>
             </Reveal>
             <Reveal delayMs={120}>
@@ -77,13 +77,13 @@ const Index: React.FC = () => {
             <Reveal>
               <div className="grid md:grid-cols-2 gap-8 text-left text-muted-foreground">
                 <p>
-                  fourHundred honors the distinguished bloodlines that defined an era of unparalleled sophistication. From the stately halls of industry
-                  titans to the intimate parlors of cultural luminaries, these noble companions witnessed history unfold. Each portrait tells a story
-                  of lineage, character, and a bond that transcends time.
+                  400 honors the distinguished bloodlines that defined an era of unparalleled sophistication. From the stately halls of industry titans
+                  to the intimate parlors of cultural luminaries, these noble companions witnessed history unfold. Each portrait tells a story of lineage,
+                  character, and the enduring power of refined companionship.
                 </p>
                 <p>
-                  Each work employs classical techniques—rich tonal palettes, thoughtful composition, and studied light—to capture not merely
-                  appearance, but presence. These are pieces meant to endure: artifacts of heritage for a discerning age.
+                  Each portrait employs the techniques of the era&apos;s master artists—those who understood that true portraiture captures not just appearance, but character.
+                  Rich oil painting traditions, masterful use of light and shadow, and compositions that speak to the viewer across centuries combine to create works that transcend mere representation.
                 </p>
               </div>
             </Reveal>
@@ -97,17 +97,13 @@ const Index: React.FC = () => {
             <Reveal>
               <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
                 {[
-                  "Individual Portraits",
-                  "Distinguished Bloodlines",
-                  "Heritage Classifications",
+                  "10,000 Individual Portraits",
+                  "400+ Distinguished Bloodlines",
+                  "5 Heritage Classifications",
                   "Masterfully Curated Traits",
                   "Archive-Quality Artistry",
-                  "Refined Compositions & Tones",
-                ].map((item, i) => (
-                  <li key={item} className="flex items-start gap-3 p-4 rounded-lg border border-primary/30">
-                    <Check className="h-5 w-5 text-primary mt-0.5" />
-                    <span className="text-sm md:text-base">{item}</span>
-                  </li>
+                ].map((item) => (
+                  <li key={item} className="p-4 rounded-lg border border-primary/30">{item}</li>
                 ))}
               </ul>
             </Reveal>
@@ -130,29 +126,50 @@ const Index: React.FC = () => {
 
         <GradientDivider />
 
-        <Section title="The Hierarchy of Heritage" subtitle="True distinction is cultivated across generations.">
+        <Section title="The Art of Noble Companionship" subtitle="Portraits that preserve an age of beauty, loyalty, and lasting legacy.">
           <Container>
             <Reveal>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
-                {[
-                  { title: "Foundational", desc: "Steadfast companions woven into daily life and legacy.", icon: Users },
-                  { title: "Distinguished", desc: "Favored by patrons and leaders for rare and admirable qualities.", icon: Crown },
-                  { title: "Exceptional", desc: "Exotic bloodlines acquired through taste and global connection.", icon: Layers },
-                  { title: "Legendary", desc: "Ancient breeds whose stories reach to civilization’s dawn.", icon: Library },
-                  { title: "Eternal", desc: "Bloodlines lost to time, preserved in art and memory.", icon: Crown },
-                ].map((h) => {
-                  const Icon = h.icon;
-                  return (
-                    <div key={h.title} className="p-4 rounded-lg border border-primary/30">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Icon className="h-4 w-4 text-primary" />
-                        <div className="font-medium">{h.title}</div>
-                      </div>
-                      <p className="text-sm text-muted-foreground">{h.desc}</p>
-                    </div>
-                  );
-                })}
+              <div className="space-y-4 text-left text-muted-foreground max-w-4xl">
+                <p>
+                  Between 1870 and 1900, America witnessed an unprecedented flowering of culture, industry, and artistic patronage.
+                  In the marble halls and mahogany libraries of the era&apos;s most influential families, loyal companions held court alongside their distinguished owners.
+                  400 preserves these intimate moments of history, where every brushstroke reveals the soul of an age that valued beauty, loyalty, and lasting legacy above all else.
+                </p>
+                <p>
+                  Each portrait employs the techniques of the era&apos;s master artists—rich oil traditions, masterful light and shadow, and compositions that speak across centuries—to create works that endure.
+                </p>
               </div>
+            </Reveal>
+          </Container>
+        </Section>
+
+        <GradientDivider />
+
+        <Section title="The Hierarchy of Heritage" subtitle="True distinction cannot be manufactured—it must be earned across generations.">
+          <Container>
+            <Reveal>
+              <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+                <li className="p-4 rounded-lg border border-primary/30">
+                  <div className="font-medium">Foundational (45%)</div>
+                  <p className="text-sm text-muted-foreground">The steadfast companions who filled the daily lives of America&apos;s most prominent families.</p>
+                </li>
+                <li className="p-4 rounded-lg border border-primary/30">
+                  <div className="font-medium">Distinguished (30%)</div>
+                  <p className="text-sm text-muted-foreground">Breeds favored by cultural patrons and industrial leaders for their rare qualities.</p>
+                </li>
+                <li className="p-4 rounded-lg border border-primary/30">
+                  <div className="font-medium">Exceptional (18%)</div>
+                  <p className="text-sm text-muted-foreground">Exotic bloodlines acquired through global connections and discerning taste.</p>
+                </li>
+                <li className="p-4 rounded-lg border border-primary/30">
+                  <div className="font-medium">Legendary (6%)</div>
+                  <p className="text-sm text-muted-foreground">Ancient breeds whose heritage traces to the dawn of civilization itself.</p>
+                </li>
+                <li className="p-4 rounded-lg border border-primary/30">
+                  <div className="font-medium">Eternal (1%)</div>
+                  <p className="text-sm text-muted-foreground">Bloodlines lost to time but preserved forever in art and memory.</p>
+                </li>
+              </ul>
             </Reveal>
           </Container>
         </Section>
@@ -164,10 +181,10 @@ const Index: React.FC = () => {
             <Reveal>
               <ul className="grid md:grid-cols-2 gap-3 text-left">
                 {[
-                  "Heritage Registry — Document your companion’s lineage",
+                  "Heritage Registry — Document your companion's noble lineage",
                   "Estate Building — Curate collections in historical environments",
                   "Bloodline Continuation — Participate in managed breeding programs",
-                  "Seasonal Gatherings — Join period‑appropriate celebrations",
+                  "Seasonal Gatherings — Join period-appropriate celebrations",
                   "Cultural Archive — Access exclusive historical content",
                 ].map((line) => (
                   <li key={line} className="p-4 rounded-lg border border-primary/30">{line}</li>
@@ -179,7 +196,7 @@ const Index: React.FC = () => {
 
         <GradientDivider />
 
-        <Section title="Your Heritage Awaits" subtitle="Discover the portrait that speaks to your soul and steward a legacy that endures.">
+        <Section title="Your Heritage Awaits" subtitle="Enter a world where every portrait preserves a moment in history.">
           <Container className="text-center">
             <Reveal>
               <div className="flex items-center justify-center gap-3">
@@ -188,6 +205,9 @@ const Index: React.FC = () => {
                 </Button>
                 <Button asChild variant="outline" className="border-primary/50">
                   <Link to="/traits">Explore Traits</Link>
+                </Button>
+                <Button asChild variant="outline" className="border-primary/50">
+                  <Link to="/breeds">Browse Breeds</Link>
                 </Button>
               </div>
             </Reveal>
