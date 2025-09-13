@@ -3,6 +3,7 @@ import React from "react";
 import Traits from "@/pages/Traits";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
+import { vi, describe, it, expect } from "vitest";
 
 // Mock metadata loader to avoid fetch in tests
 vi.mock("@/lib/metadata", async () => {

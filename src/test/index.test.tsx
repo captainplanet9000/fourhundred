@@ -3,6 +3,7 @@ import React from "react";
 import Index from "@/pages/Index";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
+import { describe, it, expect } from "vitest";
 
 describe("Home page", () => {
   it("renders the hero headline", () => {
