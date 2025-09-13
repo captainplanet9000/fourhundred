@@ -21,6 +21,7 @@ Note: You asked for Next.js App Router. This project is built on the provided Vi
 - npm run build
 - npm run preview
 - npm run lint
+- npm run test
 
 ## Environment
 
@@ -45,64 +46,68 @@ Create `public/metadata/index.json` listing all IDs, e.g.:
 [1,2,3,4,5, ..., 400]
 ```
 
-The app first loads `/metadata/index.json`. If missing, it falls back to the included sample at `/metadata/sample/index.json`.
+If missing, the app falls back to included sample at `/metadata/sample/index.json`.
 
 ### Samples Included
 
-- 5 sample metadata files in `public/metadata/sample/1.json` ... `/5.json`
-- Sample images mapped to `/public/placeholder.svg`
-
-Replace these with your real images/JSON and add `public/metadata/index.json`.
+- 6 sample metadata files in `public/metadata/sample/1.json` ... `/6.json`
+- Sample images mapped to `/public/images/collection/ComfyUI_*.png` (replace with your real images)
 
 ## Pages
 
-- `/` Home: Hero, featured tokens, collection overview, roadmap, CTAs.
-- `/gallery`: Grid with infinite "Load more", search by Breed, facets for core & derived traits, sort by ID/alpha/rarity; URL-synced filters.
+- `/` Home: Hero, featured tokens, story, highlights, hierarchy, experiences, CTAs.
+- `/gallery`: Grid with "Load more", search by Breed, facet filters, sort (ID/alpha/rarity); URL-synced filters.
 - `/token/:id`: Large image, attributes, rarity summary (if present), external links, share, prev/next.
-- `/traits`: Trait counts per category, clickable to jump to gallery filtered view.
-- `/mint`: Wallet connect (WalletConnect), contract-driven mint button (requires env + ABI/function shape).
-- `/faq`, `/about`, `/legal/terms`, `/legal/privacy`
-- 404 page.
+- `/traits`: Trait charts + linkable values and a full trait catalog reference.
+- `/breeds`: Complete breed lists by rarity tier (Common → Legendary).
+- `/report`: Observed traits report from current metadata.
+- `/mint`: Wallet connect (WalletConnect), contract-driven mint (requires env + ABI).
+- `/faq`, `/about`, `/legal/terms`, `/legal/privacy` and 404.
 
 ## Minting
 
-By default the Mint button is disabled until you provide:
+Provide:
 - VITE_CONTRACT_ADDRESS (0x…)
 - VITE_CHAIN_ID, VITE_RPC_URL
 - VITE_WALLETCONNECT_PROJECT_ID
 
-The contract function used is `mint(uint256 quantity)` payable.  
-If your contract differs (e.g., `publicMint` or a different arg list), update the ABI in `src/components/mint/MintPanel.tsx` (pass a custom ABI to the component or replace `DEFAULT_ABI`).
+Default ABI expects `mint(uint256 quantity)` payable; replace in `src/components/mint/MintPanel.tsx` if your function differs.
 
 ## Image Base
 
-Set `VITE_IMAGE_BASE` to either:
-- `/images/collection` (default, local)
+Set `VITE_IMAGE_BASE` to:
+- `/images/collection` (local)
 - `ipfs://YOUR_CID` (builds `https://ipfs.io/ipfs/YOUR_CID/{id}.png`)
 
 ## SEO
 
-SEO is handled via `react-helmet-async`. Each page sets title/description; extend as needed.
+`react-helmet-async` handles defaults + per-page tags. Update `public/sitemap.xml` with your production domain.
 
 ## Accessibility
 
-- Keyboard accessible nav
-- Proper aria labels on filter buttons and share controls
-- High contrast dark palette with gold accents
+- Keyboard navigable
+- Gold focus ring for high visibility
+- Strong contrast on dark palette
 
-## Deployment
+## CI and Deployment (GitHub + Vercel recommended)
 
-- Vercel/Netlify/Render compatible (static SPA).  
-- Ensure `public/metadata/index.json` and images are deployed.
+This repo includes:
+- `.github/workflows/ci.yml`: builds and tests on every push/PR.
+- `.github/workflows/deploy-vercel.yml`: deploys to Vercel on push to `main`.
 
-## Extending
+Steps:
+1) Create a new GitHub repo and push this project.
+2) In GitHub → Settings → Secrets and variables → Actions, add:
+   - `VERCEL_TOKEN`: from your Vercel account (Account Settings → Tokens).
+   - `VERCEL_ORG_ID`: your Vercel organization ID.
+   - `VERCEL_PROJECT_ID`: the Vercel project ID (create a Vercel project connected to your GitHub repo).
+3) Commit to `main`. The workflow will build and publish a production deployment on Vercel.
+4) Set your custom domain in Vercel. Update `public/sitemap.xml` to your domain.
 
-- Rarity: If your metadata includes `rarity_score` and `rarity_rank`, the UI will display them automatically.
-- Filters: Supported traits are listed in `src/lib/metadata.ts` (CORE and DERIVED arrays). Add/remove as needed.
-- Animations: Add your preferred reveal animations via Tailwind and small CSS transitions.
+Note: GitHub Pages is possible for SPAs, but requires path-base adjustments (`vite` base) and SPA rewrites. Vercel is recommended for this app (already includes `vercel.json` SPA rewrites).
 
 ## Troubleshooting
 
-- Gallery empty: Ensure `public/metadata/index.json` lists IDs and that each `public/metadata/{id}.json` exists and is valid JSON.
-- Images not loading: Check `VITE_IMAGE_BASE` and that `{id}.png` files exist (or your IPFS CID is correct).
-- Wallet connect issues: Verify `VITE_WALLETCONNECT_PROJECT_ID` and `VITE_RPC_URL`.
+- Gallery empty: ensure `/public/metadata/index.json` lists IDs and files exist.
+- Images not loading: confirm `VITE_IMAGE_BASE` and {id}.png files (or IPFS CID) are correct.
+- Wallet connect issues: verify `VITE_WALLETCONNECT_PROJECT_ID` and `VITE_RPC_URL`.
