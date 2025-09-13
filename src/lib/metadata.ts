@@ -51,13 +51,20 @@ export async function loadManifest(): Promise<number[]> {
 
 export function normalizeMetadata(raw: any, id: number): NFTMetadata {
   const attributes = Array.isArray(raw?.attributes) ? raw.attributes : [];
+  const hasCollection = attributes.some(
+    (a: any) => a?.trait_type === "Collection",
+  );
+  const withCollection = hasCollection
+    ? attributes
+    : [...attributes, { trait_type: "Collection", value: "fourHundred" }];
+
   return {
     name: raw?.name ?? `Token #${id}`,
     description: raw?.description ?? "",
     image: raw?.image ?? raw?.image_url,
     image_url: raw?.image_url ?? raw?.image,
     external_url: raw?.external_url ?? "",
-    attributes,
+    attributes: withCollection,
     tokenId: id,
     rarity_score: raw?.rarity_score,
     rarity_rank: raw?.rarity_rank,

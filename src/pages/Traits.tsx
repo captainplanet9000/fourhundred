@@ -8,6 +8,7 @@ import { TraitBarChart } from "@/components/traits/TraitBarChart";
 import { TraitFilterPills } from "@/components/traits/TraitFilterPills";
 import { buildFacetCounts, loadAll, ALL_SUPPORTED_TRAITS } from "@/lib/metadata";
 import { useNavigate } from "react-router-dom";
+import { TraitCatalog } from "@/components/traits/TraitCatalog";
 
 const TraitsPage: React.FC = () => {
   const [facets, setFacets] = React.useState<Record<string, Record<string, number>>>({});
@@ -53,6 +54,14 @@ const TraitsPage: React.FC = () => {
                 onClick={(v) => handleClick(k, v)}
               />
             ))}
+          </div>
+
+          <div className="mt-12">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Trait Catalog (Reference)</h2>
+            <p className="text-muted-foreground mb-6">
+              The canonical list of trait categories and values used across the collection. Actual observed values appear in the charts above.
+            </p>
+            <TraitCatalog />
           </div>
         </Container>
       </Section>
