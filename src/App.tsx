@@ -16,6 +16,7 @@ import Privacy from "./pages/legal/Privacy";
 import Breeds from "./pages/Breeds";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
+import DefaultMeta from "./components/seo/DefaultMeta";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <DefaultMeta />
         <div className="min-h-dvh flex flex-col bg-background text-foreground">
           <Navbar />
           <main className="flex-1">
