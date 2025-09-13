@@ -1,7 +1,7 @@
 {
   "name": "fourHundred #1 — Laurel & Ruffle",
   "description": "A stately companion seated before sumptuous drapery, crowned and ruffed in courtly fashion.",
-  "image": "/images/collection/1.png",
+  "image": "/images/collection/ComfyUI_00001_.png",
   "attributes": [
     { "trait_type": "Breed", "value": "Poodle" },
     { "trait_type": "Headwear", "value": "Crown" },

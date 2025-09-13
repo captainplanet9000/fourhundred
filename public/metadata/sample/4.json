@@ -1,7 +1,7 @@
 {
   "name": "fourHundred #4 — Rose Salon",
   "description": "A rose-salon setting with pearls and pink satin, warmed by afternoon light.",
-  "image": "/images/collection/4.png",
+  "image": "/images/collection/ComfyUI_00004_.png",
   "attributes": [
     { "trait_type": "Breed", "value": "Poodle" },
     { "trait_type": "Headwear", "value": "Pearl Pin" },

@@ -1,7 +1,7 @@
 {
   "name": "fourHundred #3 — Oval Regency",
   "description": "An oval-framed regency portrait: crown, ermine trim, and a royal navy field.",
-  "image": "/images/collection/3.png",
+  "image": "/images/collection/ComfyUI_00003_.png",
   "attributes": [
     { "trait_type": "Breed", "value": "Italian Greyhound" },
     { "trait_type": "Headwear", "value": "Crown" },

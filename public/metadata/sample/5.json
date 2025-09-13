@@ -1,7 +1,7 @@
 {
   "name": "fourHundred #5 — Velvet & Acanthus",
   "description": "A deep-velvet cloak with acanthus pendant set against a moody sky.",
-  "image": "/images/collection/5.png",
+  "image": "/images/collection/ComfyUI_00005_.png",
   "attributes": [
     { "trait_type": "Breed", "value": "Doodle" },
     { "trait_type": "Headwear", "value": "None" },

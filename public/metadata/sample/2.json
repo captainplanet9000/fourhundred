@@ -1,7 +1,7 @@
 {
   "name": "fourHundred #2 — Candlelit Jewels",
   "description": "By candlelight, a jewelled choker glints against teal silk and carved woodwork.",
-  "image": "/images/collection/2.png",
+  "image": "/images/collection/ComfyUI_00002_.png",
   "attributes": [
     { "trait_type": "Breed", "value": "Schnauzer" },
     { "trait_type": "Headwear", "value": "None" },
