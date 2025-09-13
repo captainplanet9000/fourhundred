@@ -1,0 +1,15 @@
+{
+  "name": "fourHundred #1",
+  "description": "A stately companion in rich damask with a touch of gold.",
+  "image": "/images/collection/1.png",
+  "attributes": [
+    { "trait_type": "Breed", "value": "Greyhound" },
+    { "trait_type": "Headwear", "value": "Laurel" },
+    { "trait_type": "Background", "value": "Garnet" },
+    { "trait_type": "Fabric", "value": "Damask" },
+    { "trait_type": "Collar", "value": "Gold-plate" }
+  ],
+  "tokenId": 1,
+  "rarity_score": 123.4,
+  "rarity_rank": 42
+}

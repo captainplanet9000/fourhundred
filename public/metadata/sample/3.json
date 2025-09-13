@@ -1,0 +1,13 @@
+{
+  "name": "fourHundred #3",
+  "description": "An elegant composition with warm light and velvet tones.",
+  "image": "/images/collection/3.png",
+  "attributes": [
+    { "trait_type": "Breed", "value": "Golden Retriever" },
+    { "trait_type": "Headwear", "value": "Top hat" },
+    { "trait_type": "Background", "value": "Sapphire" },
+    { "trait_type": "Accessory", "value": "Silk ribbon" },
+    { "trait_type": "Effects", "value": "Vignette" }
+  ],
+  "tokenId": 3
+}

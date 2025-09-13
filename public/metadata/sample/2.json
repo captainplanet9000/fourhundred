@@ -1,0 +1,15 @@
+{
+  "name": "fourHundred #2",
+  "description": "Velvet backdrop with delicate embroidery and an attentive gaze.",
+  "image": "/images/collection/2.png",
+  "attributes": [
+    { "trait_type": "Breed", "value": "Bulldog" },
+    { "trait_type": "Headwear", "value": "Monocle" },
+    { "trait_type": "Background", "value": "Emerald" },
+    { "trait_type": "Accessory", "value": "Pocket watch" },
+    { "trait_type": "Fabric", "value": "Velvet" }
+  ],
+  "tokenId": 2,
+  "rarity_score": 98.1,
+  "rarity_rank": 88
+}

@@ -1,0 +1,13 @@
+{
+  "name": "fourHundred #4",
+  "description": "Regal posture framed in warm bronze overtones.",
+  "image": "/images/collection/4.png",
+  "attributes": [
+    { "trait_type": "Breed", "value": "Doberman" },
+    { "trait_type": "Headwear", "value": "Crown" },
+    { "trait_type": "Background", "value": "Bronze" },
+    { "trait_type": "Fabric", "value": "Brocade" },
+    { "trait_type": "Collar", "value": "Studded" }
+  ],
+  "tokenId": 4
+}

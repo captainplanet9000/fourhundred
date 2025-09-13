@@ -1,0 +1,13 @@
+{
+  "name": "fourHundred #5",
+  "description": "A contemplative scene in deep amethyst tones.",
+  "image": "/images/collection/5.png",
+  "attributes": [
+    { "trait_type": "Breed", "value": "Poodle" },
+    { "trait_type": "Headwear", "value": "Beret" },
+    { "trait_type": "Background", "value": "Amethyst" },
+    { "trait_type": "Fabric", "value": "Satin" },
+    { "trait_type": "Pose", "value": "Three-quarter" }
+  ],
+  "tokenId": 5
+}
