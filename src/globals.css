@@ -36,7 +36,7 @@
 
     --radius: 0.5rem;
 
-    /* Sidebar (keep consistent) */
+    /* Sidebar */
     --sidebar-background: 40 14% 4%;
     --sidebar-foreground: 36 59% 92%;
     --sidebar-primary: 46 65% 52%;
@@ -46,40 +46,30 @@
     --sidebar-border: 41 50% 60%;
     --sidebar-ring: 43 67% 70%;
 
-    /* Custom gradient token for gilded effects */
+    /* Gilded gradient for accents */
     --gilded-gradient: linear-gradient(90deg, #9A6A28 0%, #D4AF37 22%, #E6C87E 50%, #B8860B 78%, #8C6E2E 100%);
   }
 
   .dark {
-    /* Same tokens in dark mode (brand is dark-first) */
     --background: 40 14% 4%;
     --foreground: 36 59% 92%;
-
     --card: 40 12% 5%;
     --card-foreground: 36 59% 92%;
-
     --popover: 40 12% 5%;
     --popover-foreground: 36 59% 92%;
-
     --primary: 46 65% 52%;
     --primary-foreground: 40 8% 4%;
-
     --secondary: 352 59% 30%;
     --secondary-foreground: 36 59% 92%;
-
     --muted: 30 16% 8%;
     --muted-foreground: 36 29% 71%;
-
     --accent: 168 73% 21%;
     --accent-foreground: 36 59% 92%;
-
     --destructive: 0 100% 27%;
     --destructive-foreground: 36 59% 92%;
-
     --border: 41 50% 60%;
     --input: 41 50% 60%;
     --ring: 43 67% 70%;
-
     --sidebar-background: 40 14% 4%;
     --sidebar-foreground: 36 59% 92%;
     --sidebar-primary: 46 65% 52%;
@@ -97,13 +87,40 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    /* Subtle vignette feel via background layering could be added globally if desired */
+    @apply bg-background text-foreground font-serif antialiased;
+    background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 35%, rgba(0,0,0,0.3) 100%);
+    background-attachment: fixed;
   }
 
-  /* Gold focus ring for accessibility */
+  h1, h2, h3 {
+    @apply font-display tracking-tight;
+  }
+
+  small, .ui, nav, .caption {
+    @apply font-sans;
+  }
+
   :focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px hsl(var(--ring));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    will-change: opacity, transform;
+  }
+  .reveal.show {
+    @apply animate-reveal;
   }
 }
