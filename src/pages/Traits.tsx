@@ -7,8 +7,9 @@ import { Section } from "@/components/layout/Section";
 import { TraitBarChart } from "@/components/traits/TraitBarChart";
 import { TraitFilterPills } from "@/components/traits/TraitFilterPills";
 import { buildFacetCounts, loadAll, ALL_SUPPORTED_TRAITS } from "@/lib/metadata";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TraitCatalog } from "@/components/traits/TraitCatalog";
+import { Button } from "@/components/ui/button";
 
 const TraitsPage: React.FC = () => {
   const [facets, setFacets] = React.useState<Record<string, Record<string, number>>>({});
@@ -42,7 +43,13 @@ const TraitsPage: React.FC = () => {
       </Helmet>
       <Section>
         <Container>
-          <h1 className="text-3xl md:text-5xl font-semibold mb-6">Traits Explorer</h1>
+          <div className="flex items-center justify-between mb-6">
+            <h1 className="text-3xl md:text-5xl font-semibold">Traits Explorer</h1>
+            <Button asChild variant="outline" className="border-primary/50">
+              <Link to="/report">Observed Traits Report</Link>
+            </Button>
+          </div>
+
           <TraitFilterPills filters={{}} />
           <div className="grid md:grid-cols-2 gap-8">
             {keys.map((k) => (

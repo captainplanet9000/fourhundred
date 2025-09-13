@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Terms from "./pages/legal/Terms";
 import Privacy from "./pages/legal/Privacy";
 import Breeds from "./pages/Breeds";
+import Report from "./pages/Report";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import DefaultMeta from "./components/seo/DefaultMeta";
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/token/:id" element={<Token />} />
               <Route path="/traits" element={<Traits />} />
               <Route path="/breeds" element={<Breeds />} />
+              <Route path="/report" element={<Report />} />
               <Route path="/mint" element={<Mint />} />
               <Route path="/faq" element={<Faq />} />
               <Route path="/about" element={<About />} />
