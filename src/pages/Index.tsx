@@ -10,6 +10,7 @@ import { TokenCard } from "@/components/gallery/TokenCard";
 import { loadAll } from "@/lib/metadata";
 import { Link } from "react-router-dom";
 import { MadeWithDyad } from "@/components/made-with-dyad";
+import { Check, Crown, Layers, Library, Users } from "lucide-react";
 
 const Index: React.FC = () => {
   const [featured, setFeatured] = React.useState<any[]>([]);
@@ -28,9 +29,12 @@ const Index: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>fourHundred — Gilded Age Canine Portraits</title>
-        <meta name="description" content="A collection of 400 on-chain Gilded Age canine portraits. Explore, filter traits, and mint yours." />
-        <meta property="og:title" content="fourHundred — Gilded Age Canine Portraits" />
+        <title>fourHundred — Where Legacy Lives Forever</title>
+        <meta
+          name="description"
+          content="A museum-grade collection of noble companions from the Gilded Age—where legacy, artistry, and heritage endure."
+        />
+        <meta property="og:title" content="fourHundred — Where Legacy Lives Forever" />
       </Helmet>
 
       <div className="relative overflow-hidden">
@@ -41,10 +45,11 @@ const Index: React.FC = () => {
               className="text-5xl md:text-7xl font-semibold tracking-tight bg-clip-text text-transparent"
               style={{ backgroundImage: "var(--gilded-gradient)" }}
             >
-              Gilded Age Canine Portraits
+              Where Legacy Lives Forever
             </h1>
-            <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Opulent frames, sumptuous fabrics, and steadfast companions. 400 on-chain portraits—classic, enduring, and distinctly fourHundred.
+            <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
+              In an age of unprecedented prosperity and refinement, the most discerning companions deserved portraits worthy of their devotion.
+              fourHundred presents masterfully crafted portraits celebrating the noble breeds that once graced the finest estates and grandest halls—each rendered with museum-quality artistry for the digital age.
             </p>
             <div className="mt-8 flex items-center justify-center gap-3">
               <Button asChild className="bg-primary text-primary-foreground hover:brightness-110">
@@ -54,6 +59,46 @@ const Index: React.FC = () => {
                 <Link to="/mint">Mint</Link>
               </Button>
             </div>
+          </Container>
+        </Section>
+
+        <GradientDivider />
+
+        <Section title="Where Art Meets Heritage" subtitle="Portraits that honor lineage, character, and the enduring power of refined companionship.">
+          <Container>
+            <div className="grid md:grid-cols-2 gap-8 text-left text-muted-foreground">
+              <p>
+                fourHundred honors the distinguished bloodlines that defined an era of unparalleled sophistication. From the stately halls of industry
+                titans to the intimate parlors of cultural luminaries, these noble companions witnessed history unfold. Each portrait tells a story
+                of lineage, character, and a bond that transcends time.
+              </p>
+              <p>
+                Each work employs classical techniques—rich tonal palettes, thoughtful composition, and studied light—to capture not merely
+                appearance, but presence. These are pieces meant to endure: artifacts of heritage for a discerning age.
+              </p>
+            </div>
+          </Container>
+        </Section>
+
+        <GradientDivider />
+
+        <Section title="Collection Highlights" subtitle="A thoughtfully curated system of traits, lineages, and heritage classes.">
+          <Container>
+            <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+              {[
+                "Individual Portraits",
+                "Distinguished Bloodlines",
+                "Heritage Classifications",
+                "Masterfully Curated Traits",
+                "Archive-Quality Artistry",
+                "Refined Compositions & Tones",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 p-4 rounded-lg border border-primary/30">
+                  <Check className="h-5 w-5 text-primary mt-0.5" />
+                  <span className="text-sm md:text-base">{item}</span>
+                </li>
+              ))}
+            </ul>
           </Container>
         </Section>
 
@@ -71,39 +116,61 @@ const Index: React.FC = () => {
 
         <GradientDivider />
 
-        <Section title="The Collection" subtitle="A museum-grade series rendered in deep jewel tones and warm gold accents.">
+        <Section title="The Hierarchy of Heritage" subtitle="True distinction is cultivated across generations.">
           <Container>
-            <div className="grid md:grid-cols-3 gap-6 text-left">
-              <div>
-                <div className="text-4xl font-semibold">400</div>
-                <div className="text-muted-foreground">Total supply</div>
-              </div>
-              <div>
-                <div className="text-4xl font-semibold">On-chain</div>
-                <div className="text-muted-foreground">Immutable metadata</div>
-              </div>
-              <div>
-                <div className="text-4xl font-semibold">Curated</div>
-                <div className="text-muted-foreground">Traits and palettes</div>
-              </div>
-            </div>
-            <div className="mt-8">
-              <Button asChild variant="outline" className="border-primary/50 text-foreground hover:bg-muted/50">
-                <Link to="/traits">Explore Traits</Link>
-              </Button>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+              {[
+                { title: "Foundational", desc: "Steadfast companions woven into daily life and legacy.", icon: Users },
+                { title: "Distinguished", desc: "Favored by patrons and leaders for rare and admirable qualities.", icon: Crown },
+                { title: "Exceptional", desc: "Exotic bloodlines acquired through taste and global connection.", icon: Layers },
+                { title: "Legendary", desc: "Ancient breeds whose stories reach to civilization’s dawn.", icon: Library },
+                { title: "Eternal", desc: "Bloodlines lost to time, preserved in art and memory.", icon: Crown },
+              ].map((h) => {
+                const Icon = h.icon;
+                return (
+                  <div key={h.title} className="p-4 rounded-lg border border-primary/30">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Icon className="h-4 w-4 text-primary" />
+                      <div className="font-medium">{h.title}</div>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{h.desc}</p>
+                  </div>
+                );
+              })}
             </div>
           </Container>
         </Section>
 
         <GradientDivider />
 
-        <Section title="Roadmap" subtitle="A measured cadence—quality, not haste.">
+        <Section title="Beyond Portraiture: A Living Heritage" subtitle="An entry into a world where history, breeding, and community converge.">
           <Container>
-            <ul className="grid md:grid-cols-3 gap-6 text-left">
-              <li className="p-4 rounded-lg border border-primary/30">Launch collection and gallery.</li>
-              <li className="p-4 rounded-lg border border-primary/30">Community exhibitions and features.</li>
-              <li className="p-4 rounded-lg border border-primary/30">Collector perks and archival prints.</li>
+            <ul className="grid md:grid-cols-2 gap-3 text-left">
+              {[
+                "Heritage Registry — Document your companion’s lineage",
+                "Estate Building — Curate collections in historical environments",
+                "Bloodline Continuation — Participate in managed breeding programs",
+                "Seasonal Gatherings — Join period‑appropriate celebrations",
+                "Cultural Archive — Access exclusive historical content",
+              ].map((line) => (
+                <li key={line} className="p-4 rounded-lg border border-primary/30">{line}</li>
+              ))}
             </ul>
+          </Container>
+        </Section>
+
+        <GradientDivider />
+
+        <Section title="Your Heritage Awaits" subtitle="Discover the portrait that speaks to your soul and steward a legacy that endures.">
+          <Container className="text-center">
+            <div className="flex items-center justify-center gap-3">
+              <Button asChild className="bg-primary text-primary-foreground hover:brightness-110">
+                <Link to="/gallery">Explore the Gallery</Link>
+              </Button>
+              <Button asChild variant="outline" className="border-primary/50">
+                <Link to="/traits">Explore Traits</Link>
+              </Button>
+            </div>
           </Container>
         </Section>
 
