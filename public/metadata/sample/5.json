@@ -1,13 +1,15 @@
 {
-  "name": "fourHundred #5",
-  "description": "A contemplative scene in deep amethyst tones.",
+  "name": "fourHundred #5 — Velvet & Acanthus",
+  "description": "A deep-velvet cloak with acanthus pendant set against a moody sky.",
   "image": "/images/collection/5.png",
   "attributes": [
-    { "trait_type": "Breed", "value": "Poodle" },
-    { "trait_type": "Headwear", "value": "Beret" },
-    { "trait_type": "Background", "value": "Amethyst" },
-    { "trait_type": "Fabric", "value": "Satin" },
-    { "trait_type": "Pose", "value": "Three-quarter" }
+    { "trait_type": "Breed", "value": "Doodle" },
+    { "trait_type": "Headwear", "value": "None" },
+    { "trait_type": "Background", "value": "Bronze Overcast" },
+    { "trait_type": "Fabric", "value": "Velvet" },
+    { "trait_type": "Accessory", "value": "Acanthus Pendant" }
   ],
-  "tokenId": 5
+  "tokenId": 5,
+  "rarity_score": 110.2,
+  "rarity_rank": 84
 }

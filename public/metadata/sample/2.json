@@ -1,15 +1,16 @@
 {
-  "name": "fourHundred #2",
-  "description": "Velvet backdrop with delicate embroidery and an attentive gaze.",
+  "name": "fourHundred #2 — Candlelit Jewels",
+  "description": "By candlelight, a jewelled choker glints against teal silk and carved woodwork.",
   "image": "/images/collection/2.png",
   "attributes": [
-    { "trait_type": "Breed", "value": "Bulldog" },
-    { "trait_type": "Headwear", "value": "Monocle" },
-    { "trait_type": "Background", "value": "Emerald" },
-    { "trait_type": "Accessory", "value": "Pocket watch" },
-    { "trait_type": "Fabric", "value": "Velvet" }
+    { "trait_type": "Breed", "value": "Schnauzer" },
+    { "trait_type": "Headwear", "value": "None" },
+    { "trait_type": "Background", "value": "Teal Drapery" },
+    { "trait_type": "Accessory", "value": "Jeweled Choker" },
+    { "trait_type": "Fabric", "value": "Lace" },
+    { "trait_type": "Effects", "value": "Candlelight" }
   ],
   "tokenId": 2,
-  "rarity_score": 98.1,
-  "rarity_rank": 88
+  "rarity_score": 118.7,
+  "rarity_rank": 67
 }

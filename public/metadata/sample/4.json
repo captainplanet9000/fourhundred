@@ -1,13 +1,16 @@
 {
-  "name": "fourHundred #4",
-  "description": "Regal posture framed in warm bronze overtones.",
+  "name": "fourHundred #4 — Rose Salon",
+  "description": "A rose-salon setting with pearls and pink satin, warmed by afternoon light.",
   "image": "/images/collection/4.png",
   "attributes": [
-    { "trait_type": "Breed", "value": "Doberman" },
-    { "trait_type": "Headwear", "value": "Crown" },
-    { "trait_type": "Background", "value": "Bronze" },
-    { "trait_type": "Fabric", "value": "Brocade" },
-    { "trait_type": "Collar", "value": "Studded" }
+    { "trait_type": "Breed", "value": "Poodle" },
+    { "trait_type": "Headwear", "value": "Pearl Pin" },
+    { "trait_type": "Background", "value": "Floral Paneling" },
+    { "trait_type": "Fabric", "value": "Satin" },
+    { "trait_type": "Palette", "value": "Soft Ivory" },
+    { "trait_type": "Pose", "value": "Seated" }
   ],
-  "tokenId": 4
+  "tokenId": 4,
+  "rarity_score": 101.3,
+  "rarity_rank": 103
 }

@@ -1,0 +1,15 @@
+{
+  "name": "fourHundred #6 — Baroque Goldwork",
+  "description": "Embroidered goldwork and candles illuminate a refined baroque waistcoat.",
+  "image": "/images/collection/6.png",
+  "attributes": [
+    { "trait_type": "Breed", "value": "Toy Poodle" },
+    { "trait_type": "Headwear", "value": "None" },
+    { "trait_type": "Background", "value": "Candelabra" },
+    { "trait_type": "Fabric", "value": "Velvet" },
+    { "trait_type": "Palette", "value": "Emerald & Gold" }
+  ],
+  "tokenId": 6,
+  "rarity_score": 127.8,
+  "rarity_rank": 52
+}

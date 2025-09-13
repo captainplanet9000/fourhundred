@@ -1,15 +1,16 @@
 {
-  "name": "fourHundred #1",
-  "description": "A stately companion in rich damask with a touch of gold.",
+  "name": "fourHundred #1 — Laurel & Ruffle",
+  "description": "A stately companion seated before sumptuous drapery, crowned and ruffed in courtly fashion.",
   "image": "/images/collection/1.png",
   "attributes": [
-    { "trait_type": "Breed", "value": "Greyhound" },
-    { "trait_type": "Headwear", "value": "Laurel" },
-    { "trait_type": "Background", "value": "Garnet" },
+    { "trait_type": "Breed", "value": "Poodle" },
+    { "trait_type": "Headwear", "value": "Crown" },
+    { "trait_type": "Background", "value": "Garnet Drapery" },
     { "trait_type": "Fabric", "value": "Damask" },
-    { "trait_type": "Collar", "value": "Gold-plate" }
+    { "trait_type": "Collar", "value": "Ruffled" },
+    { "trait_type": "Pose", "value": "Seated" }
   ],
   "tokenId": 1,
-  "rarity_score": 123.4,
-  "rarity_rank": 42
+  "rarity_score": 142.1,
+  "rarity_rank": 21
 }
