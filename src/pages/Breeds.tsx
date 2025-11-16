@@ -30,16 +30,17 @@ const BreedsPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Breeds — fourHundred</title>
-        <meta name="description" content="Complete breed lists by rarity tier for the fourHundred collection." />
+        <title>Breeds — 400</title>
+        <meta name="description" content="Complete breed lists by rarity tier for the 400 collection." />
       </Helmet>
+
       <Section>
         <Container>
           <h1 className="text-3xl md:text-5xl font-semibold mb-6">Complete Breed Lists by Rarity Tier</h1>
 
           <Accordion type="multiple" className="w-full">
             <AccordionItem value="common">
-              <AccordionTrigger>Common Breeds (45% — 4,500 NFTs — ~102 each)</AccordionTrigger>
+              <AccordionTrigger>Common Breeds</AccordionTrigger>
               <AccordionContent>
                 <p className="text-sm text-muted-foreground mb-3">Most recognizable and popular breeds with high market appeal:</p>
                 <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -51,7 +52,7 @@ const BreedsPage: React.FC = () => {
             </AccordionItem>
 
             <AccordionItem value="uncommon">
-              <AccordionTrigger>Uncommon Breeds (30% — 3,000 NFTs — ~52 each)</AccordionTrigger>
+              <AccordionTrigger>Uncommon Breeds</AccordionTrigger>
               <AccordionContent>
                 <p className="text-sm text-muted-foreground mb-3">Popular among enthusiasts but less mainstream:</p>
                 <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -63,7 +64,7 @@ const BreedsPage: React.FC = () => {
             </AccordionItem>
 
             <AccordionItem value="rare">
-              <AccordionTrigger>Rare Breeds (18% — 1,800 NFTs — ~31 each)</AccordionTrigger>
+              <AccordionTrigger>Rare Breeds</AccordionTrigger>
               <AccordionContent>
                 <p className="text-sm text-muted-foreground mb-3">Lesser-known but distinctive breeds with unique characteristics:</p>
                 <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -75,7 +76,7 @@ const BreedsPage: React.FC = () => {
             </AccordionItem>
 
             <AccordionItem value="epic">
-              <AccordionTrigger>Epic Breeds (6% — 600 NFTs — ~11 each)</AccordionTrigger>
+              <AccordionTrigger>Epic Breeds</AccordionTrigger>
               <AccordionContent>
                 <p className="text-sm text-muted-foreground mb-3">Extremely uncommon or regionally specific breeds:</p>
                 <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -87,7 +88,7 @@ const BreedsPage: React.FC = () => {
             </AccordionItem>
 
             <AccordionItem value="legendary">
-              <AccordionTrigger>Legendary Breeds (1% — 100 NFTs — ~4 each)</AccordionTrigger>
+              <AccordionTrigger>Legendary Breeds</AccordionTrigger>
               <AccordionContent>
                 <p className="text-sm text-muted-foreground mb-3">Extinct breeds and ultra-rare living breeds with maximum collectibility:</p>
                 <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -97,6 +98,7 @@ const BreedsPage: React.FC = () => {
                 </ul>
               </AccordionContent>
             </AccordionItem>
+
           </Accordion>
         </Container>
       </Section>
