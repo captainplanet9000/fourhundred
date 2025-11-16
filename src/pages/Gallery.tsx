@@ -102,8 +102,8 @@ const GalleryPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Gallery — fourHundred</title>
-        <meta name="description" content="Explore the full fourHundred collection of Gilded Age canine portraits." />
+        <title>Gallery — 400</title>
+        <meta name="description" content="Explore the 400 collection — portraits across every walk of Gilded Age America." />
       </Helmet>
       <Section>
         <Container>

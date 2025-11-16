@@ -28,7 +28,7 @@ const ReportPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Observed Traits Report — fourHundred</title>
+        <title>Observed Traits Report — 400</title>
         <meta name="description" content="Live trait counts from the current metadata set." />
       </Helmet>
       <Section>

@@ -38,8 +38,8 @@ const TraitsPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Traits Explorer — fourHundred</title>
-        <meta name="description" content="Explore trait distributions across the fourHundred collection." />
+        <title>Traits Explorer — 400</title>
+        <meta name="description" content="Explore trait distributions across the 400 collection." />
       </Helmet>
       <Section>
         <Container>

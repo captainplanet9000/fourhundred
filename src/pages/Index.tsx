@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { TokenCard } from "@/components/gallery/TokenCard";
 import { loadAll } from "@/lib/metadata";
 import { Link } from "react-router-dom";
-import { MadeWithDyad } from "@/components/made-with-dyad";
+// fourHundred components
 import { Reveal } from "@/components/common/Reveal";
 import { useParallax } from "@/hooks/use-parallax";
 
@@ -32,195 +32,207 @@ const Index: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>fourHundred — Where Legacy Lives Forever</title>
+        <title>fourHundred — Gilded Age Canine Portraits</title>
         <meta
           name="description"
-          content="A museum-grade collection of noble companions from the Gilded Age—where legacy, artistry, and heritage endure."
+          content="A curated collection of 10,000 unique Gilded Age dog portraits on the blockchain"
         />
-        <meta property="og:title" content="fourHundred — Where Legacy Lives Forever" />
+        <meta property="og:title" content="fourHundred — Gilded Age Canine Portraits" />
       </Helmet>
 
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden min-h-screen bg-black">
+        {/* Background image layer */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <img
+            src="/images/collection/generated-image-1757823533363.png"
+            alt=""
+            aria-hidden
+            className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2"
+          />
+        </div>
+
+        {/* Gradient overlay above image for readability */}
         <div
-          className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black via-zinc-900 to-black"
+          className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-black/90 via-black/80 to-black/95"
           style={{ transform: `translateY(${parallax}px)` }}
         />
-        <Section className="relative">
-          <Container className="text-center">
-            <Reveal>
-              <h1
-                className="text-5xl md:text-7xl font-semibold tracking-tight bg-clip-text text-transparent"
-                style={{ backgroundImage: "var(--gilded-gradient)" }}
-              >
-                Where Legacy Lives Forever
-              </h1>
-            </Reveal>
-            <Reveal delayMs={60}>
-              <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
-                In an age of unprecedented prosperity and refinement, the most discerning companions deserved portraits worthy of their devotion.
-                400 presents 10,000 masterfully crafted portraits celebrating the noble breeds that once graced the finest estates and grandest halls.
-                Each NFT captures the timeless bond between elegance and loyalty, rendered with museum-quality artistry for the digital age.
-              </p>
-            </Reveal>
-            <Reveal delayMs={120}>
-              <div className="mt-8 flex items-center justify-center gap-3">
-                <Button asChild className="bg-primary text-primary-foreground hover:brightness-110">
-                  <Link to="/gallery">View Gallery</Link>
-                </Button>
-                <Button asChild variant="outline" className="border-primary/50 text-foreground hover:bg-muted/50">
-                  <Link to="/mint">Mint</Link>
-                </Button>
-              </div>
-            </Reveal>
-          </Container>
-        </Section>
 
-        <OrnateDivider />
-
-        <Section title="Where Art Meets Heritage" subtitle="Portraits that honor lineage, character, and the enduring power of refined companionship.">
-          <Container>
-            <Reveal>
-              <div className="grid md:grid-cols-2 gap-8 text-left text-muted-foreground">
-                <p>
-                  400 honors the distinguished bloodlines that defined an era of unparalleled sophistication. From the stately halls of industry titans
-                  to the intimate parlors of cultural luminaries, these noble companions witnessed history unfold. Each portrait tells a story of lineage,
-                  character, and the enduring power of refined companionship.
+        {/* Content wrapper only for the first (hero) section */}
+        <section className="relative z-20 min-h-screen flex items-center py-0">
+            <Container className="text-center">
+              <Reveal>
+                <h1
+                  className="text-6xl md:text-8xl lg:text-9xl leading-none md:leading-[1.05] font-semibold tracking-tight bg-clip-text text-transparent"
+                  style={{ backgroundImage: "var(--gilded-gradient)" }}
+                >
+                  Where Legacy Lives Forever
+                </h1>
+              </Reveal>
+              <Reveal delayMs={60}>
+                <p className="mt-6 text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-5xl md:max-w-6xl mx-auto">
+                  Step into a transformative era. 400 presents 10,000 portraits that place companions at the heart of daily life —
+                  from workbenches and hearths to studios, stages, and salons. Each piece is a story of loyalty, character,
+                  and the shared moments that define a life together.
                 </p>
-                <p>
-                  Each portrait employs the techniques of the era&apos;s master artists—those who understood that true portraiture captures not just appearance, but character.
-                  Rich oil painting traditions, masterful use of light and shadow, and compositions that speak to the viewer across centuries combine to create works that transcend mere representation.
-                </p>
-              </div>
-            </Reveal>
-          </Container>
-        </Section>
-
-        <GradientDivider />
-
-        <Section title="Collection Highlights" subtitle="A thoughtfully curated system of traits, lineages, and heritage classes.">
-          <Container>
-            <Reveal>
-              <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
-                {[
-                  "10,000 Individual Portraits",
-                  "400+ Distinguished Bloodlines",
-                  "5 Heritage Classifications",
-                  "Masterfully Curated Traits",
-                  "Archive-Quality Artistry",
-                ].map((item) => (
-                  <li key={item} className="p-4 rounded-lg border border-primary/30">{item}</li>
-                ))}
-              </ul>
-            </Reveal>
-          </Container>
-        </Section>
-
-        <GradientDivider />
-
-        <Section title="Featured Portraits" subtitle="A glimpse into the collection’s breadth.">
-          <Container>
-            <Reveal>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {featured.map((it) => (
-                  <TokenCard key={it.tokenId} item={it} />
-                ))}
-              </div>
-            </Reveal>
-          </Container>
-        </Section>
-
-        <GradientDivider />
-
-        <Section title="The Art of Noble Companionship" subtitle="Portraits that preserve an age of beauty, loyalty, and lasting legacy.">
-          <Container>
-            <Reveal>
-              <div className="space-y-4 text-left text-muted-foreground max-w-4xl">
-                <p>
-                  Between 1870 and 1900, America witnessed an unprecedented flowering of culture, industry, and artistic patronage.
-                  In the marble halls and mahogany libraries of the era&apos;s most influential families, loyal companions held court alongside their distinguished owners.
-                  400 preserves these intimate moments of history, where every brushstroke reveals the soul of an age that valued beauty, loyalty, and lasting legacy above all else.
-                </p>
-                <p>
-                  Each portrait employs the techniques of the era&apos;s master artists—rich oil traditions, masterful light and shadow, and compositions that speak across centuries—to create works that endure.
-                </p>
-              </div>
-            </Reveal>
-          </Container>
-        </Section>
-
-        <GradientDivider />
-
-        <Section title="The Hierarchy of Heritage" subtitle="True distinction cannot be manufactured—it must be earned across generations.">
-          <Container>
-            <Reveal>
-              <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
-                <li className="p-4 rounded-lg border border-primary/30">
-                  <div className="font-medium">Foundational (45%)</div>
-                  <p className="text-sm text-muted-foreground">The steadfast companions who filled the daily lives of America&apos;s most prominent families.</p>
-                </li>
-                <li className="p-4 rounded-lg border border-primary/30">
-                  <div className="font-medium">Distinguished (30%)</div>
-                  <p className="text-sm text-muted-foreground">Breeds favored by cultural patrons and industrial leaders for their rare qualities.</p>
-                </li>
-                <li className="p-4 rounded-lg border border-primary/30">
-                  <div className="font-medium">Exceptional (18%)</div>
-                  <p className="text-sm text-muted-foreground">Exotic bloodlines acquired through global connections and discerning taste.</p>
-                </li>
-                <li className="p-4 rounded-lg border border-primary/30">
-                  <div className="font-medium">Legendary (6%)</div>
-                  <p className="text-sm text-muted-foreground">Ancient breeds whose heritage traces to the dawn of civilization itself.</p>
-                </li>
-                <li className="p-4 rounded-lg border border-primary/30">
-                  <div className="font-medium">Eternal (1%)</div>
-                  <p className="text-sm text-muted-foreground">Bloodlines lost to time but preserved forever in art and memory.</p>
-                </li>
-              </ul>
-            </Reveal>
-          </Container>
-        </Section>
-
-        <GradientDivider />
-
-        <Section title="Beyond Portraiture: A Living Heritage" subtitle="An entry into a world where history, breeding, and community converge.">
-          <Container>
-            <Reveal>
-              <ul className="grid md:grid-cols-2 gap-3 text-left">
-                {[
-                  "Heritage Registry — Document your companion's noble lineage",
-                  "Estate Building — Curate collections in historical environments",
-                  "Bloodline Continuation — Participate in managed breeding programs",
-                  "Seasonal Gatherings — Join period-appropriate celebrations",
-                  "Cultural Archive — Access exclusive historical content",
-                ].map((line) => (
-                  <li key={line} className="p-4 rounded-lg border border-primary/30">{line}</li>
-                ))}
-              </ul>
-            </Reveal>
-          </Container>
-        </Section>
-
-        <GradientDivider />
-
-        <Section title="Your Heritage Awaits" subtitle="Enter a world where every portrait preserves a moment in history.">
-          <Container className="text-center">
-            <Reveal>
-              <div className="flex items-center justify-center gap-3">
-                <Button asChild className="bg-primary text-primary-foreground hover:brightness-110">
-                  <Link to="/gallery">Explore the Gallery</Link>
-                </Button>
-                <Button asChild variant="outline" className="border-primary/50">
-                  <Link to="/traits">Explore Traits</Link>
-                </Button>
-                <Button asChild variant="outline" className="border-primary/50">
-                  <Link to="/breeds">Browse Breeds</Link>
-                </Button>
-              </div>
-            </Reveal>
-          </Container>
-        </Section>
-
-        <MadeWithDyad />
+              </Reveal>
+              <Reveal delayMs={120}>
+                <div className="mt-10 flex items-center justify-center gap-3">
+                  <Button asChild className="bg-primary text-primary-foreground hover:brightness-110">
+                    <Link to="/gallery">Discover Your Story</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="border-primary/50 text-foreground hover:bg-muted/50">
+                    <Link to="/about">Explore the Era</Link>
+                  </Button>
+                </div>
+              </Reveal>
+            </Container>
+          </section>
       </div>
+
+      <OrnateDivider />
+
+          <Section title="Art meets Heritage" subtitle="Portraits of companionship, craft, and lived scenes of the era.">
+            <Container>
+              <Reveal>
+                <div className="grid md:grid-cols-2 gap-8 text-left text-muted-foreground">
+                  <p>
+                    The Gilded Age is our lens; companionship is our subject. Each portrait centers the dog as a living proxy for the world around it —
+                    a terrier at the workbench, a shepherd by the hearth, a poodle mid‑performance, a studio companion beside an easel, a well‑kept lapdog in a salon.
+                    The setting reveals the owner’s life; the companion carries the story.
+                  </p>
+                  <p>
+                    We study period techniques and references — dress, interiors, tools, and city light — so each painting feels true to its moment.
+                    These are portraits of relationship and place, rendered with care for both subject and scene.
+                  </p>
+                </div>
+              </Reveal>
+            </Container>
+          </Section>
+
+          <GradientDivider />
+
+          <Section title="Collection Highlights" subtitle="Stories across a changing era — researched, rendered, and remembered.">
+            <Container>
+              <Reveal>
+                <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+                  {[
+                    "10,000 Individual Stories",
+                    "400+ Breeds Representing Every Social Class",
+                    "5 Social Tiers: Working Families to Elite Society",
+                    "Authentic Period Details",
+                    "Museum-Quality Artistry",
+                  ].map((item) => (
+                    <li key={item} className="p-4 rounded-lg border border-primary/30">{item}</li>
+                  ))}
+                </ul>
+              </Reveal>
+            </Container>
+          </Section>
+
+          <GradientDivider />
+
+          <Section title="Featured Portraits" subtitle="A glimpse into the collection’s breadth.">
+            <Container>
+              <Reveal>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {featured.map((it) => (
+                    <TokenCard key={it.tokenId} item={it} />
+                  ))}
+                </div>
+              </Reveal>
+            </Container>
+          </Section>
+
+          <GradientDivider />
+
+          <Section title="Companions in a Changing Era" subtitle="Portraits that honor work, family, craft, and community.">
+            <Container>
+              <Reveal>
+                <div className="space-y-4 text-left text-muted-foreground max-w-4xl">
+                  <p>
+                    Between 1870 and 1900, industrialization, migration, and civic life reshaped everyday routines. Across mills and boarding houses,
+                    farms and brownstones, companions shared the daily rhythm of work and rest with the people they loved.
+                  </p>
+                  <p>
+                    These portraits combine period technique with archival research to present dogs not as ornaments, but as partners in family, labor, and neighborhood.
+                  </p>
+                </div>
+              </Reveal>
+            </Container>
+          </Section>
+
+          <GradientDivider />
+
+          <Section title="Across Every Walk of Life" subtitle="Five social tiers that reflect how people lived — not what they were worth.">
+            <Container>
+              <Reveal>
+                <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+                  <li className="p-4 rounded-lg border border-primary/30">
+                    <div className="font-medium">Working Families (45%)</div>
+                    <p className="text-sm text-muted-foreground">Factory workers, farmers, shopkeepers, and craftspeople — loyal companions who shared everyday struggles and joys.</p>
+                  </li>
+                  <li className="p-4 rounded-lg border border-primary/30">
+                    <div className="font-medium">Rising Middle Class (30%)</div>
+                    <p className="text-sm text-muted-foreground">Teachers, clerks, tradespeople, and small business owners building stability and aspiration.</p>
+                  </li>
+                  <li className="p-4 rounded-lg border border-primary/30">
+                    <div className="font-medium">Skilled & Specialized (18%)</div>
+                    <p className="text-sm text-muted-foreground">Professionals, performers, and trained working dogs whose roles demanded expertise.</p>
+                  </li>
+                  <li className="p-4 rounded-lg border border-primary/30">
+                    <div className="font-medium">Cultural Elite (6%)</div>
+                    <p className="text-sm text-muted-foreground">Patrons, artists, and civic leaders — well-appointed companions of high society.</p>
+                  </li>
+                  <li className="p-4 rounded-lg border border-primary/30">
+                    <div className="font-medium">Mythic & Historic (1%)</div>
+                    <p className="text-sm text-muted-foreground">Enduring symbols, near-lost breeds, and remarkable stories preserved in the archive.</p>
+                  </li>
+                </ul>
+              </Reveal>
+            </Container>
+          </Section>
+
+          <GradientDivider />
+
+          <Section title="Beyond Portraiture: Explore the Era" subtitle="Research, stories, and community projects that keep history alive.">
+            <Container>
+              <Reveal>
+                <ul className="grid md:grid-cols-2 gap-3 text-left">
+                  {[
+                    "Story Registry — Contribute family memories from the era",
+                    "Historical Context — Access essays, sources, and references",
+                    "Community Exhibitions — Curated on-chain shows and salons",
+                    "Education & Resources — Classroom-ready tools and guides",
+                    "Open Data — Transparent traits and sourcing for researchers",
+                  ].map((line) => (
+                    <li key={line} className="p-4 rounded-lg border border-primary/30">{line}</li>
+                  ))}
+                </ul>
+              </Reveal>
+            </Container>
+          </Section>
+
+          <GradientDivider />
+
+          <Section title="Your Story Awaits" subtitle="Find the portrait that reflects your story.">
+            <Container className="text-center">
+              <Reveal>
+                <div className="flex items-center justify-center gap-3">
+                  <Button asChild className="bg-primary text-primary-foreground hover:brightness-110">
+                    <Link to="/gallery">Discover the Gallery</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="border-primary/50">
+                    <Link to="/traits">Explore Traits</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="border-primary/50">
+                    <Link to="/breeds">Browse Breeds</Link>
+                  </Button>
+                </div>
+              </Reveal>
+            </Container>
+          </Section>
+
+          {/* Site footer content goes here */}
     </>
   );
 };

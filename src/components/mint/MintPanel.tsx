@@ -3,16 +3,19 @@
 import React, { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
 import {
   useAccount,
   useWriteContract,
   useWaitForTransactionReceipt,
   useChainId,
   useConfig,
+  useReadContract,
 } from "wagmi";
 import { getContractAddress } from "@/lib/env";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
+import { parseEther } from "viem";
 
 const DEFAULT_ABI = [
   {
@@ -20,6 +23,13 @@ const DEFAULT_ABI = [
     name: "mint",
     outputs: [],
     stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "totalSupply",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
     type: "function",
   },
 ] as const;
@@ -48,6 +58,15 @@ export const MintPanel: React.FC<{
 
   const canMint = Boolean(contractAddress) && isConnected;
 
+  // Read on-chain totalSupply when possible
+  const { data: chainTotalSupply } = useReadContract({
+    address: contractAddress as `0x${string}` | undefined,
+    abi: contractAbi,
+    functionName: "totalSupply",
+    args: [],
+    query: { enabled: Boolean(contractAddress) },
+  });
+
   const handleMint = () => {
     if (!contractAddress || !address || !activeChain) return;
     writeContract({
@@ -55,7 +74,7 @@ export const MintPanel: React.FC<{
       abi: contractAbi,
       functionName: "mint",
       args: [BigInt(qty)] as const,
-      value: BigInt(Math.floor(priceEth * 1e18) * qty),
+      value: parseEther(priceEth.toString()) * BigInt(qty),
       account: address as `0x${string}`,
       chain: activeChain,
     });
@@ -85,14 +104,12 @@ export const MintPanel: React.FC<{
 
       <div className="text-sm text-muted-foreground flex flex-wrap gap-3">
         <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
-          Price: {priceEth} ETH
+          Price: {priceEth} ETH each
         </Badge>
         <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
-          Supply: {totalSupply} / {maxSupply}
+          Supply: {typeof chainTotalSupply === "bigint" ? Number(chainTotalSupply) : totalSupply ?? "—"} / {maxSupply}
         </Badge>
-        {!contractAddress && (
-          <Badge variant="destructive">Set contract address in .env to enable mint</Badge>
-        )}
+        {/* Contract warning removed for cleaner UI; mint is disabled until configured */}
       </div>
 
       {error && (

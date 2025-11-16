@@ -4,7 +4,8 @@ import React from "react";
 import { WagmiConfig, createConfig, http } from "wagmi";
 import type { Chain } from "viem";
 import { mainnet, base, sepolia, baseSepolia } from "viem/chains";
-import { walletConnect } from "wagmi/connectors";
+import { walletConnect, injected } from "wagmi/connectors";
+
 import { getEnv } from "@/lib/env";
 
 const chainMap: Record<string, Chain> = {
@@ -25,9 +26,33 @@ function getChain() {
 
 const CHAINS = [mainnet, base, sepolia, baseSepolia] as const;
 
-function rpcUrlFor(_chain: Chain): string {
-  return getEnv("VITE_RPC_URL") ?? getEnv("NEXT_PUBLIC_RPC_URL") ?? "";
+function rpcUrlFor(chain: Chain): string {
+  const envUrl = getEnv("VITE_RPC_URL") ?? getEnv("NEXT_PUBLIC_RPC_URL");
+  if (envUrl) return envUrl;
+  // Safe public defaults when env is not set
+  if (chain.id === mainnet.id) return "https://cloudflare-eth.com";
+  if (chain.id === base.id) return "https://mainnet.base.org";
+  if (chain.id === sepolia.id) return "https://rpc.sepolia.org";
+  if (chain.id === baseSepolia.id) return "https://sepolia.base.org";
+  return "https://cloudflare-eth.com";
 }
+
+const wcProjectId =
+  getEnv("VITE_WALLETCONNECT_PROJECT_ID") ??
+  getEnv("NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID") ??
+  "";
+
+const connectorsArr = [
+  injected(),
+  ...(wcProjectId
+    ? [
+        walletConnect({
+          projectId: wcProjectId,
+          showQrModal: true,
+        }),
+      ]
+    : []),
+];
 
 const config = createConfig({
   chains: CHAINS,
@@ -37,15 +62,7 @@ const config = createConfig({
     [sepolia.id]: http(rpcUrlFor(sepolia)),
     [baseSepolia.id]: http(rpcUrlFor(baseSepolia)),
   },
-  connectors: [
-    walletConnect({
-      projectId:
-        getEnv("VITE_WALLETCONNECT_PROJECT_ID") ??
-        getEnv("NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID") ??
-        "",
-      showQrModal: true,
-    }),
-  ],
+  connectors: connectorsArr,
 });
 
 type Props = { children: React.ReactNode };

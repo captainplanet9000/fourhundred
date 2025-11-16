@@ -7,7 +7,7 @@ const PrivacyPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Privacy — fourHundred</title>
+        <title>Privacy — 400</title>
       </Helmet>
       <Section>
         <Container>

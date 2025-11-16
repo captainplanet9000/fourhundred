@@ -3,8 +3,9 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Container } from "./Container";
-import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
 const links = [
   { to: "/gallery", label: "Gallery" },
@@ -20,8 +21,8 @@ export const Navbar: React.FC = () => {
     <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b">
       <Container className="flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl md:text-2xl font-semibold tracking-wide">
-            <span className="text-primary">four</span>Hundred
+          <span className="inline-flex items-center rounded-md bg-black text-white px-3 py-1 text-xl md:text-2xl font-semibold tracking-wide">
+            fourHundred
           </span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
@@ -38,10 +39,42 @@ export const Navbar: React.FC = () => {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          {/* Mobile menu trigger */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon" aria-label="Open menu">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-72">
+                <nav className="mt-4 flex flex-col gap-4">
+                  {links.map((l) => (
+                    <SheetClose asChild key={l.to}>
+                      <NavLink
+                        to={l.to}
+                        className={({ isActive }) =>
+                          `text-base transition-colors ${isActive ? "text-primary" : "text-foreground/90 hover:text-foreground"}`
+                        }
+                      >
+                        {l.label}
+                      </NavLink>
+                    </SheetClose>
+                  ))}
+                  <div className="pt-2">
+                    <SheetClose asChild>
+                      <Button asChild className="w-full bg-primary text-primary-foreground hover:brightness-110">
+                        <Link to="/gallery">View Gallery</Link>
+                      </Button>
+                    </SheetClose>
+                  </div>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
           <Button asChild size="sm" className="bg-primary text-primary-foreground hover:brightness-110 shadow-sm">
             <Link to="/gallery">View Gallery</Link>
           </Button>
-          <ThemeToggle />
         </div>
       </Container>
     </header>

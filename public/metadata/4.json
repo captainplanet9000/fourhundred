@@ -1,0 +1,10 @@
+{
+  "name": "fourHundred #4 — Portrait",
+  "description": "A curated piece from the fourHundred collection.",
+  "image": "/images/collection/1757611326447__000000000_3.jpg",
+  "attributes": [
+    { "trait_type": "Breed", "value": "Gilded Companion" },
+    { "trait_type": "Background", "value": "Garden" },
+    { "trait_type": "Headwear", "value": "None" }
+  ]
+}

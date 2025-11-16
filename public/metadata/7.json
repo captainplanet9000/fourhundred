@@ -1,0 +1,10 @@
+{
+  "name": "fourHundred #7 — Portrait",
+  "description": "A curated piece from the fourHundred collection.",
+  "image": "/images/collection/comfy_00003.png",
+  "attributes": [
+    { "trait_type": "Breed", "value": "Gilded Companion" },
+    { "trait_type": "Background", "value": "Library Bookshelf" },
+    { "trait_type": "Headwear", "value": "Bowler Hat" }
+  ]
+}

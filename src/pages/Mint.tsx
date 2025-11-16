@@ -8,15 +8,15 @@ import { ConnectButton } from "@/components/mint/ConnectButton";
 import { MintPanel } from "@/components/mint/MintPanel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getContractAddress } from "@/lib/env";
-import { NetworkBadge } from "@/components/mint/NetworkBadge";
+// NetworkBadge removed per design cleanup
 
 const MintPage: React.FC = () => {
   const contract = getContractAddress();
   return (
     <>
       <Helmet>
-        <title>Mint — fourHundred</title>
-        <meta name="description" content="Mint your fourHundred portrait." />
+        <title>Mint — 400</title>
+        <meta name="description" content="Mint your 400 portrait." />
       </Helmet>
       <Section>
         <Container>
@@ -24,7 +24,6 @@ const MintPage: React.FC = () => {
 
           <div className="mb-6 flex items-center gap-4 flex-wrap">
             <ConnectButton />
-            <NetworkBadge />
           </div>
 
           <Card>
@@ -32,12 +31,9 @@ const MintPage: React.FC = () => {
               <CardTitle>Mint Panel</CardTitle>
             </CardHeader>
             <CardContent>
-              <MintPanel priceEth={0} totalSupply={0} maxSupply={400} />
+              <MintPanel priceEth={0.1} totalSupply={0} maxSupply={10000} />
               {!contract && (
-                <p className="text-sm text-muted-foreground mt-4">
-                  Set contract variables in your .env to enable minting:
-                  VITE_CONTRACT_ADDRESS (or NEXT_PUBLIC_CONTRACT_ADDRESS), VITE_CHAIN_ID, VITE_RPC_URL, and VITE_WALLETCONNECT_PROJECT_ID.
-                </p>
+                <p className="text-sm text-muted-foreground mt-3">Mint temporarily unavailable.</p>
               )}
             </CardContent>
           </Card>

@@ -56,14 +56,14 @@ const TokenPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>{name} — fourHundred</title>
+        <title>{name} — 400</title>
         <meta name="description" content={`Attributes and details for ${name}.`} />
-        <meta property="og:title" content={`${name} — fourHundred`} />
+        <meta property="og:title" content={`${name} — 400`} />
         <meta property="og:description" content={`Attributes and details for ${name}.`} />
         <meta property="og:url" content={absoluteUrl} />
         <meta property="og:image" content={ogImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${name} — fourHundred`} />
+        <meta name="twitter:title" content={`${name} — 400`} />
         <meta name="twitter:description" content={`Attributes and details for ${name}.`} />
         <meta name="twitter:image" content={ogImage} />
       </Helmet>
@@ -113,7 +113,7 @@ const TokenPage: React.FC = () => {
                 </div>
               </div>
 
-              <SocialShare url={absoluteUrl} text={`fourHundred ${name}`} />
+              <SocialShare url={absoluteUrl} text={`400 ${name}`} />
             </div>
           </div>
         </Container>

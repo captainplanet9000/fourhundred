@@ -8,10 +8,10 @@ export const Footer: React.FC = () => {
       <Container className="py-8 grid md:grid-cols-3 gap-6 text-sm">
         <div>
           <div className="font-semibold text-lg">
-            fourHundred — Gilded Age Canine Portraits
+            400 — Every Story of the Gilded Age
           </div>
           <p className="text-muted-foreground mt-2">
-            400 on-chain portraits celebrating the opulence of the Gilded Age, reimagined through our faithful companions.
+            10,000 on-chain portraits honoring companions across every walk of life, 1870–1900.
           </p>
         </div>
         <div className="space-y-2">

@@ -9,55 +9,53 @@ const AboutPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>About — fourHundred</title>
-        <meta name="description" content="Where art meets heritage: fourHundred unites museum-grade artistry with the noble bloodlines of the Gilded Age." />
+        <title>About — 400</title>
+        <meta name="description" content="400 tells every story of the Gilded Age — companions beside working families, rising classes, artists, immigrants, and high society." />
       </Helmet>
       <Section>
         <Container>
           <h1 className="text-3xl md:text-5xl font-semibold mb-6">Where Art Meets Heritage</h1>
           <div className="space-y-6 text-lg text-muted-foreground max-w-3xl">
             <p>
-              400 honors the distinguished bloodlines that defined an era of unparalleled sophistication. From the stately halls of industry titans
-              to the intimate parlors of cultural luminaries, these noble companions witnessed history unfold. Each portrait tells a story of lineage, character,
-              and the enduring power of refined companionship.
+              The Gilded Age (1870–1900) is our canvas; companionship is our subject. Each portrait centers the dog as a living proxy for the world around it —
+              a terrier at the workbench, a shepherd by the hearth, a poodle mid‑performance, a studio companion beside an easel, and a well‑kept lapdog in a salon.
+              The setting reveals the owner’s life; the companion carries the story.
             </p>
             <p>
-              Between 1870 and 1900, America witnessed an unprecedented flowering of culture, industry, and artistic patronage. In the marble halls and mahogany
-              libraries of the era&apos;s most influential families, loyal companions held court alongside their distinguished owners. 400 preserves these intimate moments of history,
-              where every brushstroke reveals the soul of an age that valued beauty, loyalty, and lasting legacy above all else.
+              Our portraits combine period technique with archival reference to ground each scene in lived detail — authentic interiors, attire, tools, and city light.
+              These are stories of partnership, work, family, and belonging.
             </p>
             <p>
-              Each portrait employs the techniques of the era&apos;s master artists—rich oil traditions, masterful light and shadow, and compositions that speak across centuries—to create works that transcend mere representation.
+              Each work is rendered with museum‑grade care to honor the bond between companions and the people and places they stood beside.
             </p>
           </div>
 
           <div className="mt-12">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">The Hierarchy of Heritage</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Across Every Walk of Life</h2>
             <ul className="space-y-3 text-muted-foreground">
-              <li><span className="font-medium text-foreground">Foundational (45%)</span> — The steadfast companions who filled the daily lives of America&apos;s most prominent families.</li>
-              <li><span className="font-medium text-foreground">Distinguished (30%)</span> — Breeds favored by cultural patrons and industrial leaders for their rare qualities.</li>
-              <li><span className="font-medium text-foreground">Exceptional (18%)</span> — Exotic bloodlines acquired through global connections and discerning taste.</li>
-              <li><span className="font-medium text-foreground">Legendary (6%)</span> — Ancient breeds whose heritage traces to the dawn of civilization itself.</li>
-              <li><span className="font-medium text-foreground">Eternal (1%)</span> — Bloodlines lost to time but preserved forever in art and memory.</li>
+              <li><span className="font-medium text-foreground">Working Families (45%)</span> — Factory workers, farmers, shopkeepers, and craftspeople — companions who shared everyday struggles and joys.</li>
+              <li><span className="font-medium text-foreground">Rising Middle Class (30%)</span> — Teachers, clerks, tradespeople, and small business owners building stability and aspiration.</li>
+              <li><span className="font-medium text-foreground">Skilled &amp; Specialized (18%)</span> — Professionals, performers, and trained working dogs whose roles demanded expertise.</li>
+              <li><span className="font-medium text-foreground">Cultural Elite (6%)</span> — Patrons, artists, and civic leaders — well-appointed companions of high society.</li>
+              <li><span className="font-medium text-foreground">Mythic &amp; Historic (1%)</span> — Enduring symbols, near-lost breeds, and remarkable stories preserved in the archive.</li>
             </ul>
           </div>
 
           <div className="mt-12">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Exclusive Experiences</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Explore the Era</h2>
             <ul className="grid md:grid-cols-2 gap-3 text-left">
-              <li className="p-4 rounded-lg border border-primary/30">Heritage Registry — Document your companion&apos;s noble lineage</li>
-              <li className="p-4 rounded-lg border border-primary/30">Estate Building — Curate collections in historical environments</li>
-              <li className="p-4 rounded-lg border border-primary/30">Bloodline Continuation — Participate in managed breeding programs</li>
-              <li className="p-4 rounded-lg border border-primary/30">Seasonal Gatherings — Join period-appropriate celebrations</li>
-              <li className="p-4 rounded-lg border border-primary/30">Cultural Archive — Access exclusive historical content</li>
+              <li className="p-4 rounded-lg border border-primary/30">Story Registry — Contribute family memories from the era</li>
+              <li className="p-4 rounded-lg border border-primary/30">Historical Context — Access essays, sources, and references</li>
+              <li className="p-4 rounded-lg border border-primary/30">Community Exhibitions — Curated on-chain shows and salons</li>
+              <li className="p-4 rounded-lg border border-primary/30">Education &amp; Resources — Classroom-ready tools and guides</li>
+              <li className="p-4 rounded-lg border border-primary/30">Open Data — Transparent traits and sourcing for researchers</li>
             </ul>
           </div>
 
           <div className="mt-12">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Your Heritage Awaits</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Your Story Awaits</h2>
             <p className="text-muted-foreground max-w-3xl">
-              Enter a world where every portrait preserves a moment in history, every bloodline carries forward a noble tradition, and every collector becomes
-              a guardian of cultural memory.
+              Find the portrait that reflects your story — and help preserve the everyday histories that shaped the era.
             </p>
             <div className="mt-6 flex gap-3">
               <Button asChild className="bg-primary text-primary-foreground hover:brightness-110">

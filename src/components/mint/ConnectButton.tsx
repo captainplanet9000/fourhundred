@@ -2,11 +2,13 @@
 
 import React from "react";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
+
 import { Button } from "@/components/ui/button";
 
 export const ConnectButton: React.FC = () => {
   const { isConnected, address } = useAccount();
   const { connectors, connect, status } = useConnect();
+
   const { disconnect } = useDisconnect();
 
   if (isConnected) {
@@ -20,15 +22,19 @@ export const ConnectButton: React.FC = () => {
     );
   }
 
-  const wc = connectors[0];
+  // Prefer a ready connector (e.g., Injected/MetaMask). Fallback to WalletConnect if present.
+  const preferred =
+    connectors.find((c) => (c as any).ready) ||
+    connectors.find((c) => c.id?.toLowerCase?.() === "walletconnect") ||
+    connectors[0];
 
   return (
     <Button
-      onClick={() => connect({ connector: wc })}
-      disabled={status === "pending"}
+      onClick={() => preferred && connect({ connector: preferred })}
+      disabled={status === "pending" || !preferred}
       className="bg-primary text-primary-foreground hover:brightness-110"
     >
-      {status === "pending" ? "Connecting..." : "Connect Wallet"}
+      {preferred ? (status === "pending" ? "Connecting..." : "Connect Wallet") : "No Wallet Found"}
     </Button>
   );
 };

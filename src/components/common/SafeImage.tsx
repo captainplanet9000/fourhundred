@@ -35,7 +35,7 @@ export const SafeImage: React.FC<Props> = ({
     <img
       src={fallbacks[idx]}
       alt={alt}
-      className={className}
+      className={`block ${className ?? ""}`}
       loading={loading}
       onError={handleError}
     />
