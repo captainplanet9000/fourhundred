@@ -21,6 +21,14 @@ const FaqPage: React.FC = () => {
                 membership pass into the 400 Club — an exclusive community that bridges old wealth and new wealth.
               </AccordionContent>
             </AccordionItem>
+            <AccordionItem value="generative">
+              <AccordionTrigger>What does "generative art" mean here?</AccordionTrigger>
+              <AccordionContent>
+                Generative art means the portraits are built from rules and traits instead of painted one-by-one from scratch. We define ingredients like
+                breed, clothing, setting, props, and lighting, then use generative models to propose many possible scenes. From there we curate and refine,
+                keeping only the strongest compositions, so every NFT you can mint is a one-of-one work created by a mix of system and artist.
+              </AccordionContent>
+            </AccordionItem>
             <AccordionItem value="supply">
               <AccordionTrigger>How many tokens are there?</AccordionTrigger>
               <AccordionContent>

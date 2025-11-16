@@ -26,6 +26,6 @@ describe("Home page", () => {
         </BrowserRouter>
       </HelmetProvider>
     );
-    expect(screen.getByText(/Every Member, A Unique Portrait/i)).toBeInTheDocument();
+    expect(screen.getByText(/Where Legacy Lives Forever/i)).toBeInTheDocument();
   });
 });

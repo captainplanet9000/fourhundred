@@ -52,14 +52,15 @@ const Index: React.FC = () => {
                   className="text-6xl md:text-8xl lg:text-9xl leading-none md:leading-[1.05] font-semibold tracking-tight bg-clip-text text-transparent"
                   style={{ backgroundImage: "var(--gilded-gradient)" }}
                 >
-                  Every Member, A Unique Portrait
+                  Where Legacy Lives Forever
                 </h1>
               </Reveal>
               <Reveal delayMs={60}>
                 <p className="mt-6 text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-5xl md:max-w-6xl mx-auto">
                   fourHundred is a generative art collection of 10,000 unique NFT portraits. Each token is your membership in the
                   400 Club — an exclusive circle where every member receives a one-of-one Gilded Age canine portrait linking old
-                  wealth and new wealth.
+                  wealth and new wealth. Traits like breed, setting, garments, objects, and light are combined algorithmically and
+                  then hand-curated so that no two portraits — or memberships — are the same.
                 </p>
               </Reveal>
               <Reveal delayMs={120}>
@@ -86,13 +87,14 @@ const Index: React.FC = () => {
               <Reveal>
                 <div className="grid md:grid-cols-2 gap-8 text-left text-muted-foreground">
                   <p>
-                    The Gilded Age is our lens; companionship is our subject. Generative systems compose each scene, centering the dog as a living proxy
-                    for the world around it — a terrier at the workbench, a shepherd by the hearth, a poodle mid-performance, a studio companion beside
-                    an easel, a well-kept lapdog in a salon.
+                    The Gilded Age is our lens; companionship is our subject. Generative systems start from a trait library — breeds, poses, garments,
+                    interiors, objects, and atmosphere — and compose scenes that center the dog as a living proxy for the world around it: a terrier at
+                    the workbench, a shepherd by the hearth, a poodle mid-performance, a studio companion beside an easel, a well-kept lapdog in a salon.
                   </p>
                   <p>
-                    We guide the models with period techniques and references — dress, interiors, tools, and city light — so every portrait feels true to its
-                    moment. These are portraits of relationship and place, rendered with care for both subject and scene.
+                    We guide the models with period techniques and references — dress, interiors, tools, and city light — and review every output by hand
+                    so each selected portrait feels true to its moment. These are portraits of relationship and place, rendered with care for both subject
+                    and scene.
                   </p>
                 </div>
               </Reveal>

@@ -32,6 +32,11 @@ const AboutPage: React.FC = () => {
               Generative systems compose every frame, but prompts, references, and selection are guided by hand so that no two portraits feel alike.
               Your token is both artwork and key — your permanent membership in the 400 Club.
             </p>
+            <p>
+              In practice, that means we define traits — breed, posture, garments, background, objects, and mood — and let generative models explore
+              countless combinations. From those outputs, we curate, refine prompts, and only keep portraits where the composition, lighting, and
+              storytelling feel strong enough to stand as a one-of-one work.
+            </p>
           </div>
 
           <div className="mt-12">
