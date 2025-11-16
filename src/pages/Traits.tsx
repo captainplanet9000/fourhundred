@@ -7,7 +7,6 @@ import { Section } from "@/components/layout/Section";
 import { TraitBarChart } from "@/components/traits/TraitBarChart";
 import { TraitFilterPills } from "@/components/traits/TraitFilterPills";
 import { Link } from "react-router-dom";
-import { TraitCatalog } from "@/components/traits/TraitCatalog";
 import { Button } from "@/components/ui/button";
 import { getTraitCounts } from "@/lib/breedsTraitsFromMd";
 
@@ -68,14 +67,6 @@ const TraitsPage: React.FC = () => {
               </p>
             </div>
           )}
-
-          <div className="mt-12">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Trait Catalog (Reference)</h2>
-            <p className="text-muted-foreground mb-6">
-              The canonical list of trait categories and values used across the collection. Actual observed values appear in the charts above.
-            </p>
-            <TraitCatalog />
-          </div>
         </Container>
       </Section>
     </>
