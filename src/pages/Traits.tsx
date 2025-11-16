@@ -6,34 +6,20 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { TraitBarChart } from "@/components/traits/TraitBarChart";
 import { TraitFilterPills } from "@/components/traits/TraitFilterPills";
-import { buildFacetCounts, loadAll, ALL_SUPPORTED_TRAITS } from "@/lib/metadata";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { TraitCatalog } from "@/components/traits/TraitCatalog";
 import { Button } from "@/components/ui/button";
+import { getTraitCounts } from "@/lib/breedsTraitsFromMd";
 
 const TraitsPage: React.FC = () => {
   const [facets, setFacets] = React.useState<Record<string, Record<string, number>>>({});
-  const [total, setTotal] = React.useState(0);
-  const navigate = useNavigate();
 
   React.useEffect(() => {
-    let mounted = true;
-    loadAll().then((all) => {
-      if (!mounted) return;
-      setFacets(buildFacetCounts(all));
-      setTotal(all.length);
-    });
-    return () => {
-      mounted = false;
-    };
+    const counts = getTraitCounts();
+    setFacets(counts);
   }, []);
 
-  const handleClick = (trait: string, value: string) => {
-    const q = encodeURIComponent(JSON.stringify({ [trait]: [value] }));
-    navigate(`/gallery?traits=${q}`);
-  };
-
-  const keys = ALL_SUPPORTED_TRAITS.filter((t) => facets[t]);
+  const keys = Object.keys(facets);
 
   return (
     <>
@@ -52,15 +38,18 @@ const TraitsPage: React.FC = () => {
 
           <TraitFilterPills filters={{}} />
           <div className="grid md:grid-cols-2 gap-8">
-            {keys.map((k) => (
-              <TraitBarChart
-                key={k}
-                title={k}
-                data={facets[k]}
-                total={total}
-                onClick={(v) => handleClick(k, v)}
-              />
-            ))}
+            {keys.map((k) => {
+              const data = facets[k];
+              const totalForCategory = Object.values(data).reduce((sum, n) => sum + n, 0);
+              return (
+                <TraitBarChart
+                  key={k}
+                  title={k}
+                  data={data}
+                  total={totalForCategory}
+                />
+              );
+            })}
           </div>
 
           <div className="mt-12">

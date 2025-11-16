@@ -5,26 +5,44 @@ import { Helmet } from "react-helmet-async";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { getAllBreeds } from "@/lib/breedsTraitsFromMd";
 
-const commonBreeds = [
-  "Golden Retriever","Labrador Retriever","German Shepherd","Bulldog (English)","French Bulldog","Beagle","Poodle (Standard)","Rottweiler","Yorkshire Terrier","Dachshund","Siberian Husky","Boxer","Great Dane","Pomeranian","Boston Terrier","Shih Tzu","Cocker Spaniel","Border Collie","Chihuahua","Pug","Australian Shepherd","Maltese","Mastiff","Cavalier King Charles Spaniel","English Springer Spaniel","Bernese Mountain Dog","Doberman Pinscher","Miniature Schnauzer","Chow Chow","Saint Bernard","Akita Inu","Newfoundland","Weimaraner","Collie","Samoyed","Basset Hound","Great Pyrenees","Brittany","Vizsla","Irish Setter","Bloodhound","Bull Terrier","Whippet","Chinese Shar-Pei",
-];
+const allBreeds = getAllBreeds();
 
-const uncommonBreeds = [
-  "Afghan Hound","Alaskan Malamute","Airedale Terrier","Borzoi","Greyhound","Irish Wolfhound","Scottish Deerhound","Rhodesian Ridgeback","Saluki","Standard Schnauzer","Giant Schnauzer","Portuguese Water Dog","Leonberger","Anatolian Shepherd Dog","Cane Corso","Bullmastiff","German Shorthaired Pointer","Gordon Setter","English Setter","Pointer","Chesapeake Bay Retriever","Flat-Coated Retriever","Curly-Coated Retriever","Nova Scotia Duck Tolling Retriever","Wirehaired Pointing Griffon","Spinone Italiano","Welsh Springer Spaniel","Irish Water Spaniel","American Water Spaniel","Boykin Spaniel","Clumber Spaniel","Sussex Spaniel","Norwegian Elkhound","Keeshond","Finnish Spitz","Schipperke","Belgian Malinois","Belgian Tervuren","Belgian Sheepdog","Bouvier des Flandres","Old English Sheepdog","Bearded Collie","Polish Lowland Sheepdog","Puli","Komondor","Kuvasz","Tibetan Mastiff","Tibetan Terrier","Lhasa Apso","Shiba Inu","Basenji","Pharaoh Hound","Ibizan Hound","American Foxhound","English Foxhound","Treeing Walker Coonhound","Black and Tan Coonhound",
-];
+type TierKey = "common" | "uncommon" | "rare" | "epic" | "legendary";
 
-const rareBreeds = [
-  "Xoloitzcuintli (Mexican Hairless)","Chinese Crested","Peruvian Inca Orchid","Thai Ridgeback","Azawakh","Sloughi","Cirneco dell'Etna","Otterhound","Petit Basset Griffon Vendeen","Grand Basset Griffon Vendeen","Briquet Griffon Vendeen","Harrier","Plott","Redbone Coonhound","Bluetick Coonhound","American English Coonhound","Norwegian Lundehund","Swedish Vallhund","Icelandic Sheepdog","Finnish Lapphund","Norwegian Buhund","Karelian Bear Dog","East Siberian Laika","West Siberian Laika","Russian-European Laika","Yakutian Laika","Greenland Dog","Canadian Eskimo Dog","Chinook","Carolina Dog","New Guinea Singing Dog","Dingo","Telomian","Kai Ken","Kishu Ken","Shikoku","Hokkaido","Jindo","Pungsan Dog","Donggyeongi","Nureongi","Phu Quoc Ridgeback","Hmong Dog","Catalburun","Turkish Pointer","Braque du Bourbonnais","Braque Francais","Spanish Water Dog","Portuguese Podengo","Podenco Canario","Podenco Ibicenco","Lagotto Romagnolo","Barbet","Russian Toy","Prague Ratter","Russian Tsvetnaya Bolonka",
-];
+const tierLabels: Record<TierKey, string> = {
+  common: "Common Breeds",
+  uncommon: "Uncommon Breeds",
+  rare: "Rare Breeds",
+  epic: "Epic Breeds",
+  legendary: "Legendary Breeds",
+};
 
-const epicBreeds = [
-  "Lundehund","Telomian","New Guinea Singing Dog","Carolina Dog","Dingo","Basenji","Azawakh","Catalburun","Mudi","Pumi","Spanish Mastiff","Pyrenean Mastiff","Neapolitan Mastiff","Fila Brasileiro","Dogo Argentino","Perro de Presa Canario","Alano Espanol","Ca de Bou","Caucasian Shepherd Dog","Central Asian Shepherd Dog","Kangal Dog","Akbash Dog","Tornjak","Sarplaninac","Karakachan Dog","Bulgarian Shepherd Dog","Carpathian Shepherd Dog","Mioritic Shepherd Dog","Bucovina Shepherd Dog","Estrela Mountain Dog","Castro Laboreiro Dog","Rafeiro do Alentejo","Cao da Serra da Estrela","Cao de Agua Portugues","Cao de Castro Laboreiro","Perdigueiro Portugues","Pointer Portugues","Perdiguero de Burgos","Pachon Navarro","Villano de Las Encartaciones","Galgo Espanol","Podenco Andaluz","Maneto","Ratonero Bodeguero Andaluz","Perro de Pastor Mallorquin","Ca Rater Mallorqui","Gos d'Atura Catala","Perro de Agua Espanol","Mastín del Pirineo","Mastín Espanol","Alano Espanol",
-];
+function getTierForCount(count: number): TierKey {
+  if (count <= 4) return "legendary";
+  if (count <= 19) return "epic";
+  if (count <= 49) return "rare";
+  if (count <= 79) return "uncommon";
+  return "common";
+}
 
-const legendaryBreeds = [
-  "Tesem (Extinct Egyptian)","Salish Wool Dog (Extinct)","Hawaiian Poi Dog (Extinct)","Turnspit Dog (Extinct)","Talbot Hound (Extinct)","St. John's Water Dog (Extinct)","Molossus (Ancient Extinct)","Alaunt (Medieval Extinct)","Cuban Bloodhound (Extinct)","Paisley Terrier (Extinct)","Toy Trawler Spaniel (Extinct)","English Water Spaniel (Extinct)","Blue Paul Terrier (Extinct)","Cordoba Fighting Dog (Extinct)","Moscow Water Dog (Extinct)","Sakhalin Husky (Nearly Extinct)","Lundehund (Ultra Rare)","Mudi (Ultra Rare)","Lagotto Romagnolo (Ultra Rare)","Xolo (Ultra Rare Ancient)","Basenji (Ancient Rare)","New Guinea Singing Dog (Wild Rare)","Carolina Dog (Rare Wild)","Canaan Dog (Ancient)","Thai Ridgeback (Ultra Rare)","Phu Quoc Ridgeback (Ultra Rare)",
-];
+const tieredBreeds: Record<TierKey, string[]> = {
+  common: [],
+  uncommon: [],
+  rare: [],
+  epic: [],
+  legendary: [],
+};
+
+for (const b of allBreeds) {
+  const tier = getTierForCount(b.count);
+  tieredBreeds[tier].push(b.name);
+}
+
+for (const key of Object.keys(tieredBreeds) as TierKey[]) {
+  tieredBreeds[key].sort((a, b) => a.localeCompare(b));
+}
 
 const BreedsPage: React.FC = () => {
   return (
@@ -40,11 +58,11 @@ const BreedsPage: React.FC = () => {
 
           <Accordion type="multiple" className="w-full">
             <AccordionItem value="common">
-              <AccordionTrigger>Common Breeds</AccordionTrigger>
+              <AccordionTrigger>{tierLabels.common}</AccordionTrigger>
               <AccordionContent>
-                <p className="text-sm text-muted-foreground mb-3">Most recognizable and popular breeds with high market appeal:</p>
+                <p className="text-sm text-muted-foreground mb-3">Most recognizable and frequently appearing breeds in the collection:</p>
                 <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
-                  {commonBreeds.map((b) => (
+                  {tieredBreeds.common.map((b) => (
                     <li key={b} className="text-foreground/90">{b}</li>
                   ))}
                 </ul>
@@ -52,11 +70,11 @@ const BreedsPage: React.FC = () => {
             </AccordionItem>
 
             <AccordionItem value="uncommon">
-              <AccordionTrigger>Uncommon Breeds</AccordionTrigger>
+              <AccordionTrigger>{tierLabels.uncommon}</AccordionTrigger>
               <AccordionContent>
-                <p className="text-sm text-muted-foreground mb-3">Popular among enthusiasts but less mainstream:</p>
+                <p className="text-sm text-muted-foreground mb-3">Breeds that appear less frequently but remain well represented:</p>
                 <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
-                  {uncommonBreeds.map((b) => (
+                  {tieredBreeds.uncommon.map((b) => (
                     <li key={b} className="text-foreground/90">{b}</li>
                   ))}
                 </ul>
@@ -64,11 +82,11 @@ const BreedsPage: React.FC = () => {
             </AccordionItem>
 
             <AccordionItem value="rare">
-              <AccordionTrigger>Rare Breeds</AccordionTrigger>
+              <AccordionTrigger>{tierLabels.rare}</AccordionTrigger>
               <AccordionContent>
-                <p className="text-sm text-muted-foreground mb-3">Lesser-known but distinctive breeds with unique characteristics:</p>
+                <p className="text-sm text-muted-foreground mb-3">Breeds with relatively few portraits in the collection:</p>
                 <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
-                  {rareBreeds.map((b) => (
+                  {tieredBreeds.rare.map((b) => (
                     <li key={b} className="text-foreground/90">{b}</li>
                   ))}
                 </ul>
@@ -76,11 +94,11 @@ const BreedsPage: React.FC = () => {
             </AccordionItem>
 
             <AccordionItem value="epic">
-              <AccordionTrigger>Epic Breeds</AccordionTrigger>
+              <AccordionTrigger>{tierLabels.epic}</AccordionTrigger>
               <AccordionContent>
-                <p className="text-sm text-muted-foreground mb-3">Extremely uncommon or regionally specific breeds:</p>
+                <p className="text-sm text-muted-foreground mb-3">Extremely uncommon or regionally specific breeds with very limited appearances:</p>
                 <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
-                  {epicBreeds.map((b) => (
+                  {tieredBreeds.epic.map((b) => (
                     <li key={b} className="text-foreground/90">{b}</li>
                   ))}
                 </ul>
@@ -88,11 +106,11 @@ const BreedsPage: React.FC = () => {
             </AccordionItem>
 
             <AccordionItem value="legendary">
-              <AccordionTrigger>Legendary Breeds</AccordionTrigger>
+              <AccordionTrigger>{tierLabels.legendary}</AccordionTrigger>
               <AccordionContent>
-                <p className="text-sm text-muted-foreground mb-3">Extinct breeds and ultra-rare living breeds with maximum collectibility:</p>
+                <p className="text-sm text-muted-foreground mb-3">Extinct, near-lost, or ultra-rare breeds that appear only a handful of times:</p>
                 <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
-                  {legendaryBreeds.map((b) => (
+                  {tieredBreeds.legendary.map((b) => (
                     <li key={b} className="text-foreground/90">{b}</li>
                   ))}
                 </ul>
