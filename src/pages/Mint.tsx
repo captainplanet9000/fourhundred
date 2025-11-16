@@ -15,12 +15,12 @@ const MintPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Mint — 400</title>
-        <meta name="description" content="Mint your 400 portrait." />
+        <title>Mint — 400 Club</title>
+        <meta name="description" content="Mint your 400 Club membership portrait." />
       </Helmet>
       <Section>
         <Container>
-          <h1 className="text-3xl md:text-5xl font-semibold mb-6">Mint</h1>
+          <h1 className="text-3xl md:text-5xl font-semibold mb-6">Mint Your Membership</h1>
 
           <div className="mb-6 flex items-center gap-4 flex-wrap">
             <ConnectButton />

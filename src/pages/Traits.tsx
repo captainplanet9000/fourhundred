@@ -30,7 +30,10 @@ const TraitsPage: React.FC = () => {
     <>
       <Helmet>
         <title>Traits Explorer — 400</title>
-        <meta name="description" content="Explore trait distributions across the 400 collection." />
+        <meta
+          name="description"
+          content="Explore generative trait distributions across the 400 collection and see how each unique portrait is composed."
+        />
       </Helmet>
       <Section>
         <Container>

@@ -8,10 +8,10 @@ export const Footer: React.FC = () => {
       <Container className="py-8 grid md:grid-cols-3 gap-6 text-sm">
         <div>
           <div className="font-semibold text-lg">
-            400 — Every Story of the Gilded Age
+            400 Club — Generative Portrait Membership
           </div>
           <p className="text-muted-foreground mt-2">
-            10,000 on-chain portraits honoring companions across every walk of life, 1870–1900.
+            A generative collection of 10,000 unique on-chain portraits. Each NFT is a one-of-one membership in the 400 Club.
           </p>
         </div>
         <div className="space-y-2">

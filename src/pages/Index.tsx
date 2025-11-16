@@ -19,12 +19,12 @@ const Index: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>fourHundred — Gilded Age Canine Portraits</title>
+        <title>fourHundred — The 400 Club of Generative Portraits</title>
         <meta
           name="description"
-          content="A curated collection of 10,000 unique Gilded Age dog portraits on the blockchain"
+          content="A generative collection of 10,000 unique NFT portraits. Each token is your membership in an exclusive 400 Club, bridging old wealth and new wealth."
         />
-        <meta property="og:title" content="fourHundred — Gilded Age Canine Portraits" />
+        <meta property="og:title" content="fourHundred — The 400 Club of Generative Portraits" />
       </Helmet>
 
       <div className="relative overflow-hidden min-h-screen bg-black">
@@ -52,14 +52,14 @@ const Index: React.FC = () => {
                   className="text-6xl md:text-8xl lg:text-9xl leading-none md:leading-[1.05] font-semibold tracking-tight bg-clip-text text-transparent"
                   style={{ backgroundImage: "var(--gilded-gradient)" }}
                 >
-                  Where Legacy Lives Forever
+                  Every Member, A Unique Portrait
                 </h1>
               </Reveal>
               <Reveal delayMs={60}>
                 <p className="mt-6 text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-5xl md:max-w-6xl mx-auto">
-                  Step into a transformative era. 400 presents 10,000 portraits that place companions at the heart of daily life —
-                  from workbenches and hearths to studios, stages, and salons. Each piece is a story of loyalty, character,
-                  and the shared moments that define a life together.
+                  fourHundred is a generative art collection of 10,000 unique NFT portraits. Each token is your membership in the
+                  400 Club — an exclusive circle where every member receives a one-of-one Gilded Age canine portrait linking old
+                  wealth and new wealth.
                 </p>
               </Reveal>
               <Reveal delayMs={120}>
@@ -78,18 +78,21 @@ const Index: React.FC = () => {
 
       <OrnateDivider />
 
-          <Section title="Art meets Heritage" subtitle="Portraits of companionship, craft, and lived scenes of the era.">
+          <Section
+            title="Art Meets Generative Heritage"
+            subtitle="A generative portrait series grounded in companionship, craft, and lived scenes of the era."
+          >
             <Container>
               <Reveal>
                 <div className="grid md:grid-cols-2 gap-8 text-left text-muted-foreground">
                   <p>
-                    The Gilded Age is our lens; companionship is our subject. Each portrait centers the dog as a living proxy for the world around it —
-                    a terrier at the workbench, a shepherd by the hearth, a poodle mid‑performance, a studio companion beside an easel, a well‑kept lapdog in a salon.
-                    The setting reveals the owner’s life; the companion carries the story.
+                    The Gilded Age is our lens; companionship is our subject. Generative systems compose each scene, centering the dog as a living proxy
+                    for the world around it — a terrier at the workbench, a shepherd by the hearth, a poodle mid-performance, a studio companion beside
+                    an easel, a well-kept lapdog in a salon.
                   </p>
                   <p>
-                    We study period techniques and references — dress, interiors, tools, and city light — so each painting feels true to its moment.
-                    These are portraits of relationship and place, rendered with care for both subject and scene.
+                    We guide the models with period techniques and references — dress, interiors, tools, and city light — so every portrait feels true to its
+                    moment. These are portraits of relationship and place, rendered with care for both subject and scene.
                   </p>
                 </div>
               </Reveal>
@@ -98,16 +101,19 @@ const Index: React.FC = () => {
 
           <GradientDivider />
 
-          <Section title="Collection Highlights" subtitle="Stories across a changing era — researched, rendered, and remembered.">
+          <Section
+            title="Collection Highlights"
+            subtitle="A generative NFT collection where every membership comes with a one-of-one portrait."
+          >
             <Container>
               <Reveal>
                 <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
                   {[
-                    "10,000 Individual Stories",
-                    "400+ Breeds Representing Every Social Class",
-                    "5 Social Tiers: Working Families to Elite Society",
-                    "Authentic Period Details",
-                    "Museum-Quality Artistry",
+                    "10,000 one-of-one generative portraits",
+                    "226 catalogued breeds and variations",
+                    "Each NFT doubles as 400 Club membership",
+                    "Old wealth and new wealth, reimagined on-chain",
+                    "Artist-directed prompts, museum-quality curation",
                   ].map((item) => (
                     <li key={item} className="p-4 rounded-lg border border-primary/30">{item}</li>
                   ))}
@@ -164,31 +170,22 @@ const Index: React.FC = () => {
 
           <GradientDivider />
 
-          <Section title="Across Every Walk of Life" subtitle="Five social tiers that reflect how people lived — not what they were worth.">
+          <Section
+            title="An Exclusive Club, Across Every Walk of Life"
+            subtitle="Old wealth, new wealth, and every story in between — all within a single collection."
+          >
             <Container>
               <Reveal>
-                <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
-                  <li className="p-4 rounded-lg border border-primary/30">
-                    <div className="font-medium">Working Families (45%)</div>
-                    <p className="text-sm text-muted-foreground">Factory workers, farmers, shopkeepers, and craftspeople — loyal companions who shared everyday struggles and joys.</p>
-                  </li>
-                  <li className="p-4 rounded-lg border border-primary/30">
-                    <div className="font-medium">Rising Middle Class (30%)</div>
-                    <p className="text-sm text-muted-foreground">Teachers, clerks, tradespeople, and small business owners building stability and aspiration.</p>
-                  </li>
-                  <li className="p-4 rounded-lg border border-primary/30">
-                    <div className="font-medium">Skilled & Specialized (18%)</div>
-                    <p className="text-sm text-muted-foreground">Professionals, performers, and trained working dogs whose roles demanded expertise.</p>
-                  </li>
-                  <li className="p-4 rounded-lg border border-primary/30">
-                    <div className="font-medium">Cultural Elite (6%)</div>
-                    <p className="text-sm text-muted-foreground">Patrons, artists, and civic leaders — well-appointed companions of high society.</p>
-                  </li>
-                  <li className="p-4 rounded-lg border border-primary/30">
-                    <div className="font-medium">Mythic & Historic (1%)</div>
-                    <p className="text-sm text-muted-foreground">Enduring symbols, near-lost breeds, and remarkable stories preserved in the archive.</p>
-                  </li>
-                </ul>
+                <div className="space-y-4 text-left text-muted-foreground max-w-4xl">
+                  <p>
+                    Historically, the "400" was a rumored list of names that defined elite society. The 400 Club reimagines that idea on-chain: membership
+                    is open, but the portraits still feel like they belong on the walls of private salons, workshops, and brownstones.
+                  </p>
+                  <p>
+                    Each NFT balances old wealth and new wealth — tailored dress, interiors, and period details paired with on-chain traits and provenance.
+                    Whether your story is working-class hustle or inherited luxury, your companion holds it in frame.
+                  </p>
+                </div>
               </Reveal>
             </Container>
           </Section>

@@ -15,15 +15,17 @@ const FaqPage: React.FC = () => {
           <h1 className="text-3xl md:text-5xl font-semibold mb-6">Frequently Asked Questions</h1>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="what">
-              <AccordionTrigger>What is 400?</AccordionTrigger>
+              <AccordionTrigger>What is the 400 Club?</AccordionTrigger>
               <AccordionContent>
-                400 is a collection of 10,000 on-chain portraits that tell the full story of Gilded Age America (1870–1900) — companions beside working families,
-                rising classes, artists, immigrants, and high society. Each piece combines museum-grade craft with archival research.
+                400 is a generative art collection of 10,000 unique NFT portraits. Each token is a one-of-one Gilded Age–inspired canine portrait and your
+                membership pass into the 400 Club — an exclusive community that bridges old wealth and new wealth.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="supply">
               <AccordionTrigger>How many tokens are there?</AccordionTrigger>
-              <AccordionContent>Exactly 10,000 tokens, each unique.</AccordionContent>
+              <AccordionContent>
+                Exactly 10,000 NFTs, each unique and non-fungible. No two portraits share the same combination of traits and composition.
+              </AccordionContent>
             </AccordionItem>
             <AccordionItem value="rights">
               <AccordionTrigger>What are the licensing terms?</AccordionTrigger>

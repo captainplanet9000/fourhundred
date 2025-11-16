@@ -49,12 +49,16 @@ const BreedsPage: React.FC = () => {
     <>
       <Helmet>
         <title>Breeds — 400</title>
-        <meta name="description" content="Complete breed lists by rarity tier for the 400 collection." />
+        <meta name="description" content="Browse all 226 catalogued breeds in the 400 collection, grouped by rarity tier." />
       </Helmet>
 
       <Section>
         <Container>
           <h1 className="text-3xl md:text-5xl font-semibold mb-6">Complete Breed Lists by Rarity Tier</h1>
+          <p className="text-muted-foreground mb-6 max-w-2xl">
+            The collection includes 226 distinct breeds. Rarity tiers reflect how often each one appears across the 10,000 generative portraits
+            that make up the 400 Club.
+          </p>
 
           <Accordion type="multiple" className="w-full">
             <AccordionItem value="common">

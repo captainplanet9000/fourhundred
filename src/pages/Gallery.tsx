@@ -104,7 +104,10 @@ const GalleryPage: React.FC = () => {
     <>
       <Helmet>
         <title>Gallery — 400</title>
-        <meta name="description" content="Explore the 400 collection — portraits across every walk of Gilded Age America." />
+        <meta
+          name="description"
+          content="Explore the 400 Club — browse unique generative portraits and discover your membership NFT."
+        />
       </Helmet>
       <Section>
         <Container>
