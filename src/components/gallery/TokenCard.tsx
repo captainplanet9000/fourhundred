@@ -11,11 +11,14 @@ export const TokenCard: React.FC<{ item: NFTMetadata }> = ({ item }) => {
   const shown = item.attributes.filter((a) => keyTraits.includes(a.trait_type));
 
   return (
-    <Link to={`/token/${item.tokenId}`} aria-label={`View token #${item.tokenId}`}>
+    <Link
+      to={`/token/${item.tokenId}`}
+      aria-label={item.name ? `View ${item.name}` : `View Member #${item.tokenId}`}
+    >
       <Card className="relative overflow-hidden hover:shadow-lg transition border border-primary/30 hover:border-primary/60">
         <CardHeader className="pb-2">
           <CardTitle className="text-base font-medium flex items-center justify-between">
-            <span>#{item.tokenId}</span>
+            <span>{item.name ?? `Member #${item.tokenId}`}</span>
             {item.rarity_rank !== undefined && (
               <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
                 Rank {item.rarity_rank}

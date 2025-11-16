@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet-async";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { loadToken, loadManifest } from "@/lib/metadata";
+import { CURATED_ITEMS, getCuratedItemByTokenId } from "@/lib/curated-gallery";
 import { AttributeList } from "@/components/token/AttributeList";
 import { RaritySummary } from "@/components/token/RaritySummary";
 import { SocialShare } from "@/components/token/SocialShare";
@@ -18,6 +19,10 @@ const TokenPage: React.FC = () => {
   const [manifest, setManifest] = React.useState<number[]>([]);
   const [item, setItem] = React.useState<any>(null);
   const navigate = useNavigate();
+  const curatedIds = React.useMemo(
+    () => CURATED_ITEMS.map((i) => i.tokenId).sort((a, b) => a - b),
+    [],
+  );
 
   React.useEffect(() => {
     let mounted = true;
@@ -30,7 +35,12 @@ const TokenPage: React.FC = () => {
   React.useEffect(() => {
     let mounted = true;
     if (Number.isFinite(tokenId)) {
-      loadToken(tokenId).then((res) => mounted && setItem(res));
+      const curated = getCuratedItemByTokenId(tokenId);
+      if (curated) {
+        if (mounted) setItem(curated);
+      } else {
+        loadToken(tokenId).then((res) => mounted && setItem(res));
+      }
     }
     return () => {
       mounted = false;
@@ -39,9 +49,19 @@ const TokenPage: React.FC = () => {
 
   if (!Number.isFinite(tokenId)) return null;
 
-  const idx = manifest.indexOf(tokenId);
-  const prevId = idx > 0 ? manifest[idx - 1] : undefined;
-  const nextId = idx >= 0 && idx < manifest.length - 1 ? manifest[idx + 1] : undefined;
+  const isCurated = Number.isFinite(tokenId) && curatedIds.includes(tokenId);
+  let prevId: number | undefined;
+  let nextId: number | undefined;
+
+  if (isCurated) {
+    const idx = curatedIds.indexOf(tokenId);
+    if (idx > 0) prevId = curatedIds[idx - 1];
+    if (idx >= 0 && idx < curatedIds.length - 1) nextId = curatedIds[idx + 1];
+  } else {
+    const idx = manifest.indexOf(tokenId);
+    if (idx > 0) prevId = manifest[idx - 1];
+    if (idx >= 0 && idx < manifest.length - 1) nextId = manifest[idx + 1];
+  }
 
   const name = item?.name ?? `Token #${tokenId}`;
   const absoluteUrl =
