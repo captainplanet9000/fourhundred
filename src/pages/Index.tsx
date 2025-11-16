@@ -7,27 +7,14 @@ import { Section } from "@/components/layout/Section";
 import { GradientDivider } from "@/components/layout/GradientDivider";
 import { OrnateDivider } from "@/components/layout/OrnateDivider";
 import { Button } from "@/components/ui/button";
-import { TokenCard } from "@/components/gallery/TokenCard";
-import { loadAll } from "@/lib/metadata";
+import { SafeImage } from "@/components/common/SafeImage";
 import { Link } from "react-router-dom";
 // fourHundred components
 import { Reveal } from "@/components/common/Reveal";
 import { useParallax } from "@/hooks/use-parallax";
 
 const Index: React.FC = () => {
-  const [featured, setFeatured] = React.useState<any[]>([]);
   const parallax = useParallax(0.15);
-
-  React.useEffect(() => {
-    let mounted = true;
-    loadAll().then((all) => {
-      if (!mounted) return;
-      setFeatured(all.slice(0, 4));
-    });
-    return () => {
-      mounted = false;
-    };
-  }, []);
 
   return (
     <>
@@ -135,8 +122,22 @@ const Index: React.FC = () => {
             <Container>
               <Reveal>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {featured.map((it) => (
-                    <TokenCard key={it.tokenId} item={it} />
+                  {[
+                    "ComfyUI_00038__1.png",
+                    "ComfyUI_00058_.png",
+                    "ComfyUI_00060_.png",
+                    "ComfyUI_00075__1.png",
+                  ].map((file) => (
+                    <div key={file} className="relative overflow-hidden rounded-md border border-primary/40 bg-black/40">
+                      <div className="relative w-full aspect-square">
+                        <SafeImage
+                          src={`/images/collection/${file}`}
+                          alt="Featured fourHundred portrait"
+                          className="absolute inset-0 h-full w-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
                   ))}
                 </div>
               </Reveal>
