@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { WagmiConfig, createConfig, http } from "wagmi";
+import { WagmiProvider, createConfig, http } from "wagmi";
 import type { Chain } from "viem";
 import { mainnet, base, sepolia, baseSepolia } from "viem/chains";
 import { walletConnect, injected } from "wagmi/connectors";
@@ -68,5 +68,5 @@ const config = createConfig({
 type Props = { children: React.ReactNode };
 
 export const Web3Provider: React.FC<Props> = ({ children }) => {
-  return <WagmiConfig config={config}>{children}</WagmiConfig>;
+  return <WagmiProvider config={config}>{children}</WagmiProvider>;
 };

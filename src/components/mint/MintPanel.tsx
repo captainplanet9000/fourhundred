@@ -17,22 +17,10 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { parseEther } from "viem";
 
-const DEFAULT_ABI = [
-  {
-    inputs: [{ internalType: "uint256", name: "quantity", type: "uint256" }],
-    name: "mint",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "totalSupply",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-] as const;
+import FourHundredABI from "@/lib/abi/FourHundred.json";
+
+// Replaced DEFAULT_ABI with import
+const contractAbi = FourHundredABI.abi;
 
 export const MintPanel: React.FC<{
   priceEth?: number;
@@ -51,7 +39,7 @@ export const MintPanel: React.FC<{
     [config, chainId],
   );
 
-  const contractAbi = useMemo(() => abi ?? DEFAULT_ABI, [abi]);
+  const contractAbi = useMemo(() => abi ?? FourHundredABI.abi, [abi]);
 
   const { data: hash, isPending, writeContract, error } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({ hash });
@@ -72,7 +60,7 @@ export const MintPanel: React.FC<{
     writeContract({
       address: contractAddress as `0x${string}`,
       abi: contractAbi,
-      functionName: "mint",
+      functionName: "mintPublic",
       args: [BigInt(qty)] as const,
       value: parseEther(priceEth.toString()) * BigInt(qty),
       account: address as `0x${string}`,
