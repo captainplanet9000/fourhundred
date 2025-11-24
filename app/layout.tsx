@@ -1,0 +1,20 @@
+import './globals.css'
+import { Providers } from '@/components/Providers'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'fourHundred — Gilded Age Dogs',
+  description: '10,000 Gilded Age dog portraits — mint now',
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className="min-h-screen bg-velvet">
+        <Providers>
+          {children}
+        </Providers>
+      </body>
+    </html>
+  )
+}
