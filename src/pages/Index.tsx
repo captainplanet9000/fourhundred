@@ -21,12 +21,12 @@ const Index: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>fourHundred — Infinite Elegance. Zero Duplicates.</title>
+        <title>fourHundred — Where Legacy Lives Forever</title>
         <meta
           name="description"
           content="Witness the first generative collection dedicated to the high society of the canine world. 9,400 unique, algorithmically curated masterpieces."
         />
-        <meta property="og:title" content="fourHundred — Infinite Elegance. Zero Duplicates." />
+        <meta property="og:title" content="fourHundred — Where Legacy Lives Forever" />
       </Helmet>
 
       <div className="relative overflow-hidden min-h-screen bg-black">
@@ -58,8 +58,8 @@ const Index: React.FC = () => {
                 className="text-6xl md:text-8xl lg:text-9xl leading-none md:leading-[1.05] font-semibold tracking-tight bg-clip-text text-transparent"
                 style={{ backgroundImage: "var(--gilded-gradient)" }}
               >
-                Infinite Elegance.<br />
-                <span className="text-white">Zero Duplicates.</span>
+                Where Legacy<br />
+                <span className="text-white">Lives Forever.</span>
               </h1>
             </motion.div>
 

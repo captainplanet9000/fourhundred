@@ -114,8 +114,8 @@ const TokenPage: React.FC = () => {
             />
             <div className="space-y-6">
               <div>
-                <h1 className="text-3xl md:text-5xl font-semibold">{name}</h1>
-                <p className="text-muted-foreground mt-2">Token #{tokenId}</p>
+                <h1 className="text-3xl md:text-5xl font-semibold">400 Club Member</h1>
+                <p className="text-muted-foreground mt-2">Your unique portrait will be revealed after mint</p>
               </div>
 
               <AttributeList attributes={item?.attributes ?? []} />
