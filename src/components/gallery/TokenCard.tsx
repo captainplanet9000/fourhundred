@@ -17,12 +17,12 @@ export const TokenCard: React.FC<{ item: NFTMetadata }> = ({ item }) => {
     >
       <Card className="relative overflow-hidden hover:shadow-lg transition border border-primary/30 hover:border-primary/60">
         <CardContent className="p-0">
-          <div className="relative w-full aspect-square">
+          <div className="relative w-full aspect-square overflow-hidden bg-neutral-900">
             <SafeImage
               src={item.image || item.image_url}
               tokenId={item.tokenId}
               alt={item.name}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="w-full h-full object-cover"
               loading="lazy"
             />
             <FrameCorners />
