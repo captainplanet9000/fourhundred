@@ -23,22 +23,27 @@ Scheduler: Normal or Karras
 
 **Positive Prompt:**
 ```
-masterpiece, best quality, oil painting style, 
-burgundy velvet curtains slowly parting from center, 
-thick visible brushstrokes on fabric, golden light emerging from gap,
-ornate gold tassels and braided cord, dramatic chiaroscuro lighting,
-warm amber candlelight rays, dust particles floating in light beams,
-John Singer Sargent painting technique, impasto texture on velvet folds,
-dark background, Victorian aesthetic, museum quality,
-elegant slow motion, cinematic lighting
+an oil painting on canvas coming to life, traditional oil painting, 
+thick impasto brushstrokes, visible paint texture throughout,
+burgundy velvet curtains slowly parting from center,
+heavy palette knife strokes creating fabric folds,
+cracked aged varnish surface, canvas weave texture visible,
+golden light painted with yellow ochre and cadmium pigments,
+ornate gold leaf tassels, dramatic Rembrandt chiaroscuro,
+warm umber and sienna undertones, painted dust motes,
+classical museum painting aesthetic, gilt baroque frame edge visible,
+the painting breathes and moves, brushstrokes shimmer with life,
+19th century academic art style, slow dreamlike motion
 ```
 
 **Negative Prompt:**
 ```
-worst quality, low quality, blurry, distorted, deformed, 
-ugly, bad anatomy, watermark, signature, text, logo,
-photorealistic, 3D render, CGI, modern, neon, bright colors,
-cartoon, anime, illustration, flat lighting, overexposed
+photorealistic, photograph, photo, realistic, 3D render, CGI, 
+digital art, smooth gradients, clean lines, sharp edges,
+video footage, film grain, camera movement, lens flare,
+plastic, glossy, modern, contemporary, minimalist,
+cartoon, anime, vector art, flat colors, cel shading,
+worst quality, low quality, blurry, watermark, text
 ```
 
 ---
@@ -47,21 +52,27 @@ cartoon, anime, illustration, flat lighting, overexposed
 
 **Positive Prompt:**
 ```
-masterpiece, best quality, classical oil painting animation,
-dark velvet drape being drawn aside, deep burgundy and umber tones,
-visible canvas texture, heavy impasto paint creating fabric folds,
-golden highlight on velvet pile, antique gold fringe trim,
-warm ochre light flooding through opening, Rembrandt lighting style,
-Old Masters technique, rich varnished finish, painted dust motes,
-dramatic shadows, museum gallery atmosphere, slow elegant movement
+a living oil painting, painted on stretched linen canvas,
+dark velvet drape being drawn aside in paint strokes,
+deep burnt umber and alizarin crimson pigments,
+visible woven canvas texture beneath paint layers,
+heavy impasto creating three-dimensional fabric folds,
+golden highlights in Naples yellow and gold ochre,
+antique craquelure cracks in aged oil paint surface,
+Rembrandt van Rijn technique, glazed varnish sheen,
+Old Masters museum piece coming alive,
+raw sienna and Van Dyke brown shadows,
+the painted scene slowly animates, painterly motion
 ```
 
 **Negative Prompt:**
 ```
-worst quality, low quality, blurry, distorted, deformed,
-ugly, bad anatomy, watermark, signature, text, logo,
-photorealistic, CGI, digital art, smooth gradients, plastic,
-cartoon, anime, modern style, harsh lighting, overexposed
+photorealistic, photograph, photo, realistic, 3D render, CGI, 
+digital art, smooth gradients, clean lines, sharp edges,
+video footage, film grain, camera movement, lens flare,
+plastic, glossy, modern, contemporary, minimalist,
+cartoon, anime, vector art, flat colors, cel shading,
+worst quality, low quality, blurry, watermark, text
 ```
 
 ---
@@ -70,22 +81,27 @@ cartoon, anime, modern style, harsh lighting, overexposed
 
 **Positive Prompt:**
 ```
-masterpiece, best quality, 19th century academic oil painting style,
-ornate Victorian theater curtains sweeping open dramatically,
-deep wine-red velvet with visible brushwork texture,
-elaborate gold embroidery and massive painted tassels,
-dramatic stage lighting as golden rays piercing through,
-William Bouguereau painting technique, proscenium arch frame visible,
-painted shadows in fabric folds, floating gold dust particles,
-grand theatrical reveal, warm amber atmosphere, slow majestic motion
+a grand oil painting hanging in a museum coming to life,
+19th century French Academic painting style,
+ornate theater curtains rendered in cadmium red and carmine,
+elaborate brushwork visible in every fold and drape,
+gold embroidery painted with actual gold leaf pigment,
+massive tassels in thick impasto yellow ochre,
+titanium white and cadmium yellow light rays,
+William-Adolphe Bouguereau technique, proscenium arch in frame,
+painted on fine Belgian linen canvas, visible weave,
+cracked antique varnish, museum lighting on paint surface,
+the masterwork slowly breathes, oil paint texture throughout
 ```
 
 **Negative Prompt:**
 ```
-worst quality, low quality, blurry, distorted, deformed,
-ugly, bad anatomy, watermark, signature, text, logo,
-photorealistic, 3D render, video game, contemporary style,
-cartoon, anime, flat colors, harsh shadows, overexposed
+photorealistic, photograph, photo, realistic, 3D render, CGI, 
+digital art, smooth gradients, clean lines, sharp edges,
+video footage, film grain, camera movement, lens flare,
+plastic, glossy, modern, contemporary, minimalist,
+cartoon, anime, vector art, flat colors, cel shading,
+worst quality, low quality, blurry, watermark, text
 ```
 
 ---
@@ -94,23 +110,28 @@ cartoon, anime, flat colors, harsh shadows, overexposed
 
 **Positive Prompt:**
 ```
-masterpiece, best quality, detailed oil painting close-up,
-rich velvet curtain corner being gently pulled back,
-extreme detail in painted fabric texture, individual brushstrokes visible,
-deep burgundy transitioning to black in shadows,
-single golden rope tassel swinging gently,
-warm portrait studio lighting in amber gold tones,
-John Singer Sargent fabric study style, craquelure aged paint texture,
-varnish gleam catching light, intimate scale,
-gentle breathing movement, soft golden particles floating
+extreme close-up of an oil painting's surface,
+painted velvet curtain corner in alizarin crimson and ivory black,
+you can see individual bristle marks from the brush,
+thick buttery oil paint with visible palette knife work,
+the painting surface has depth and texture,
+cadmium orange and burnt sienna in the folds,
+single golden tassel painted in impasto gold ochre,
+John Singer Sargent alla prima technique,
+aged canvas with fine craquelure pattern,
+amber damar varnish catching gallery light,
+the paint itself seems to move and breathe,
+intimate museum viewing distance, ultra detailed brushwork
 ```
 
 **Negative Prompt:**
 ```
-worst quality, low quality, blurry, distorted, deformed,
-ugly, bad anatomy, watermark, signature, text, logo,
-photorealistic, CGI, smooth texture, plastic look,
-cartoon, anime, harsh lighting, fast motion, jerky movement
+photorealistic, photograph, photo, realistic, 3D render, CGI, 
+digital art, smooth gradients, clean lines, sharp edges,
+video footage, film grain, camera movement, lens flare,
+plastic, glossy, modern, contemporary, minimalist,
+cartoon, anime, vector art, flat colors, cel shading,
+worst quality, low quality, blurry, watermark, text
 ```
 
 ---
@@ -119,23 +140,28 @@ cartoon, anime, harsh lighting, fast motion, jerky movement
 
 **Positive Prompt:**
 ```
-masterpiece, best quality, grand classical oil painting,
-symmetrical royal presentation curtains drawing apart majestically,
-sumptuous crimson velvet with ermine fur trim painted in oil,
-elaborate gold bullion fringe with metallic shimmer,
-royal crown motif embroidered in gold thread,
-majestic golden light revealing from center,
-Franz Winterhalter court painter style, regal atmosphere,
-painted light rays emanating outward, gilded dust particles,
-ornate baroque gold frame surrounding scene, slow regal motion
+a royal court painting coming alive on its canvas,
+symmetrical presentation curtains in Venetian red and madder lake,
+ermine fur trim rendered in lead white and raw umber stippling,
+elaborate gold fringe painted with shell gold and yellow ochre,
+royal crown motif in genuine gold leaf application,
+majestic light in cadmium lemon and titanium white,
+Franz Xaver Winterhalter court painter technique,
+painted on museum-quality stretched canvas,
+ornate baroque gilt frame visible at edges,
+centuries-old craquelure in the paint surface,
+the royal painting stirs to life, painterly texture throughout,
+slow regal motion as if the painting dreams
 ```
 
 **Negative Prompt:**
 ```
-worst quality, low quality, blurry, distorted, deformed,
-ugly, bad anatomy, watermark, signature, text, logo,
-photorealistic, 3D render, CGI, modern aesthetic,
-cartoon, anime, flat lighting, asymmetrical, rushed motion
+photorealistic, photograph, photo, realistic, 3D render, CGI, 
+digital art, smooth gradients, clean lines, sharp edges,
+video footage, film grain, camera movement, lens flare,
+plastic, glossy, modern, contemporary, minimalist,
+cartoon, anime, vector art, flat colors, cel shading,
+worst quality, low quality, blurry, watermark, text
 ```
 
 ---
@@ -179,28 +205,39 @@ cartoon, anime, flat lighting, asymmetrical, rushed motion
 
 ## Prompt Enhancement Tags
 
-### Quality Boosters (add to positive)
+### Oil Painting Must-Haves (add to every prompt)
 ```
-masterpiece, best quality, highly detailed, 
-professional, cinematic lighting, 8k quality
-```
-
-### Oil Painting Style Tags
-```
-oil painting style, visible brushstrokes, impasto texture,
-canvas texture, layered glazing, classical painting technique
+oil painting on canvas, visible brushstrokes, thick impasto,
+canvas weave texture, craquelure, aged varnish surface,
+traditional oil painting, the painting comes alive
 ```
 
-### Motion Tags
+### Specific Pigment Names (for authenticity)
 ```
-slow motion, elegant movement, smooth animation,
-gentle flowing motion, cinematic movement
+cadmium red, alizarin crimson, burnt umber, raw sienna,
+yellow ochre, Naples yellow, titanium white, ivory black,
+Van Dyke brown, Venetian red, cadmium orange, gold ochre
 ```
 
-### Lighting Tags
+### Painting Technique Terms
 ```
-chiaroscuro lighting, dramatic shadows, warm candlelight,
-golden hour lighting, Rembrandt lighting, museum lighting
+impasto, alla prima, glazing technique, scumbling,
+palette knife strokes, visible bristle marks, layered paint,
+wet-on-wet, sfumato, chiaroscuro
+```
+
+### Canvas & Surface Tags
+```
+stretched linen canvas, Belgian linen, canvas weave visible,
+cracked varnish, antique craquelure, damar varnish sheen,
+museum-quality canvas, aged paint surface
+```
+
+### "Living Painting" Motion Tags
+```
+the painting breathes, oil paint animating, painterly motion,
+brushstrokes shimmer, the masterwork comes alive,
+dreaming painting, paint surface undulating slowly
 ```
 
 ---
