@@ -8,39 +8,112 @@ const FaqPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>FAQ — 400</title>
+        <title>FAQ — 400 Club</title>
+        <meta name="description" content="Frequently asked questions about the 400 Club — the first generative art PFP collection of its kind." />
       </Helmet>
       <Section>
         <Container>
-          <h1 className="text-3xl md:text-5xl font-semibold mb-6">Frequently Asked Questions</h1>
-          <Accordion type="single" collapsible className="w-full">
+          <h1 className="text-3xl md:text-5xl font-semibold mb-4">Frequently Asked Questions</h1>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Everything you need to know about the 400 Club — the first generative art profile picture collection of its kind.
+          </p>
+          <Accordion type="single" collapsible className="w-full max-w-3xl">
+            
             <AccordionItem value="what">
               <AccordionTrigger>What is the 400 Club?</AccordionTrigger>
               <AccordionContent>
-                400 is a generative art collection of 9,400 unique NFT portraits. Each token is a one-of-one Gilded Age–inspired canine portrait and your
-                membership pass into the 400 Club — an exclusive community that bridges old wealth and new wealth.
+                The 400 Club is the first generative art profile picture (PFP) collection of its kind — 9,400 completely unique, 
+                AI-generated Gilded Age canine portraits. Each NFT serves as both a one-of-one piece of digital art and your 
+                membership pass into an exclusive community. Your portrait isn't just art; it's your identity and your key to the club.
               </AccordionContent>
             </AccordionItem>
+
+            <AccordionItem value="first">
+              <AccordionTrigger>What makes this the "first of its kind"?</AccordionTrigger>
+              <AccordionContent>
+                Unlike traditional PFP collections that layer pre-drawn traits, fourHundred portraits are fully generated compositions. 
+                Each piece is created through advanced generative AI, combining breed, clothing, setting, and lighting into cohesive 
+                oil-painting-style portraits. No trait layering, no templates — every portrait is a unique artistic creation that 
+                stands on its own as fine art.
+              </AccordionContent>
+            </AccordionItem>
+
             <AccordionItem value="generative">
-              <AccordionTrigger>What does "generative art" mean here?</AccordionTrigger>
+              <AccordionTrigger>What does "generative art" mean?</AccordionTrigger>
               <AccordionContent>
-                Generative art means the portraits are built from rules and traits instead of painted one-by-one from scratch. We define ingredients like
-                breed, clothing, setting, props, and lighting, then use generative models to propose many possible scenes. From there we curate and refine,
-                keeping only the strongest compositions, so every NFT you can mint is a one-of-one work created by a mix of system and artist.
+                Generative art uses algorithms and AI to create artwork. For fourHundred, we defined hundreds of traits — breeds, 
+                Gilded Age clothing, Victorian settings, accessories, and lighting conditions — then used generative models to compose 
+                each portrait. The result is curated and refined by artists, ensuring every piece meets our quality standards while 
+                remaining completely unique. No two portraits share the same composition.
               </AccordionContent>
             </AccordionItem>
+
+            <AccordionItem value="membership">
+              <AccordionTrigger>What does membership include?</AccordionTrigger>
+              <AccordionContent>
+                <p className="mb-3">Holding a 400 Club NFT grants you:</p>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li><strong>Exclusive Discord Access</strong> — Token-gated channels for members only</li>
+                  <li><strong>Your Unique PFP</strong> — A one-of-one portrait to use as your identity across Web3</li>
+                  <li><strong>Community Voting</strong> — Influence the direction of the club and future drops</li>
+                  <li><strong>Early Access</strong> — First look at upcoming features, collaborations, and rewards</li>
+                  <li><strong>Future Airdrops</strong> — Members will receive exclusive rewards and benefits as the club grows</li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="discord">
+              <AccordionTrigger>How do I access the Discord?</AccordionTrigger>
+              <AccordionContent>
+                After minting or purchasing a 400 Club NFT, connect your wallet to our Discord server using Collab.Land or a similar 
+                token-gating service. Your NFT will be verified automatically, unlocking access to members-only channels where you can 
+                connect with fellow collectors, participate in events, and stay updated on club announcements.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="rewards">
+              <AccordionTrigger>What rewards and features are coming?</AccordionTrigger>
+              <AccordionContent>
+                We're building a full ecosystem for 400 Club members. Upcoming features include exclusive merchandise drops, 
+                IRL events, collaborative art projects, holder-only raffles, and partnerships with other Web3 communities. 
+                Your membership NFT is your lifetime pass to everything we build. The earlier you join, the more you'll benefit 
+                as the club grows.
+              </AccordionContent>
+            </AccordionItem>
+
             <AccordionItem value="supply">
-              <AccordionTrigger>How many tokens are there?</AccordionTrigger>
+              <AccordionTrigger>How many NFTs are in the collection?</AccordionTrigger>
               <AccordionContent>
-                Exactly 9,400 NFTs, each unique and non-fungible. No two portraits share the same combination of traits and composition.
+                Exactly 9,400 unique portraits. Each one is a true 1/1 — no duplicates, no editions. The collection will never expand 
+                beyond this fixed supply, making each membership increasingly valuable as the community grows.
               </AccordionContent>
             </AccordionItem>
+
+            <AccordionItem value="price">
+              <AccordionTrigger>What is the mint price?</AccordionTrigger>
+              <AccordionContent>
+                The public mint price is 0.1 ETH per portrait. This is a one-time cost that grants you permanent membership in the 
+                400 Club, plus ownership of a unique piece of generative art.
+              </AccordionContent>
+            </AccordionItem>
+
             <AccordionItem value="rights">
-              <AccordionTrigger>What are the licensing terms?</AccordionTrigger>
+              <AccordionTrigger>What rights do I have to my portrait?</AccordionTrigger>
               <AccordionContent>
-                Non-exclusive personal use; see full terms for details.
+                You own the NFT and have full rights to use your portrait as your profile picture, display it, and show it off. 
+                Commercial rights are limited to personal use — you can print it for yourself, use it as your identity, but cannot 
+                mass-produce merchandise for sale. Full licensing terms are available in our Terms of Service.
               </AccordionContent>
             </AccordionItem>
+
+            <AccordionItem value="wallet">
+              <AccordionTrigger>Which wallets are supported?</AccordionTrigger>
+              <AccordionContent>
+                We support all major Ethereum wallets including MetaMask, Coinbase Wallet, WalletConnect-compatible wallets, 
+                Rainbow, and more. Simply connect your wallet on the Mint page to get started.
+              </AccordionContent>
+            </AccordionItem>
+
           </Accordion>
         </Container>
       </Section>
