@@ -100,9 +100,9 @@ const FaqPage: React.FC = () => {
             <AccordionItem value="rights">
               <AccordionTrigger>What rights do I have to my portrait?</AccordionTrigger>
               <AccordionContent>
-                You own the NFT and have full rights to use your portrait as your profile picture, display it, and show it off. 
-                Commercial rights are limited to personal use — you can print it for yourself, use it as your identity, but cannot 
-                mass-produce merchandise for sale. Full licensing terms are available in our Terms of Service.
+                You own full intellectual property (IP) rights to your 400 Club NFT. This means you can use your portrait however 
+                you want — as your profile picture, on merchandise, in commercial projects, or however else you see fit. Your portrait 
+                is yours completely. Print it, sell products with it, license it — the IP belongs to you as the holder.
               </AccordionContent>
             </AccordionItem>
 
