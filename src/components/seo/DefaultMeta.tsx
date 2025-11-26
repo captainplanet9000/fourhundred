@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 
 const siteName = "fourHundred — The 400 Club of Generative Portraits";
 const siteDescription =
-  "A generative collection of 10,000 unique NFT portraits. Each token is your membership in an exclusive 400 Club, bridging old wealth and new wealth.";
+  "A generative collection of 9,400 unique NFT portraits. Each token is your membership in an exclusive 400 Club, bridging old wealth and new wealth.";
 const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://fourhundred.club";
 const defaultImage = "/images/og-image.jpg";
 

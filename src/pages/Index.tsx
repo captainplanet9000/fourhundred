@@ -24,7 +24,7 @@ const Index: React.FC = () => {
         <title>fourHundred — Infinite Elegance. Zero Duplicates.</title>
         <meta
           name="description"
-          content="Witness the first generative collection dedicated to the high society of the canine world. 10,000 unique, algorithmically curated masterpieces."
+          content="Witness the first generative collection dedicated to the high society of the canine world. 9,400 unique, algorithmically curated masterpieces."
         />
         <meta property="og:title" content="fourHundred — Infinite Elegance. Zero Duplicates." />
       </Helmet>
@@ -105,7 +105,7 @@ const Index: React.FC = () => {
                 fourHundred is not just a collection; it is a technical marvel disguised as fine art. We have trained our generative models on the aesthetics of the Gilded Age—the oil paintings, the velvet textures, the stoic expressions of the elite. But instead of a brush, we use code. Instead of a canvas, we use the blockchain.
               </p>
               <p>
-                Each of the 10,000 portraits is the result of a complex, probabilistic interplay of hundreds of traits. From the sheen of a monocle to the fabric weight of a velvet smoking jacket, every detail is calculated to ensure aesthetic harmony. The result is a collection where no two pieces are alike, yet every piece feels like it belongs on the wall of a 19th-century manor.
+                Each of the 9,400 portraits is the result of a complex, probabilistic interplay of hundreds of traits. From the sheen of a monocle to the fabric weight of a velvet smoking jacket, every detail is calculated to ensure aesthetic harmony. The result is a collection where no two pieces are alike, yet every piece feels like it belongs on the wall of a 19th-century manor.
               </p>
             </div>
           </Reveal>
@@ -124,7 +124,7 @@ const Index: React.FC = () => {
               {[
                 { title: "Generative DNA", desc: "Every token carries a unique genetic code that dictates its visual properties." },
                 { title: "Curated Chaos", desc: "Algorithms introduce controlled randomness to create unexpected, delightful combinations." },
-                { title: "The 1/1 Experience", desc: "While there are 10,000 in the collection, the piece you hold is the only one of its kind." },
+                { title: "The 1/1 Experience", desc: "While there are 9,400 in the collection, the piece you hold is the only one of its kind." },
               ].map((item) => (
                 <GoldenBorder key={item.title}>
                   <div className="p-6 h-full">
@@ -148,7 +148,7 @@ const Index: React.FC = () => {
                 In the late 19th century, society was defined by a list of four hundred names—the only people who 'mattered' in New York society. But history forgot the others. The loyal companions. The silent observers who sat by the fireplaces of the Vanderbilts and the Astors.
               </p>
               <p>
-                We have reimagined this lost history. In an alternate timeline where the Gilded Age never ended, these 10,000 aristocratic canines rule the drawing rooms. They are the barons of industry, the dowagers of Fifth Avenue, and the tycoons of the telegraph. They are the fourHundred. And now, they are immortalized on the blockchain.
+                We have reimagined this lost history. In an alternate timeline where the Gilded Age never ended, these 9,400 aristocratic canines rule the drawing rooms. They are the barons of industry, the dowagers of Fifth Avenue, and the tycoons of the telegraph. They are the fourHundred. And now, they are immortalized on the blockchain.
               </p>
             </div>
           </Reveal>

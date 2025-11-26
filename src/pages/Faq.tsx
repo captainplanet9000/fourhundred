@@ -17,7 +17,7 @@ const FaqPage: React.FC = () => {
             <AccordionItem value="what">
               <AccordionTrigger>What is the 400 Club?</AccordionTrigger>
               <AccordionContent>
-                400 is a generative art collection of 10,000 unique NFT portraits. Each token is a one-of-one Gilded Age–inspired canine portrait and your
+                400 is a generative art collection of 9,400 unique NFT portraits. Each token is a one-of-one Gilded Age–inspired canine portrait and your
                 membership pass into the 400 Club — an exclusive community that bridges old wealth and new wealth.
               </AccordionContent>
             </AccordionItem>
@@ -32,7 +32,7 @@ const FaqPage: React.FC = () => {
             <AccordionItem value="supply">
               <AccordionTrigger>How many tokens are there?</AccordionTrigger>
               <AccordionContent>
-                Exactly 10,000 NFTs, each unique and non-fungible. No two portraits share the same combination of traits and composition.
+                Exactly 9,400 NFTs, each unique and non-fungible. No two portraits share the same combination of traits and composition.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="rights">

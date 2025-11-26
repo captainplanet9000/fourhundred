@@ -12,7 +12,7 @@ const AboutPage: React.FC = () => {
         <title>About — 400 Club</title>
         <meta
           name="description"
-          content="fourHundred is a generative NFT collection of 10,000 unique portraits. Each token is membership in the 400 Club — an exclusive circle that bridges old wealth and new wealth."
+          content="fourHundred is a generative NFT collection of 9,400 unique portraits. Each token is membership in the 400 Club — an exclusive circle that bridges old wealth and new wealth."
         />
       </Helmet>
       <Section>
@@ -20,7 +20,7 @@ const AboutPage: React.FC = () => {
           <h1 className="text-3xl md:text-5xl font-semibold mb-6">Inside the 400 Club</h1>
           <div className="space-y-6 text-lg text-muted-foreground max-w-3xl">
             <p>
-              fourHundred is a generative art project: 10,000 one-of-one canine portraits built from a curated library of Gilded Age reference — dress,
+              fourHundred is a generative art project: 9,400 one-of-one canine portraits built from a curated library of Gilded Age reference — dress,
               interiors, tools, and city light. The 400 Club is the membership that sits over the collection: each NFT pairs you with a portrait that feels
               pulled from an old-world salon or workshop.
             </p>

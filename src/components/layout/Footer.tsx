@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
             400 Club — Generative Portrait Membership
           </div>
           <p className="text-muted-foreground mt-2">
-            A generative collection of 10,000 unique on-chain portraits. Each NFT is a one-of-one membership in the 400 Club.
+            A generative collection of 9,400 unique on-chain portraits. Each NFT is a one-of-one membership in the 400 Club.
           </p>
         </div>
         <div className="space-y-2">

@@ -31,7 +31,7 @@ const MintPage: React.FC = () => {
               <CardTitle>Mint Panel</CardTitle>
             </CardHeader>
             <CardContent>
-              <MintPanel priceEth={0.1} totalSupply={0} maxSupply={10000} />
+              <MintPanel priceEth={0.1} totalSupply={0} maxSupply={9400} />
               {!contract && (
                 <p className="text-sm text-muted-foreground mt-3">Mint temporarily unavailable.</p>
               )}
