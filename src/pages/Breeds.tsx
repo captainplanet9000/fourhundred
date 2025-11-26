@@ -20,10 +20,10 @@ const tierLabels: Record<TierKey, string> = {
 };
 
 function getTierForCount(count: number): TierKey {
-  if (count <= 4) return "legendary";
-  if (count <= 19) return "epic";
-  if (count <= 49) return "rare";
-  if (count <= 79) return "uncommon";
+  if (count <= 10) return "legendary";
+  if (count <= 30) return "epic";
+  if (count <= 60) return "rare";
+  if (count <= 90) return "uncommon";
   return "common";
 }
 

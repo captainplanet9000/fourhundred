@@ -29,10 +29,10 @@ const TraitsPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Traits Explorer — 400</title>
+        <title>Traits Explorer — 400 Club</title>
         <meta
           name="description"
-          content="Explore generative trait distributions across the 400 collection and see how each unique portrait is composed."
+          content="Explore the trait distributions across 9,400 unique portraits. See how breeds, backgrounds, fabrics, accessories, and clothing colors combine to create each one-of-one piece."
         />
       </Helmet>
       <Section>

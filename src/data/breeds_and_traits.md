@@ -1,6 +1,6 @@
-# Breeds and Traits from _final_prompts_fixed.txt
+# Breeds and Traits - 400 Club Collection
 
-Total prompts: 10000
+Total NFTs: 9,400
 
 ## Breeds (226)
 - Afghan Hound (53)
