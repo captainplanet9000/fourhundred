@@ -4,7 +4,7 @@ import React from "react";
 import { WagmiProvider, createConfig, http } from "wagmi";
 import type { Chain } from "viem";
 import { mainnet, base, sepolia, baseSepolia } from "viem/chains";
-import { walletConnect, injected } from "wagmi/connectors";
+import { walletConnect, injected, coinbaseWallet, metaMask } from "wagmi/connectors";
 
 import { getEnv } from "@/lib/env";
 
@@ -43,6 +43,8 @@ const wcProjectId =
   "";
 
 const connectorsArr = [
+  metaMask(),
+  coinbaseWallet({ appName: "fourHundred" }),
   injected(),
   ...(wcProjectId
     ? [
