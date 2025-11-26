@@ -27,7 +27,7 @@ export function MintCard() {
   const maxPerWallet = Number((perWalletLimit as bigint | undefined) ?? 20n);
   const uiMax = 5; // UI cap per your spec
   const effectiveMax = Math.min(uiMax, maxPerTx);
-  const priceWei = (mintPrice as bigint | undefined) ?? parseEther("0.05");
+  const priceWei = (mintPrice as bigint | undefined) ?? parseEther("0.1");
   const totalCostWei = priceWei * BigInt(qty);
 
   const saleLabel = useMemo(() => {
@@ -96,7 +96,7 @@ export function MintCard() {
         <h2 className="text-2xl font-semibold">Mint</h2>
         <div className="text-right">
           <div className="text-sm text-white/60">Phase: <span className="text-gilded-300">{saleLabel}</span></div>
-          <div className="text-sm text-white/60">Minted: <span className="text-gilded-300">{totalSupply ? Number(totalSupply) : 0} / {maxSupply ? Number(maxSupply) : 10000}</span></div>
+          <div className="text-sm text-white/60">Minted: <span className="text-gilded-300">{totalSupply ? Number(totalSupply) : 0} / {maxSupply ? Number(maxSupply) : 9400}</span></div>
         </div>
       </div>
 

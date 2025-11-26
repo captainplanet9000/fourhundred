@@ -20,7 +20,7 @@ export default function Home() {
               <p className="mt-4 text-white/70 max-w-prose">
                 Witness the first generative collection dedicated to the high society of the canine world. Every stroke, every texture, every expression is algorithmically curated to create a masterpiece that is yours and yours alone.
               </p>
-              <p className="mt-2 text-gilded-300">100% Unique Generative Art • 0.05 ETH • 9,400 Supply</p>
+              <p className="mt-2 text-gilded-300">100% Unique Generative Art • 0.1 ETH • 9,400 Supply</p>
               <div className="mt-8"><StatsBar /></div>
             </div>
             <div className="lg:pl-6">
