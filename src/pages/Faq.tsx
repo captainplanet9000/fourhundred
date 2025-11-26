@@ -55,6 +55,8 @@ const FaqPage: React.FC = () => {
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                   <li><strong>Exclusive Discord Access</strong> — Token-gated channels for members only</li>
                   <li><strong>Your Unique PFP</strong> — A one-of-one portrait to use as your identity across Web3</li>
+                  <li><strong>Full IP Rights</strong> — You own full intellectual property rights to your portrait</li>
+                  <li><strong>Future Project Access</strong> — Priority access and allowlist spots for upcoming mints and projects</li>
                   <li><strong>Community Voting</strong> — Influence the direction of the club and future drops</li>
                   <li><strong>Early Access</strong> — First look at upcoming features, collaborations, and rewards</li>
                   <li><strong>Future Airdrops</strong> — Members will receive exclusive rewards and benefits as the club grows</li>
