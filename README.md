@@ -1,10 +1,10 @@
 # fourHundred NFT Gallery
 
-A sophisticated web application designed to showcase a collection of 10,000 unique dog portraits from the Gilded Age.
+A sophisticated web application designed to showcase a collection of 9,400 unique dog portraits from the Gilded Age.
 
 ## Features
 
-- Full collection gallery with 10,000 tokens
+- Full collection gallery with 9,400 tokens
 - Metadata integration with IPFS
 - Search and filter functionality
 - Individual token detail pages

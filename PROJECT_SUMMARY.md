@@ -1,7 +1,7 @@
 # fourHundred NFT Gallery - Project Summary
 
 ## Overview
-The fourHundred NFT Gallery is a sophisticated web application designed to showcase a collection of 10,000 unique dog portraits from the Gilded Age. The application provides an immersive experience for exploring, searching, and learning about each NFT in the collection.
+The fourHundred NFT Gallery is a sophisticated web application designed to showcase a collection of 9,400 unique dog portraits from the Gilded Age. The application provides an immersive experience for exploring, searching, and learning about each NFT in the collection.
 
 ## Completed Features
 
@@ -12,7 +12,7 @@ The fourHundred NFT Gallery is a sophisticated web application designed to showc
 - Added ESLint and Prettier for code quality
 
 ### 2. Full Collection Gallery
-- Implemented a responsive gallery that displays all 10,000 tokens
+- Implemented a responsive gallery that displays all 9,400 tokens
 - Created a metadata service to fetch and cache token information
 - Added pagination to navigate through the large collection efficiently
 

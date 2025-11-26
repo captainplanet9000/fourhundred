@@ -10,7 +10,7 @@ import React from "react";
 const config = getDefaultConfig({
   appName: "fourHundred",
   projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID || "fourhundred-temp",
-  chains: [sepolia, mainnet],
+  chains: [mainnet, sepolia],
   ssr: true,
   transports: {
     [mainnet.id]: http(process.env.NEXT_PUBLIC_RPC_MAINNET || "https://mainnet.infura.io/v3/demo"),

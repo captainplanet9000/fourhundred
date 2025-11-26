@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'fourHundred — Gilded Age Dogs',
-  description: '10,000 Gilded Age dog portraits — mint now',
+  description: '9,400 Gilded Age dog portraits — mint now',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

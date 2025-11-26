@@ -12,7 +12,7 @@ export default function GalleryPage() {
               <span className="text-gilded-400">Gallery</span>
             </h1>
             <p className="mt-2 text-white/70 max-w-prose">
-              Explore the complete fourHundred collection of 10,000 Gilded Age dog portraits.
+              Explore the complete fourHundred collection of 9,400 Gilded Age dog portraits.
             </p>
           </div>
           <OptimizedGallery />
