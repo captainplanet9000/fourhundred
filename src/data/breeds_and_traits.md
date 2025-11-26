@@ -233,10 +233,10 @@ Total NFTs: 9,400
 
 ## Traits
 ### Framing (2)
-- Bust-length portrait (5000)
-- Close-up portrait (5000)
+- Bust-length portrait (4700)
+- Close-up portrait (4700)
 ### Poses (1)
-- Formal Bust Portrait (10000)
+- Formal Bust Portrait (9400)
 ### Backgrounds (75)
 - Ancient Egyptian Temple (28)
 - Apothecary Shop (68)

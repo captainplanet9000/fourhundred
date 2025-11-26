@@ -20,11 +20,11 @@ const tierLabels: Record<TierKey, string> = {
 };
 
 function getTierForCount(count: number): TierKey {
-  if (count <= 10) return "legendary";
-  if (count <= 30) return "epic";
-  if (count <= 60) return "rare";
-  if (count <= 90) return "uncommon";
-  return "common";
+  if (count <= 5) return "legendary";   // Extinct breeds (3-4)
+  if (count <= 15) return "epic";        // Very rare breeds (11-12)
+  if (count <= 45) return "rare";        // Rare breeds (23-44)
+  if (count <= 70) return "uncommon";    // Less common breeds (52-64)
+  return "common";                        // Popular breeds (102-103)
 }
 
 const tieredBreeds: Record<TierKey, string[]> = {
