@@ -24,7 +24,7 @@ export const Navbar: React.FC = () => {
           <img 
             src="/images/script_logo_white.jpeg" 
             alt="fourHundred" 
-            className="h-10 md:h-12 w-auto"
+            className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto mix-blend-screen"
           />
         </Link>
         <nav className="hidden md:flex items-center gap-6">
