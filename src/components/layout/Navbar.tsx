@@ -20,12 +20,10 @@ export const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b">
       <Container className="flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center">
-          <img 
-            src="/images/script_logo_white.jpeg" 
-            alt="fourHundred" 
-            className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto mix-blend-screen"
-          />
+        <Link to="/" className="flex items-center gap-2">
+          <span className="text-xl sm:text-2xl md:text-3xl font-serif italic text-white tracking-wide">
+            fourHundred
+          </span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {links.map((l) => (
