@@ -154,16 +154,16 @@ const TraitsPage: React.FC = () => {
                   <p className="text-sm text-muted-foreground mb-4">{data.description}</p>
                   <div className="grid md:grid-cols-2 gap-2">
                     {data.highlights.map((item) => (
-                      <div key={item.name} className="flex justify-between items-center py-2 border-b border-primary/10">
-                        <span className="text-foreground/90">{item.name}</span>
-                        <div className="flex items-center gap-2">
-                          <div className="w-24 h-2 bg-black/40 rounded-full overflow-hidden">
+                      <div key={item.name} className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-3 border-b border-primary/10 gap-2">
+                        <span className="text-foreground/90 text-sm sm:text-base">{item.name}</span>
+                        <div className="flex items-center gap-3 w-full sm:w-auto">
+                          <div className="flex-1 sm:w-40 md:w-48 lg:w-56 h-4 bg-muted/50 rounded-full overflow-hidden border border-primary/20">
                             <div 
-                              className="h-full bg-primary/60 rounded-full" 
-                              style={{ width: `${Math.min((item.count / data.total) * 100 * 10, 100)}%` }}
+                              className="h-full bg-gradient-to-r from-primary to-yellow-400 rounded-full" 
+                              style={{ width: `${Math.min((item.count / data.total) * 100 * 15, 100)}%` }}
                             />
                           </div>
-                          <span className="text-sm text-muted-foreground w-12 text-right">{item.count}</span>
+                          <span className="text-sm text-foreground w-16 text-right font-semibold">{item.count.toLocaleString()}</span>
                         </div>
                       </div>
                     ))}

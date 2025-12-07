@@ -55,7 +55,7 @@ const Index: React.FC = () => {
               transition={{ duration: 1.2 }}
             >
               <h1
-                className="text-6xl md:text-8xl lg:text-9xl leading-none md:leading-[1.05] font-semibold tracking-tight"
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl leading-tight md:leading-[1.05] font-semibold tracking-tight"
               >
                 <span className="text-white">Where </span>
                 <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gilded-gradient)" }}>Legacy</span><br />
@@ -68,8 +68,8 @@ const Index: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <p className="mt-6 text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-5xl md:max-w-6xl mx-auto">
-                Witness the first generative collection dedicated to the high society of the canine world.
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-0">
+                Witness the first generative art NFT collection dedicated to the high society of the canine world.
                 Every stroke, every texture, every expression is algorithmically curated to create a masterpiece that is yours and yours alone.
               </p>
             </motion.div>
@@ -79,11 +79,11 @@ const Index: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 1 }}
             >
-              <div className="mt-10 flex items-center justify-center gap-3">
-                <Button asChild className="bg-primary text-primary-foreground hover:brightness-110 text-lg px-8 py-6">
+              <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Button asChild className="bg-primary text-primary-foreground hover:brightness-110 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto">
                   <Link to="/mint">Commission Portrait</Link>
                 </Button>
-                <Button asChild variant="outline" className="border-primary/50 text-foreground hover:bg-muted/50 text-lg px-8 py-6">
+                <Button asChild variant="outline" className="border-primary/50 text-foreground hover:bg-muted/50 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto">
                   <Link to="/gallery">Enter the Gallery</Link>
                 </Button>
               </div>
@@ -196,11 +196,11 @@ const Index: React.FC = () => {
       <Section title="Your Story Awaits" subtitle="Find the portrait that reflects your story.">
         <Container className="text-center">
           <Reveal>
-            <div className="flex items-center justify-center gap-3">
-              <Button asChild className="bg-primary text-primary-foreground hover:brightness-110 text-lg px-8 py-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Button asChild className="bg-primary text-primary-foreground hover:brightness-110 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto">
                 <Link to="/gallery">Discover the Gallery</Link>
               </Button>
-              <Button asChild variant="outline" className="border-primary/50 text-lg px-8 py-6">
+              <Button asChild variant="outline" className="border-primary/50 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto">
                 <Link to="/traits">Explore Traits</Link>
               </Button>
             </div>

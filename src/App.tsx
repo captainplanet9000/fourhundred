@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Gallery from "./pages/Gallery";
+import GalleryFull from "./pages/GalleryFull";
 import Token from "./pages/Token";
 import Traits from "./pages/Traits";
 import Mint from "./pages/Mint";
@@ -28,12 +29,25 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <DefaultMeta />
-        <div className="min-h-dvh flex flex-col bg-background text-foreground">
+        <div className="min-h-dvh flex flex-col bg-background text-foreground relative">
+          {/* Subtle painting texture background */}
+          <div 
+            className="fixed inset-0 pointer-events-none"
+            style={{
+              backgroundImage: "url('/images/paintedbg_texture.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              transform: "scaleX(-1)",
+              opacity: 0.06,
+              zIndex: 0,
+            }}
+          />
           <Navbar />
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/gallery" element={<Gallery />} />
+              <Route path="/collection" element={<GalleryFull />} />
               <Route path="/token/:id" element={<Token />} />
               <Route path="/traits" element={<Traits />} />
               <Route path="/breeds" element={<Breeds />} />

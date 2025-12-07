@@ -36,10 +36,10 @@ const MintPage: React.FC = () => {
           <Container>
             {/* Hero text */}
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
                 Mint Your Portrait
               </h1>
-              <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto px-4 sm:px-0">
                 9,400 unique portraits. One legacy. Claim yours.
               </p>
             </div>

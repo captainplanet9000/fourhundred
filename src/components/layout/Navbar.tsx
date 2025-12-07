@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 
 const links = [
   { to: "/gallery", label: "Gallery" },
+  { to: "/collection", label: "Collection" },
   { to: "/traits", label: "Traits" },
   { to: "/breeds", label: "Breeds" },
   { to: "/mint", label: "Mint" },
@@ -19,11 +20,13 @@ const links = [
 export const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b">
-      <Container className="flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl sm:text-2xl md:text-3xl font-serif italic text-white tracking-wide">
-            fourHundred
-          </span>
+      <Container className="flex items-center justify-between h-14 sm:h-16 md:h-18 lg:h-20">
+        <Link to="/" className="flex items-center">
+          <img 
+            src="/images/fourhundred_logo.png" 
+            alt="fourHundred" 
+            className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto"
+          />
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {links.map((l) => (
