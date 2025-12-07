@@ -58,17 +58,6 @@ const AboutPage: React.FC = () => {
           </div>
 
           <div className="mt-12">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Explore the Era</h2>
-            <ul className="grid md:grid-cols-2 gap-3 text-left">
-              <li className="p-4 rounded-lg border border-primary/30">Story Registry — Contribute family memories from the era</li>
-              <li className="p-4 rounded-lg border border-primary/30">Historical Context — Access essays, sources, and references</li>
-              <li className="p-4 rounded-lg border border-primary/30">Community Exhibitions — Curated on-chain shows and salons</li>
-              <li className="p-4 rounded-lg border border-primary/30">Education &amp; Resources — Classroom-ready tools and guides</li>
-              <li className="p-4 rounded-lg border border-primary/30">Open Data — Transparent traits and sourcing for researchers</li>
-            </ul>
-          </div>
-
-          <div className="mt-12">
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">Your Story Awaits</h2>
             <p className="text-muted-foreground max-w-3xl">
               Find the portrait that reflects your story — and claim your place in the 400 Club with a one-of-one generative work.
