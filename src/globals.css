@@ -100,9 +100,15 @@
     background-size: cover;
     background-position: center;
     transform: scaleX(-1);
-    opacity: 0.18;
+    opacity: 0.25;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
+  }
+  
+  /* Ensure content stays above texture */
+  #root {
+    position: relative;
+    z-index: 1;
   }
 
   h1, h2, h3 {
