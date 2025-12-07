@@ -64,25 +64,6 @@ const FaqPage: React.FC = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="discord">
-              <AccordionTrigger>How do I access the Discord?</AccordionTrigger>
-              <AccordionContent>
-                After minting or purchasing a 400 Club NFT, connect your wallet to our Discord server using Collab.Land or a similar 
-                token-gating service. Your NFT will be verified automatically, unlocking access to members-only channels where you can 
-                connect with fellow collectors, participate in events, and stay updated on club announcements.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="rewards">
-              <AccordionTrigger>What rewards and features are coming?</AccordionTrigger>
-              <AccordionContent>
-                We're building a full ecosystem for 400 Club members. Upcoming features include exclusive merchandise drops, 
-                IRL events, collaborative art projects, holder-only raffles, and partnerships with other Web3 communities. 
-                Your membership NFT is your lifetime pass to everything we build. The earlier you join, the more you'll benefit 
-                as the club grows.
-              </AccordionContent>
-            </AccordionItem>
-
             <AccordionItem value="supply">
               <AccordionTrigger>How many NFTs are in the collection?</AccordionTrigger>
               <AccordionContent>
