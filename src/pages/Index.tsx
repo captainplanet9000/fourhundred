@@ -55,10 +55,10 @@ const Index: React.FC = () => {
               transition={{ duration: 1.2 }}
             >
               <h1
-                className="text-6xl md:text-8xl lg:text-9xl leading-none md:leading-[1.05] font-semibold tracking-tight bg-clip-text text-transparent"
-                style={{ backgroundImage: "var(--gilded-gradient)" }}
+                className="text-6xl md:text-8xl lg:text-9xl leading-none md:leading-[1.05] font-semibold tracking-tight"
               >
-                Where Legacy<br />
+                <span className="text-white">Where </span>
+                <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gilded-gradient)" }}>Legacy</span><br />
                 <span className="text-white">Lives Forever.</span>
               </h1>
             </motion.div>
