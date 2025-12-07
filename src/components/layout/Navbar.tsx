@@ -9,7 +9,6 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 
 const links = [
   { to: "/gallery", label: "Gallery" },
-  { to: "/collection", label: "Collection" },
   { to: "/traits", label: "Traits" },
   { to: "/breeds", label: "Breeds" },
   { to: "/mint", label: "Mint" },
