@@ -31,63 +31,67 @@ const Index: React.FC = () => {
 
       <div className="relative overflow-hidden min-h-screen bg-black">
         {/* Background image layer */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <img
-            src="/images/collection/generated-image-1757823533363.png"
-            alt=""
-            aria-hidden
-            className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 opacity-60"
-          />
-        </div>
+        <div 
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{
+            backgroundImage: `url('/images/collection/landing_banner_full_prod.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.7
+          }}
+        />
 
         {/* Gradient overlay above image for readability */}
         <div
-          className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-black/90 via-black/80 to-black/95"
+          className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-black/40 via-black/30 to-black/60"
           style={{ transform: `translateY(${parallax}px)` }}
         />
 
         {/* Content wrapper only for the first (hero) section */}
         <section className="relative z-20 min-h-screen flex items-center py-0">
-          <Container className="text-center">
-            <motion.div
-              initial={{ opacity: 0, filter: "blur(10px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1.2 }}
-            >
-              <h1
-                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl leading-tight md:leading-[1.05] font-semibold tracking-tight"
+          <Container className="px-4 sm:px-6">
+            <div className="mx-auto max-w-5xl rounded-2xl bg-black/75 backdrop-blur-md border border-white/10 px-6 sm:px-10 py-10 sm:py-14 text-center">
+              <motion.div
+                initial={{ opacity: 0, filter: "blur(10px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{ duration: 1.2 }}
               >
-                <span className="text-white">Where </span>
-                <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gilded-gradient)" }}>Legacy</span><br />
-                <span className="text-white">Lives Forever.</span>
-              </h1>
-            </motion.div>
+                <h1
+                  className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl leading-tight md:leading-[1.05] font-semibold tracking-tight"
+                >
+                  <span className="text-white">Where </span>
+                  <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gilded-gradient)" }}>Legacy</span><br />
+                  <span className="text-white">Lives Forever.</span>
+                </h1>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-0">
-                Witness the first generative art NFT collection dedicated to the high society of the canine world.
-                Every stroke, every texture, every expression is algorithmically curated to create a masterpiece that is yours and yours alone.
-              </p>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto">
+                  Witness the first generative art NFT collection dedicated to the high society of the canine world.
+                  Every stroke, every texture, every expression is algorithmically curated to create a masterpiece that is yours and yours alone.
+                </p>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 1 }}
-            >
-              <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Button asChild className="bg-primary text-primary-foreground hover:brightness-110 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto">
-                  <Link to="/mint">Commission Portrait</Link>
-                </Button>
-                <Button asChild variant="outline" className="border-primary/50 text-foreground hover:bg-muted/50 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto">
-                  <Link to="/gallery">Enter the Gallery</Link>
-                </Button>
-              </div>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1 }}
+              >
+                <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <Button asChild className="bg-primary text-primary-foreground hover:brightness-110 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto">
+                    <Link to="/mint">Commission Portrait</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="border-primary/50 text-foreground hover:bg-muted/50 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 w-full sm:w-auto">
+                    <Link to="/gallery">Enter the Gallery</Link>
+                  </Button>
+                </div>
+              </motion.div>
+            </div>
           </Container>
         </section>
       </div>
@@ -162,10 +166,11 @@ const Index: React.FC = () => {
           <Reveal>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                "ComfyUI_00038__1.png",
-                "ComfyUI_00058_.png",
-                "ComfyUI_00060_.png",
-                "ComfyUI_00075__1.png",
+                // Using specific Member images from the collection
+                "Member_113.png",
+                "Member_124.png",
+                "Member_6912.png",
+                "Member_7873.png",
               ].map((file) => (
                 <motion.div
                   key={file}
@@ -176,6 +181,7 @@ const Index: React.FC = () => {
                   <div className="relative w-full aspect-square">
                     <SafeImage
                       src={`/images/collection/${file}`}
+
                       alt="Featured fourHundred portrait"
                       className="absolute inset-0 h-full w-full object-cover"
                       loading="lazy"
