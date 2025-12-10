@@ -10,7 +10,7 @@ type Props = {
 
 export const Section: React.FC<Props> = ({ id, title, subtitle, children, className = "" }) => {
   return (
-    <section id={id} className={`py-10 sm:py-14 md:py-20 lg:py-24 ${className}`}>
+    <section id={id} className={`py-10 sm:py-14 md:py-20 ${className}`}>
       {(title || subtitle) && (
         <div className="mb-10 text-center">
           {title && (

@@ -96,6 +96,21 @@ const Index: React.FC = () => {
         </section>
       </div>
 
+      {/* Page-wide background for all sections after hero */}
+      <div 
+        className="relative"
+        style={{
+          backgroundImage: `url('/images/paintedbg_7.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Subtle dark overlay */}
+        <div className="absolute inset-0 bg-black/85 pointer-events-none" />
+        <div className="relative z-10">
+
       <OrnateDivider />
 
       <Section
@@ -213,6 +228,8 @@ const Index: React.FC = () => {
           </Reveal>
         </Container>
       </Section>
+        </div>
+      </div>
     </>
   );
 };
