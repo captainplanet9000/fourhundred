@@ -8,8 +8,8 @@ import { MintPanel } from "@/components/mint/MintPanel";
 import { Card, CardContent } from "@/components/ui/card";
 import { getContractAddress } from "@/lib/env";
 
-// Mint date: January 4th, 2026 at 12:00 PM EST
-const MINT_DATE = new Date("2026-01-04T12:00:00-05:00");
+// Mint date: January 14th, 2026 at 12:00 PM EST
+const MINT_DATE = new Date("2026-01-14T12:00:00-05:00");
 
 interface TimeLeft {
   days: number;
@@ -88,7 +88,7 @@ const MintPage: React.FC = () => {
             {!isMintLive && timeLeft && (
               <div className="mb-10">
                 <p className="text-center text-amber-400 text-lg mb-4 font-semibold">
-                  January 4th, 2026 at 12:00 PM EST
+                  January 14th, 2026 at 12:00 PM EST
                 </p>
                 <div className="flex justify-center gap-3 sm:gap-6">
                   {[
@@ -118,7 +118,7 @@ const MintPage: React.FC = () => {
               <Card className="bg-black/70 border-2 border-amber-600/50 backdrop-blur-sm shadow-2xl">
                 <CardContent className="pt-6">
                   {isMintLive ? (
-                    <MintPanel priceEth={0.1} totalSupply={0} maxSupply={9400} />
+                    <MintPanel priceEth={0.05} totalSupply={0} maxSupply={9400} />
                   ) : (
                     <div className="text-center py-6">
                       <h3 className="text-2xl font-semibold text-white mb-2">
@@ -134,7 +134,7 @@ const MintPage: React.FC = () => {
                         <p className="text-amber-400 font-medium">Mint Details</p>
                         <div className="grid grid-cols-2 gap-4 mt-3 text-sm">
                           <div className="text-white/60">Price</div>
-                          <div className="text-white font-semibold">0.1 ETH</div>
+                          <div className="text-white font-semibold">0.05 ETH</div>
                           <div className="text-white/60">Supply</div>
                           <div className="text-white font-semibold">9,400</div>
                           <div className="text-white/60">Per Transaction</div>
@@ -152,7 +152,7 @@ const MintPage: React.FC = () => {
               
               {/* Price tagline */}
               <p className="text-center text-white/60 italic text-lg mt-8">
-                0.1 ETH per portrait
+                0.05 ETH per portrait
               </p>
             </div>
           </Container>

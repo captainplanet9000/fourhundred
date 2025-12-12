@@ -75,7 +75,7 @@ const FaqPage: React.FC = () => {
             <AccordionItem value="price">
               <AccordionTrigger>What is the mint price?</AccordionTrigger>
               <AccordionContent>
-                The public mint price is 0.1 ETH per portrait. This is a one-time cost that grants you permanent membership in the 
+                The public mint price is 0.05 ETH per portrait. This is a one-time cost that grants you permanent membership in the 
                 400 Club, plus ownership of a unique piece of generative art.
               </AccordionContent>
             </AccordionItem>
