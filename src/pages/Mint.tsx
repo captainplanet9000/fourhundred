@@ -1,14 +1,31 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Container } from "@/components/layout/Container";
 import { ConnectButton } from "@/components/mint/ConnectButton";
 import { Card, CardContent } from "@/components/ui/card";
-import { getContractAddress } from "@/lib/env";
 
 const MintPage: React.FC = () => {
-  const contract = getContractAddress();
+  const mintDate = useMemo(() => new Date("2026-02-15T00:00:00.000Z"), []);
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const countdown = useMemo(() => {
+    const diffMs = Math.max(0, mintDate.getTime() - now);
+    const totalSeconds = Math.floor(diffMs / 1000);
+
+    const days = Math.floor(totalSeconds / (60 * 60 * 24));
+    const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+    const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+    const seconds = totalSeconds % 60;
+
+    return { totalSeconds, days, hours, minutes, seconds };
+  }, [mintDate, now]);
 
   return (
     <>
@@ -37,7 +54,7 @@ const MintPage: React.FC = () => {
             {/* Hero text */}
             <div className="text-center mb-8">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-                Mint Coming Soon
+                Launching February 15, 2026
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto px-4 sm:px-0">
                 9,400 unique portraits. One legacy. Claim yours.
@@ -46,9 +63,37 @@ const MintPage: React.FC = () => {
 
             {/* Coming Soon Message */}
             <div className="mb-10">
-              <p className="text-center text-amber-400 text-2xl sm:text-3xl md:text-4xl font-bold">
-                Coming Soon 2026
-              </p>
+              {countdown.totalSeconds > 0 ? (
+                <div className="text-center">
+                  <p className="text-amber-400 text-2xl sm:text-3xl md:text-4xl font-bold">
+                    Launching February 15, 2026
+                  </p>
+                  <div className="mt-4 flex items-center justify-center gap-3 sm:gap-4 text-white">
+                    {[
+                      { label: "Days", value: countdown.days },
+                      { label: "Hours", value: countdown.hours },
+                      { label: "Minutes", value: countdown.minutes },
+                      { label: "Seconds", value: countdown.seconds },
+                    ].map((item) => (
+                      <div
+                        key={item.label}
+                        className="min-w-[72px] sm:min-w-[92px] rounded-xl border border-amber-600/40 bg-black/50 px-3 py-2 backdrop-blur-sm"
+                      >
+                        <div className="text-2xl sm:text-3xl font-bold tabular-nums">
+                          {String(item.value).padStart(2, "0")}
+                        </div>
+                        <div className="text-xs sm:text-sm text-white/70">
+                          {item.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <p className="text-center text-amber-400 text-2xl sm:text-3xl md:text-4xl font-bold">
+                  Mint is live
+                </p>
+              )}
             </div>
 
             {/* Mint card - centered with Victorian styling */}
