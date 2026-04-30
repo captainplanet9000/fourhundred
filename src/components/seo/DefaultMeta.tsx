@@ -2,11 +2,11 @@
 
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { CHAIN, COLLECTION, MINT, MINT_DATE_LABEL } from "@/lib/launch";
 
-const siteName = "fourHundred — The 400 Club of Generative Portraits";
-const siteDescription =
-  "A generative collection of 9,400 unique NFT portraits. Each token is your membership in an exclusive 400 Club, bridging old wealth and new wealth.";
-const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://fourhundred.club";
+const siteName = `${COLLECTION.name} — Free claim on ${CHAIN.name}`;
+const siteDescription = `${COLLECTION.supply.toLocaleString()} unique Gilded Age dog portraits. Free claim on ${CHAIN.name} L2 (chain ${CHAIN.chainId}). Opens ${MINT_DATE_LABEL}. One per wallet. ${MINT.royaltyPct}% royalty on secondary funds the project.`;
+const baseUrl = typeof window !== "undefined" ? window.location.origin : COLLECTION.website;
 const defaultImage = "/images/og-image.jpg";
 
 export const DefaultMeta: React.FC = () => {
@@ -14,7 +14,7 @@ export const DefaultMeta: React.FC = () => {
     <Helmet>
       <meta name="theme-color" content="#0D0C0A" />
       <meta name="color-scheme" content="dark" />
-      <meta name="application-name" content="fourHundred" />
+      <meta name="application-name" content={COLLECTION.name} />
       <meta name="description" content={siteDescription} />
       <meta property="og:title" content={siteName} />
       <meta property="og:description" content={siteDescription} />
@@ -27,6 +27,7 @@ export const DefaultMeta: React.FC = () => {
       <meta name="twitter:title" content={siteName} />
       <meta name="twitter:description" content={siteDescription} />
       <meta name="twitter:image" content={defaultImage} />
+      <meta name="twitter:site" content={COLLECTION.twitterHandle} />
       <link rel="canonical" href={baseUrl} />
       <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     </Helmet>

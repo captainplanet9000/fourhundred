@@ -26,6 +26,6 @@ describe("Home page", () => {
         </BrowserRouter>
       </HelmetProvider>
     );
-    expect(screen.getByText(/Where Legacy Lives Forever/i)).toBeInTheDocument();
+    expect(screen.getByText(/Claim your seat at the/i)).toBeInTheDocument();
   });
 });

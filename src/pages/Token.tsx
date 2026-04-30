@@ -12,6 +12,8 @@ import { RaritySummary } from "@/components/token/RaritySummary";
 import { SocialShare } from "@/components/token/SocialShare";
 import { Button } from "@/components/ui/button";
 import { SafeImage } from "@/components/common/SafeImage";
+import { CHAIN, explorerTokenUrl, openseaTokenUrl } from "@/lib/launch";
+import { getContractAddress } from "@/lib/env";
 
 const TokenPage: React.FC = () => {
   const { id } = useParams();
@@ -123,13 +125,38 @@ const TokenPage: React.FC = () => {
 
               <div className="space-y-2">
                 <div className="text-sm text-muted-foreground">External</div>
-                <div className="flex gap-3">
-                  <Button asChild variant="outline">
-                    <a href="https://opensea.io" target="_blank" rel="noreferrer">View on OpenSea</a>
-                  </Button>
-                  <Button asChild variant="outline">
-                    <a href="https://etherscan.io" target="_blank" rel="noreferrer">View on Etherscan</a>
-                  </Button>
+                <div className="flex flex-wrap gap-3">
+                  {(() => {
+                    const contract = getContractAddress();
+                    const osUrl = openseaTokenUrl(contract, tokenId);
+                    const explUrl = explorerTokenUrl(contract, tokenId);
+                    return (
+                      <>
+                        {osUrl ? (
+                          <Button asChild variant="outline">
+                            <a href={osUrl} target="_blank" rel="noreferrer">
+                              View on OpenSea
+                            </a>
+                          </Button>
+                        ) : (
+                          <Button variant="outline" disabled title="Available after mint goes live">
+                            OpenSea — after mint
+                          </Button>
+                        )}
+                        {explUrl ? (
+                          <Button asChild variant="outline">
+                            <a href={explUrl} target="_blank" rel="noreferrer">
+                              View on {CHAIN.name}
+                            </a>
+                          </Button>
+                        ) : (
+                          <Button variant="outline" disabled title="Available after mint goes live">
+                            {CHAIN.name} — after mint
+                          </Button>
+                        )}
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
 

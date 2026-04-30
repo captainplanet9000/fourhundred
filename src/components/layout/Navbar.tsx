@@ -66,7 +66,7 @@ export const Navbar: React.FC = () => {
                   <div className="pt-2">
                     <SheetClose asChild>
                       <Button asChild className="w-full bg-primary text-primary-foreground hover:brightness-110">
-                        <Link to="/gallery">View Gallery</Link>
+                        <Link to="/mint">Get ready for mint</Link>
                       </Button>
                     </SheetClose>
                   </div>
@@ -75,7 +75,7 @@ export const Navbar: React.FC = () => {
             </Sheet>
           </div>
           <Button asChild size="sm" className="bg-primary text-primary-foreground hover:brightness-110 shadow-sm">
-            <Link to="/gallery">View Gallery</Link>
+            <Link to="/mint">Get ready for mint</Link>
           </Button>
         </div>
       </Container>

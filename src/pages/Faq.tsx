@@ -73,18 +73,29 @@ const FaqPage: React.FC = () => {
             </AccordionItem>
 
             <AccordionItem value="price">
-              <AccordionTrigger>What is the mint price?</AccordionTrigger>
+              <AccordionTrigger>What does it cost to mint?</AccordionTrigger>
               <AccordionContent>
-                The public mint price is 0.05 ETH per portrait. This is a one-time cost that grants you permanent membership in the 
-                400 Club, plus ownership of a unique piece of generative art.
+                Minting is <strong>free</strong> — you pay only the MegaETH gas fee, which is a fraction of a cent.
+                The 400 Club is funded by an 8% royalty on secondary sales, not by primary mint revenue. One claim per wallet,
+                first-come first-served, until the 9,400 supply is gone.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="why-free">
+              <AccordionTrigger>Why a free mint?</AccordionTrigger>
+              <AccordionContent>
+                Free mints maximize unique-holder count, and unique holders are what make a collection &quot;the&quot; PFP for
+                a chain. We&apos;d rather be the largest, most-recognized 400 Club on MegaETH than collect a one-time mint fee.
+                Long-term revenue is the 8% secondary royalty — every time a portrait trades, the project (and the chain&apos;s
+                cultural footprint) compounds.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="rights">
               <AccordionTrigger>What rights do I have to my portrait?</AccordionTrigger>
               <AccordionContent>
-                You own full intellectual property (IP) rights to your 400 Club NFT. This means you can use your portrait however 
-                you want — as your profile picture, on merchandise, in commercial projects, or however else you see fit. Your portrait 
+                You own full intellectual property (IP) rights to your 400 Club NFT. This means you can use your portrait however
+                you want — as your profile picture, on merchandise, in commercial projects, or however else you see fit. Your portrait
                 is yours completely. Print it, sell products with it, license it — the IP belongs to you as the holder.
               </AccordionContent>
             </AccordionItem>
@@ -92,8 +103,19 @@ const FaqPage: React.FC = () => {
             <AccordionItem value="wallet">
               <AccordionTrigger>Which wallets are supported?</AccordionTrigger>
               <AccordionContent>
-                We support all major Ethereum wallets including MetaMask, Coinbase Wallet, WalletConnect-compatible wallets, 
-                Rainbow, and more. Simply connect your wallet on the Mint page to get started.
+                Any EVM wallet that supports custom networks — MetaMask, Coinbase Wallet, Rainbow, and any
+                WalletConnect-compatible wallet. The mint page will prompt you to add MegaETH (chain ID 4326) the first time
+                you connect, or you can pre-add it from{" "}
+                <a href="https://docs.megaeth.com/user-guide/connect" target="_blank" rel="noreferrer noopener" className="underline">docs.megaeth.com/user-guide/connect</a>.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="network">
+              <AccordionTrigger>What network are we on?</AccordionTrigger>
+              <AccordionContent>
+                MegaETH — the realtime Ethereum L2 (chain ID <strong>4326</strong>). Bridge any ETH at{" "}
+                <a href="https://www.megaeth.com/bridge" target="_blank" rel="noreferrer noopener" className="underline">megaeth.com/bridge</a>.
+                You don&apos;t need much: the entire mint costs a fraction of a cent in gas.
               </AccordionContent>
             </AccordionItem>
 
