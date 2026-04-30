@@ -42,7 +42,7 @@ const Index: React.FC = () => {
         <title>{COLLECTION.name} — Free claim on {CHAIN.name}</title>
         <meta
           name="description"
-          content={`${COLLECTION.supply.toLocaleString()} Gilded Age dog portraits. Free claim on ${CHAIN.name} L2. Opens ${MINT_DATE_LABEL}. ${MINT.royaltyPct}% royalty on secondary funds the project.`}
+          content={`${COLLECTION.supply.toLocaleString()} one-of-one Gilded Age dog portraits. Free claim on ${CHAIN.name}. Opens ${MINT_DATE_LABEL}. Join the club.`}
         />
         <meta property="og:title" content={`${COLLECTION.name} — Free claim on ${CHAIN.name}`} />
       </Helmet>
@@ -108,8 +108,7 @@ const Index: React.FC = () => {
               >
                 <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto">
                   {COLLECTION.supply.toLocaleString()} one-of-one Gilded Age portraits on {CHAIN.name},
-                  the realtime Ethereum L2. One per wallet. Funded by an {MINT.royaltyPct}% royalty
-                  on secondary — we win when you do.
+                  the realtime Ethereum L2. A real club, a real community, free to join.
                 </p>
               </motion.div>
 
@@ -228,24 +227,24 @@ const Index: React.FC = () => {
           <GradientDivider />
 
           <Section
-            title="Free claim. Funded by royalties."
-            subtitle="The 400 Club is the first major free PFP on MegaETH. Here's why."
+            title="A real club. A real community."
+            subtitle="The 400 Club is free to join — and built to last."
           >
             <Container>
               <Reveal>
                 <ul className="grid md:grid-cols-3 gap-6 text-left">
                   {[
                     {
-                      title: "Maximum distribution",
-                      desc: `${COLLECTION.supply.toLocaleString()} unique holders is the floor. One per wallet, no whales.`,
+                      title: "Free to claim",
+                      desc: `Pay only ${CHAIN.name} gas — fractions of a cent. No paywalls, no presale tax, no insider rounds.`,
                     },
                     {
-                      title: "MegaETH-native",
-                      desc: `Built for the realtime L2. Mints feel instant. Gas is fractions of a cent.`,
+                      title: "One-of-one art",
+                      desc: `${COLLECTION.supply.toLocaleString()} hand-curated Gilded Age portraits. No two alike. Yours forever.`,
                     },
                     {
-                      title: `${MINT.royaltyPct}% royalty, forever`,
-                      desc: `We earn when you trade. Aligned incentives — we keep building, you get appreciation.`,
+                      title: "A genuine community",
+                      desc: `Token-gated channels, member-only drops, and a club where holders actually show up — not a flip-and-leave crowd.`,
                     },
                   ].map((item) => (
                     <GoldenBorder key={item.title}>
@@ -357,7 +356,7 @@ const Index: React.FC = () => {
 
           <GradientDivider />
 
-          <Section title="Your seat is waiting" subtitle="One per wallet. First-come, first-served.">
+          <Section title="Your seat is waiting" subtitle="First-come, first-served. Free.">
             <Container className="text-center">
               <Reveal>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

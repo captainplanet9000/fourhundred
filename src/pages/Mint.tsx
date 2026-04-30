@@ -68,7 +68,7 @@ const MintPage: React.FC = () => {
         <title>Mint — {COLLECTION.name}</title>
         <meta
           name="description"
-          content={`Free claim on ${CHAIN.name}. ${COLLECTION.supply.toLocaleString()} portraits. One per wallet. ${MINT.royaltyPct}% royalty on secondary.`}
+          content={`Free claim on ${CHAIN.name}. ${COLLECTION.supply.toLocaleString()} one-of-one Gilded Age portraits. Join the club.`}
         />
       </Helmet>
 
@@ -94,8 +94,7 @@ const MintPage: React.FC = () => {
                   : `Free claim on ${CHAIN.name}`}
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto px-4 sm:px-0">
-                {COLLECTION.supply.toLocaleString()} unique Gilded Age portraits. Free to claim. One
-                per wallet. Pay only {CHAIN.name} gas.
+                {COLLECTION.supply.toLocaleString()} unique Gilded Age portraits. Free to claim. Pay only {CHAIN.name} gas.
               </p>
             </div>
 
@@ -156,15 +155,7 @@ const MintPage: React.FC = () => {
                           </div>
                           <div className="text-white/60">Supply</div>
                           <div className="text-white font-semibold">
-                            {COLLECTION.supply.toLocaleString()}
-                          </div>
-                          <div className="text-white/60">Per Wallet</div>
-                          <div className="text-white font-semibold">
-                            {MINT.perWalletLimit} (anti-bot)
-                          </div>
-                          <div className="text-white/60">Royalty</div>
-                          <div className="text-white font-semibold">
-                            {MINT.royaltyPct}% on secondary
+                            {COLLECTION.supply.toLocaleString()} one-of-one
                           </div>
                           <div className="text-white/60">Network</div>
                           <div className="text-white font-semibold">
@@ -200,7 +191,7 @@ const MintPage: React.FC = () => {
               </div>
 
               <p className="text-center text-white/60 italic text-lg mt-8">
-                Free to claim. Funded by {MINT.royaltyPct}% royalties on secondary.
+                Free to claim. Built to last.
               </p>
             </div>
           </Container>

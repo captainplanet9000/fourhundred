@@ -80,10 +80,12 @@ export const MintPanel: React.FC<{
 }> = ({ priceEth = 0, totalSupply = 0, maxSupply = 9400, abi }) => {
   const { isConnected, address } = useAccount();
   const contractAddress = getContractAddress();
-  // Free mint launch: per-wallet limit is 1, so the qty selector is hidden
-  // and we always send qty=1. If the project later raises perWalletLimit,
-  // re-expose the input.
+  // Free mint launch: per-wallet limit is 2 (anti-bot, but lets a holder
+  // claim a pair). The qty selector is shown with min=1, max=2 in free
+  // mode. Update MAX_FREE_QTY to mirror the contract's perWalletLimit if
+  // you change it on-chain.
   const isFreeMint = priceEth === 0;
+  const MAX_FREE_QTY = 2;
   const [qty, setQty] = useState<number>(1);
 
   const config = useConfig();
@@ -174,18 +176,23 @@ export const MintPanel: React.FC<{
   return (
     <div className="space-y-4">
       <div className="flex items-end gap-3">
-        {!isFreeMint && (
-          <div className="flex-1">
-            <label className="block text-sm mb-1">Quantity</label>
-            <Input
-              type="number"
-              min={1}
-              max={10}
-              value={qty}
-              onChange={(e) => setQty(Math.max(1, Math.min(10, Number(e.target.value))))}
-            />
-          </div>
-        )}
+        <div className="flex-1">
+          <label className="block text-sm mb-1">Quantity</label>
+          <Input
+            type="number"
+            min={1}
+            max={isFreeMint ? MAX_FREE_QTY : 10}
+            value={qty}
+            onChange={(e) =>
+              setQty(
+                Math.max(
+                  1,
+                  Math.min(isFreeMint ? MAX_FREE_QTY : 10, Number(e.target.value)),
+                ),
+              )
+            }
+          />
+        </div>
         <Button
           onClick={handleMint}
           disabled={!canMint || isPending || isConfirming}
@@ -210,7 +217,7 @@ export const MintPanel: React.FC<{
         </Badge>
         {isFreeMint && (
           <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
-            1 per wallet
+            Up to {MAX_FREE_QTY} per wallet
           </Badge>
         )}
         {!proofLoading && isAllowlisted && (

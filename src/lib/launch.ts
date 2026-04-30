@@ -11,7 +11,7 @@ export const COLLECTION = {
   symbol: "400",
   supply: 9400,
   description:
-    "9,400 unique Gilded Age dog portraits. Free to claim on MegaETH. One per wallet. 8% royalty on secondary funds the project.",
+    "9,400 one-of-one Gilded Age dog portraits. Free to claim on MegaETH. A real club, free to join.",
   shortPitch: "9,400 portraits. Free claim on MegaETH.",
   website: "https://fourhundred.club",
   twitter: "https://x.com/4hundred_club",
@@ -23,8 +23,8 @@ export const MINT = {
   dateISO: "2026-05-13T16:00:00.000Z",
   priceLabel: "FREE",
   priceWei: 0n,
-  perTxLimit: 1,
-  perWalletLimit: 1,
+  perTxLimit: 2,
+  perWalletLimit: 2,
   royaltyPct: 8,
 } as const;
 

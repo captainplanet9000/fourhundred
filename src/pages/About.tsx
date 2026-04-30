@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { CHAIN, COLLECTION, MINT, MINT_DATE_LABEL } from "@/lib/launch";
+import { CHAIN, COLLECTION, MINT_DATE_LABEL } from "@/lib/launch";
 
 const AboutPage: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const AboutPage: React.FC = () => {
         <title>About — {COLLECTION.name}</title>
         <meta
           name="description"
-          content={`The ${COLLECTION.name} is ${COLLECTION.supply.toLocaleString()} one-of-one Gilded Age portraits — a free claim on ${CHAIN.name}. Funded by ${MINT.royaltyPct}% royalty on secondary.`}
+          content={`The ${COLLECTION.name} is ${COLLECTION.supply.toLocaleString()} one-of-one Gilded Age portraits — a free claim on ${CHAIN.name}. A real club, free to join.`}
         />
       </Helmet>
       <Section>
@@ -29,9 +29,8 @@ const AboutPage: React.FC = () => {
             </p>
             <p>
               We&apos;re launching as a <strong>free claim on {CHAIN.name}</strong> on{" "}
-              <strong>{MINT_DATE_LABEL}</strong>. One per wallet, no whales, no presale tax. The
-              project is funded by an {MINT.royaltyPct}% royalty on secondary sales — when the
-              collection trades, we keep building.
+              <strong>{MINT_DATE_LABEL}</strong>. No whales, no presale tax — just a real
+              collection, opened to a real community. The 400 Club is built for the long run.
             </p>
             <p>
               Rather than sorting people into rigid social tiers, we think in scenes and roles:
@@ -53,18 +52,17 @@ const AboutPage: React.FC = () => {
           </div>
 
           <div className="mt-12">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Why free, why royalty-funded</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Why free</h2>
             <ul className="space-y-3 text-muted-foreground">
               <li>
-                <span className="font-medium text-foreground">Maximum distribution.</span> A free
-                claim with one per wallet means {COLLECTION.supply.toLocaleString()} unique holders
-                — not 1,200 wallets each holding eight. Holder count is the gravity that makes a
-                collection &quot;the&quot; PFP for a chain.
+                <span className="font-medium text-foreground">Open to everyone.</span> A free
+                claim spreads the {COLLECTION.supply.toLocaleString()} portraits across a wide
+                holder base. The 400 Club only works as a real community, not a wallet hoarders&apos; club.
               </li>
               <li>
-                <span className="font-medium text-foreground">Aligned incentives.</span> We earn
-                when you trade, not when you mint. {MINT.royaltyPct}% royalty on every secondary
-                sale, forever. We&apos;re building for the long run.
+                <span className="font-medium text-foreground">No paywalls.</span> No presale tax,
+                no insider rounds. If you want a portrait, you claim a portrait — same door for
+                everyone.
               </li>
               <li>
                 <span className="font-medium text-foreground">{CHAIN.name}-native.</span> The

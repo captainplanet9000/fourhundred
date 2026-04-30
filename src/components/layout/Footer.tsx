@@ -4,7 +4,6 @@ import { Twitter, Github, ExternalLink } from "lucide-react";
 import {
   CHAIN,
   COLLECTION,
-  MINT,
   explorerAddressUrl,
   openseaCollectionUrl,
 } from "@/lib/launch";
@@ -27,7 +26,7 @@ export const Footer: React.FC = () => {
             portraits. Each NFT is a one-of-one membership in the {COLLECTION.name}.
           </p>
           <p className="text-xs text-muted-foreground/80 mt-3">
-            Free to claim. Funded by {MINT.royaltyPct}% royalties on secondary.
+            Free to claim. Built to last.
           </p>
         </div>
         <div className="space-y-2">

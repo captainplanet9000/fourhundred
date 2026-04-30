@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 import { CHAIN, COLLECTION, MINT, MINT_DATE_LABEL } from "@/lib/launch";
 
 const siteName = `${COLLECTION.name} — Free claim on ${CHAIN.name}`;
-const siteDescription = `${COLLECTION.supply.toLocaleString()} unique Gilded Age dog portraits. Free claim on ${CHAIN.name} L2 (chain ${CHAIN.chainId}). Opens ${MINT_DATE_LABEL}. One per wallet. ${MINT.royaltyPct}% royalty on secondary funds the project.`;
+const siteDescription = `${COLLECTION.supply.toLocaleString()} unique Gilded Age dog portraits. Free claim on ${CHAIN.name} L2 (chain ${CHAIN.chainId}). Opens ${MINT_DATE_LABEL}. Join the club.`;
 const baseUrl = typeof window !== "undefined" ? window.location.origin : COLLECTION.website;
 const defaultImage = "/images/og-image.jpg";
 

@@ -73,21 +73,19 @@ const FaqPage: React.FC = () => {
             </AccordionItem>
 
             <AccordionItem value="price">
-              <AccordionTrigger>What does it cost to mint?</AccordionTrigger>
+              <AccordionTrigger>What does it cost to claim?</AccordionTrigger>
               <AccordionContent>
-                Minting is <strong>free</strong> — you pay only the MegaETH gas fee, which is a fraction of a cent.
-                The 400 Club is funded by an 8% royalty on secondary sales, not by primary mint revenue. One claim per wallet,
-                first-come first-served, until the 9,400 supply is gone.
+                Claiming is <strong>free</strong>. You pay only the MegaETH gas fee — a fraction
+                of a cent. First-come, first-served, until the 9,400 supply is gone.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="why-free">
-              <AccordionTrigger>Why a free mint?</AccordionTrigger>
+              <AccordionTrigger>Why is it free?</AccordionTrigger>
               <AccordionContent>
-                Free mints maximize unique-holder count, and unique holders are what make a collection &quot;the&quot; PFP for
-                a chain. We&apos;d rather be the largest, most-recognized 400 Club on MegaETH than collect a one-time mint fee.
-                Long-term revenue is the 8% secondary royalty — every time a portrait trades, the project (and the chain&apos;s
-                cultural footprint) compounds.
+                Because the 400 Club only works as a real community. A free claim opens the door
+                to anyone who wants in — no paywall, no presale tax, no insider rounds. We want
+                holders who actually want to be here.
               </AccordionContent>
             </AccordionItem>
 
